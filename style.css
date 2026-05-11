@@ -504,32 +504,17 @@ video{width:100%;display:block;background:#000}
 }
 
 
-/* Replay transition readability fix */
-.timeline{
-  z-index:999999 !important;
-}
-
-.timeline-box{
-  min-height:420px !important;
-}
-
-#foundText{
-  font-size:clamp(1.8rem,6vw,3.5rem) !important;
-  margin-top:18px !important;
-}
-
-
-/* HARD FIX: full-screen constellation / multiverse transition */
+/* SUPER OBVIOUS CONSTELLATION TRANSITION FIX */
 .timeline{
   position:fixed !important;
   inset:0 !important;
-  z-index:999999 !important;
+  z-index:9999999 !important;
   display:grid !important;
   place-items:center !important;
   text-align:center !important;
   background:
-    radial-gradient(circle at center, rgba(255,255,255,0.14), rgba(0,0,0,0.96) 58%),
-    linear-gradient(180deg,#12001d,#000) !important;
+    radial-gradient(circle at center, rgba(255, 80, 180, 0.16), rgba(0,0,0,0.98) 62%),
+    linear-gradient(180deg, #160024 0%, #000 100%) !important;
   overflow:hidden !important;
 }
 
@@ -541,65 +526,104 @@ video{width:100%;display:block;background:#000}
   position:absolute !important;
   inset:-200px !important;
   background-image:
-    radial-gradient(circle,rgba(255,255,255,.95) 1px,transparent 1.6px),
-    radial-gradient(circle,rgba(255,0,160,.8) 1px,transparent 1.8px) !important;
-  background-size:45px 45px,75px 75px !important;
-  opacity:.5 !important;
-  animation:driftStars 10s linear infinite !important;
+    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,0,160,.9) 1px, transparent 2px),
+    radial-gradient(circle, rgba(115,220,255,.75) 1px, transparent 1.7px) !important;
+  background-size:38px 38px, 68px 68px, 110px 110px !important;
+  opacity:.55 !important;
+  animation:driftStars 11s linear infinite !important;
+}
+
+.constellation-map{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  opacity:.95;
+  filter: drop-shadow(0 0 16px rgba(255, 70, 180, .9));
+  animation: constellationFloat 8s ease-in-out infinite;
+}
+
+.constellation line,
+.constellation path{
+  fill:none;
+  stroke:rgba(255, 210, 240, .86);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-dasharray:12 14;
+  animation: constellationDash 3.2s linear infinite;
+}
+
+.constellation circle{
+  fill:white;
+  stroke:rgba(255, 0, 170, .95);
+  stroke-width:3;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,.95));
+  animation: starPulse 1.8s ease-in-out infinite;
+}
+
+.heart-constellation path{
+  stroke:rgba(255, 80, 170, .95);
+  stroke-width:4;
+}
+
+@keyframes constellationDash{
+  from{ stroke-dashoffset:0; }
+  to{ stroke-dashoffset:-52; }
+}
+
+@keyframes constellationFloat{
+  0%,100%{ transform:scale(1) rotate(0deg); opacity:.86; }
+  50%{ transform:scale(1.035) rotate(.4deg); opacity:1; }
+}
+
+@keyframes starPulse{
+  0%,100%{ transform:scale(1); opacity:.7; }
+  50%{ transform:scale(1.35); opacity:1; }
 }
 
 .timeline-box{
   position:relative !important;
-  z-index:2 !important;
+  z-index:3 !important;
   width:min(900px,94%) !important;
-  min-height:420px !important;
+  min-height:430px !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
+  padding:24px !important;
+  border-radius:32px !important;
+  background:rgba(0,0,0,.18) !important;
+  backdrop-filter:blur(2px) !important;
 }
 
 #timelineTitle{
   margin:0 0 28px !important;
-  font-size:clamp(2rem,7vw,4rem) !important;
-  text-shadow:0 0 24px rgba(255,0,160,1) !important;
-}
-
-#foundText{
-  margin-top:18px !important;
-  font-size:clamp(1.8rem,6vw,3.5rem) !important;
-  color:#ffd7ef !important;
-  text-shadow:0 0 22px rgba(255,0,160,1) !important;
-  transition:opacity .8s ease, transform .8s ease !important;
-}
-
-.found-hidden{
-  opacity:0 !important;
-  transform:translateY(14px) !important;
-}
-
-.found-show{
-  opacity:1 !important;
-  transform:translateY(0) !important;
+  font-size:clamp(2rem,7vw,4.2rem) !important;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 36px rgba(255,0,160,1),
+    0 0 80px rgba(255,0,160,.55) !important;
 }
 
 .scan-log{
   margin-top:8px !important;
   margin-bottom:30px !important;
-  min-height:145px !important;
+  min-height:150px !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
-  gap:10px !important;
+  gap:12px !important;
 }
 
 .scan-line{
   margin:0 !important;
-  font-size:clamp(1rem,3.2vw,1.4rem) !important;
+  font-size:clamp(1rem,3.2vw,1.45rem) !important;
   color:#ffd9ef !important;
   letter-spacing:.08em !important;
-  text-shadow:0 0 12px rgba(255,0,160,.85) !important;
+  text-shadow:0 0 14px rgba(255,0,160,1) !important;
   transition:opacity .7s ease, transform .7s ease !important;
 }
 
@@ -609,6 +633,27 @@ video{width:100%;display:block;background:#000}
 }
 
 .show-line{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+}
+
+#foundText{
+  margin-top:18px !important;
+  font-size:clamp(1.9rem,6vw,3.7rem) !important;
+  color:#ffd7ef !important;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 35px rgba(255,0,160,1),
+    0 0 75px rgba(255,0,160,.65) !important;
+  transition:opacity .8s ease, transform .8s ease !important;
+}
+
+.found-hidden{
+  opacity:0 !important;
+  transform:translateY(14px) !important;
+}
+
+.found-show{
   opacity:1 !important;
   transform:translateY(0) !important;
 }

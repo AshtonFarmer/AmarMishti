@@ -15,8 +15,10 @@ function vibrateHeart(){
 }
 
 function resetTimeline(){
-  foundText.classList.remove("found-show");
-  foundText.classList.add("found-hidden");
+  if(foundText){
+    foundText.classList.remove("found-show");
+    foundText.classList.add("found-hidden");
+  }
 
   document.querySelectorAll(".scan-line").forEach(line => {
     line.classList.remove("show-line");
@@ -34,9 +36,9 @@ function runTimelineTransition(options){
   timelineTitle.textContent = searchText;
   foundText.textContent = foundMessage;
 
-  // Make absolutely sure the constellation page is visible.
   timeline.classList.remove("hidden");
   timeline.style.display = "grid";
+  timeline.style.opacity = "1";
 
   const scanLines = document.querySelectorAll(".scan-line");
 
@@ -44,20 +46,20 @@ function runTimelineTransition(options){
     setTimeout(() => {
       line.classList.remove("hidden-line");
       line.classList.add("show-line");
-    }, 700 + (index * 600));
+    }, 700 + (index * 650));
   });
 
   setTimeout(() => {
     foundText.classList.remove("found-hidden");
     foundText.classList.add("found-show");
-  }, 3500);
+  }, 3900);
 
   setTimeout(() => {
     timeline.classList.add("hidden");
     timeline.style.display = "";
     resetTimeline();
     after();
-  }, 6800);
+  }, 7800);
 }
 
 boltBtn.addEventListener("click", async () => {
@@ -104,7 +106,6 @@ startBtn.addEventListener("click", async () => {
   }catch(e){}
 });
 
-// Replay from the ending page: show another multiverse transition first.
 window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
 
@@ -128,6 +129,6 @@ window.addEventListener("DOMContentLoaded", () => {
           window.scrollTo(0,0);
         }
       });
-    }, 350);
+    }, 400);
   }
 });
