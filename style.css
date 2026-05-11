@@ -1854,3 +1854,191 @@ video{width:100%;display:block;background:#000}
   #carUniverse .f1{ width:500px !important; bottom:11vh !important; }
   #carUniverse .bmw{ width:450px !important; bottom:10vh !important; }
 }
+
+
+/* =========================================================
+   FINAL CAR FIX: cars move on road + smoke text fades in/out
+========================================================= */
+
+#carUniverse{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:99999999 !important;
+  overflow:hidden !important;
+  background:#000 !important;
+}
+
+#carUniverse.hidden{
+  display:none !important;
+}
+
+#carUniverse .car-scene{
+  position:absolute !important;
+  inset:0 !important;
+  display:none !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(circle at center, rgba(70,15,100,.45), black 72%) !important;
+}
+
+#carUniverse .car-scene.active{
+  display:block !important;
+}
+
+#carUniverse .car-stars::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-200px !important;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,135,210,.65) 1px, transparent 2px) !important;
+  background-size:55px 55px, 96px 96px !important;
+  opacity:.42 !important;
+  animation:finalCarStars 18s linear infinite !important;
+}
+
+@keyframes finalCarStars{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-250px); }
+}
+
+#carUniverse .car-road{
+  position:absolute !important;
+  left:0 !important;
+  bottom:0 !important;
+  width:100% !important;
+  height:28vh !important;
+  z-index:1 !important;
+  display:block !important;
+  background:linear-gradient(to bottom,#464646,#060606) !important;
+  box-shadow:0 -24px 60px rgba(255,130,190,.16) !important;
+}
+
+#carUniverse .car-road::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  top:50% !important;
+  width:240% !important;
+  height:5px !important;
+  background:repeating-linear-gradient(to right, white 0 70px, transparent 70px 140px) !important;
+  animation:finalRoadMove 1.2s linear infinite !important;
+}
+
+@keyframes finalRoadMove{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-140px); }
+}
+
+#carUniverse .neon{
+  box-shadow:
+    0 -20px 70px rgba(255,0,80,.5),
+    0 -20px 90px rgba(0,120,255,.35) !important;
+}
+
+#carUniverse .city{
+  box-shadow:0 -20px 70px rgba(255,190,120,.28) !important;
+}
+
+/* IMPORTANT: default car sits centered before driving */
+#carUniverse .car{
+  position:absolute !important;
+  left:50% !important;
+  bottom:8vh !important;
+  width:min(720px,88vw) !important;
+  height:auto !important;
+  transform:translateX(-50%) !important;
+  z-index:5 !important;
+  overflow:visible !important;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,.22))
+    drop-shadow(0 0 42px rgba(255,150,75,.45)) !important;
+}
+
+#carUniverse .jeep{
+  width:min(720px,88vw) !important;
+  bottom:8vh !important;
+}
+
+#carUniverse .f1{
+  width:min(840px,96vw) !important;
+  bottom:8vh !important;
+  filter:
+    drop-shadow(0 0 22px rgba(255,0,60,.7))
+    drop-shadow(0 0 45px rgba(0,120,255,.32)) !important;
+}
+
+#carUniverse .bmw{
+  width:min(760px,90vw) !important;
+  bottom:8vh !important;
+}
+
+/* This class is added by JS after a short pause */
+#carUniverse .car.drive{
+  animation:finalCarDriveAcross 6.5s linear forwards !important;
+}
+
+@keyframes finalCarDriveAcross{
+  0%{
+    left:-70vw;
+    transform:translateX(0);
+  }
+  100%{
+    left:115vw;
+    transform:translateX(0);
+  }
+}
+
+/* smoke words in the center */
+#carUniverse .car-text{
+  position:absolute !important;
+  left:0 !important;
+  top:31% !important;
+  width:100% !important;
+  text-align:center !important;
+  z-index:20 !important;
+  margin:0 !important;
+  font-size:clamp(2rem,5vw,4.1rem) !important;
+  color:white !important;
+  opacity:0 !important;
+  filter:blur(18px) !important;
+  transform:scale(.95) !important;
+  text-shadow:
+    0 0 22px rgba(255,255,255,.68),
+    0 0 60px rgba(255,180,120,.45),
+    0 0 105px rgba(255,80,160,.28) !important;
+}
+
+/* Fade in, hold, fade out */
+#carUniverse .car-text.animate{
+  animation:finalSmokeFade 5.6s ease forwards !important;
+}
+
+@keyframes finalSmokeFade{
+  0%{
+    opacity:0;
+    filter:blur(20px);
+    transform:scale(.92);
+  }
+  25%{
+    opacity:1;
+    filter:blur(4px);
+    transform:scale(1);
+  }
+  62%{
+    opacity:1;
+    filter:blur(.3px);
+    transform:scale(1);
+  }
+  100%{
+    opacity:0;
+    filter:blur(14px);
+    transform:scale(1.05);
+  }
+}
+
+@media(max-width:700px){
+  #carUniverse .jeep{ width:430px !important; bottom:10vh !important; }
+  #carUniverse .f1{ width:500px !important; bottom:11vh !important; }
+  #carUniverse .bmw{ width:450px !important; bottom:10vh !important; }
+}

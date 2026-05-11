@@ -67,7 +67,7 @@ function runTimelineTransition(options){
 
 
 /* =========================================================
-   VERIFIED WORKING CAR UNIVERSE FLOW
+   VERIFIED WORKING CAR UNIVERSE FLOW - MOVING + FADING TEXT
 ========================================================= */
 
 const carUniverse = document.getElementById("carUniverse");
@@ -78,7 +78,7 @@ let carTimer2;
 let carTimer3;
 let carTimer4;
 
-function restartCarAnim(el, className){
+function restartClass(el, className){
   if(!el) return;
   el.classList.remove(className);
   el.offsetHeight;
@@ -86,7 +86,13 @@ function restartCarAnim(el, className){
 }
 
 function showCarScene(index){
-  carScenes.forEach(scene => scene.classList.remove("active"));
+  carScenes.forEach(scene => {
+    scene.classList.remove("active");
+    const oldCar = scene.querySelector(".car");
+    const oldText = scene.querySelector(".car-text");
+    if(oldCar) oldCar.classList.remove("drive");
+    if(oldText) oldText.classList.remove("animate");
+  });
 
   const current = carScenes[index];
   if(!current) return;
@@ -96,16 +102,15 @@ function showCarScene(index){
   const car = current.querySelector(".car");
   const text = current.querySelector(".car-text");
 
-  if(car) car.classList.remove("drive");
-  if(text) text.classList.remove("animate");
-
+  // Words fade in first
   setTimeout(() => {
-    restartCarAnim(text, "animate");
+    restartClass(text, "animate");
   }, 250);
 
+  // Car starts driving after a short cinematic pause
   setTimeout(() => {
-    restartCarAnim(car, "drive");
-  }, 1300);
+    restartClass(car, "drive");
+  }, 1250);
 }
 
 function startCarUniverseSequence(afterSequence){
