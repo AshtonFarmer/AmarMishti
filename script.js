@@ -70,14 +70,17 @@ boltBtn.addEventListener("click", async () => {
     await bgMusic.play();
   }catch(e){}
 
-  runTimelineTransition({
-    searchText: "Searching the multiverse...",
-    foundMessage: "Tanima Das found ❤️",
-    after: () => {
-      intro.classList.add("hidden");
-      videoPage.classList.remove("hidden");
-      window.scrollTo(0,0);
-    }
+  // New flow: birthday page -> car universe -> multiverse search -> video page
+  startCarUniverseSequence(() => {
+    runTimelineTransition({
+      searchText: "Searching the multiverse...",
+      foundMessage: "Tanima Das found ❤️",
+      after: () => {
+        intro.classList.add("hidden");
+        videoPage.classList.remove("hidden");
+        window.scrollTo(0,0);
+      }
+    });
   });
 });
 
@@ -155,3 +158,72 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 2600);
   }
 });
+
+/* =========================================================
+   CAR UNIVERSE SEQUENCE - FULLY INTEGRATED
+========================================================= */
+
+const carUniverse = document.getElementById("carUniverse");
+const carScenes = document.querySelectorAll(".car-scene");
+
+function resetCarSceneAnimations(scene){
+  const car = scene.querySelector(".car");
+  const text = scene.querySelector(".smoke-text");
+
+  if(car){
+    car.style.animation = "none";
+    car.offsetHeight;
+    car.style.animation = "";
+  }
+
+  if(text){
+    text.style.animation = "none";
+    text.offsetHeight;
+    text.style.animation = "";
+  }
+}
+
+function startCarUniverseSequence(afterSequence){
+  carUniverse.classList.remove("hidden");
+  carUniverse.style.opacity = "1";
+
+  let current = 0;
+
+  function showScene(index){
+    carScenes.forEach(scene => {
+      scene.classList.remove("active-scene");
+    });
+
+    const scene = carScenes[index];
+    scene.classList.add("active-scene");
+    resetCarSceneAnimations(scene);
+  }
+
+  showScene(0);
+
+  setTimeout(() => {
+    current = 1;
+    showScene(current);
+  }, 7200);
+
+  setTimeout(() => {
+    current = 2;
+    showScene(current);
+  }, 14400);
+
+  setTimeout(() => {
+    carUniverse.style.transition = "opacity 1.8s ease";
+    carUniverse.style.opacity = "0";
+
+    setTimeout(() => {
+      carUniverse.classList.add("hidden");
+      carUniverse.style.opacity = "";
+      carUniverse.style.transition = "";
+
+      if(afterSequence){
+        afterSequence();
+      }
+    }, 1900);
+
+  }, 21600);
+}
