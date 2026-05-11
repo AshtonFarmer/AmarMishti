@@ -5,13 +5,31 @@ body{
   font-family:Arial,sans-serif;
 }
 
+.controls{
+  position:fixed;
+  top:16px;
+  right:16px;
+  z-index:99999;
+  display:flex;
+  gap:8px;
+}
+
+.controls button{
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.14);
+  color:white;
+  padding:9px 13px;
+  border-radius:999px;
+  font-weight:800;
+}
+
 #sceneLabel{
   position:fixed;
   top:16px;
   left:16px;
   z-index:9999;
   color:white;
-  opacity:.75;
+  opacity:.85;
   font-size:14px;
   letter-spacing:.12em;
   text-transform:uppercase;
@@ -79,35 +97,38 @@ body{
 
 .car{
   position:absolute;
-  left:-70vw;
-  bottom:7vh;
-  width:min(760px,90vw);
+  left:50%;
+  bottom:8vh;
+  width:min(720px,88vw);
   height:auto;
-  animation:drive 7s linear forwards;
+  transform:translateX(-50%);
   filter:drop-shadow(0 0 18px rgba(255,255,255,.22)) drop-shadow(0 0 42px rgba(255,150,75,.45));
   overflow:visible;
   z-index:5;
 }
 
-.jeep{
-  bottom:8vh;
-  width:min(720px,88vw);
-}
-
 .f1{
-  bottom:8vh;
   width:min(840px,96vw);
   filter:drop-shadow(0 0 22px rgba(255,0,60,.7)) drop-shadow(0 0 45px rgba(0,120,255,.32));
 }
 
 .bmw{
-  bottom:8vh;
   width:min(760px,90vw);
 }
 
+.car.drive{
+  animation:drive 6.5s linear forwards;
+}
+
 @keyframes drive{
-  from{ left:-75vw; }
-  to{ left:115vw; }
+  from{
+    left:-70vw;
+    transform:translateX(0);
+  }
+  to{
+    left:115vw;
+    transform:translateX(0);
+  }
 }
 
 .text{
@@ -117,11 +138,13 @@ body{
   text-align:center;
   font-size:clamp(2rem,5vw,4.1rem);
   color:white;
-  opacity:0;
-  animation:textReveal 3.3s ease forwards;
-  animation-delay:1.5s;
+  opacity:1;
   text-shadow:0 0 22px rgba(255,255,255,.68),0 0 60px rgba(255,180,120,.45),0 0 105px rgba(255,80,160,.28);
   z-index:6;
+}
+
+.text.animate{
+  animation:textReveal 3.3s ease forwards;
 }
 
 @keyframes textReveal{
