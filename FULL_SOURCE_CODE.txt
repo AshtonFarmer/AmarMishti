@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=constellation2" />
 </head>
 <body>
 <audio id="bgMusic" loop>
@@ -50,9 +50,48 @@
 
 <section id="timeline" class="timeline hidden">
   <div class="timeline-stars"></div>
+
+  <svg class="constellation-map" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="constellation constellation-one">
+      <line x1="120" y1="210" x2="260" y2="160"></line>
+      <line x1="260" y1="160" x2="390" y2="250"></line>
+      <line x1="390" y1="250" x2="520" y2="190"></line>
+      <circle cx="120" cy="210" r="7"></circle>
+      <circle cx="260" cy="160" r="7"></circle>
+      <circle cx="390" cy="250" r="7"></circle>
+      <circle cx="520" cy="190" r="7"></circle>
+    </g>
+
+    <g class="constellation constellation-two">
+      <line x1="620" y1="640" x2="710" y2="530"></line>
+      <line x1="710" y1="530" x2="820" y2="590"></line>
+      <line x1="820" y1="590" x2="890" y2="470"></line>
+      <circle cx="620" cy="640" r="7"></circle>
+      <circle cx="710" cy="530" r="7"></circle>
+      <circle cx="820" cy="590" r="7"></circle>
+      <circle cx="890" cy="470" r="7"></circle>
+    </g>
+
+    <g class="constellation heart-constellation">
+      <path d="M500 640 C430 580 360 520 390 445 C415 385 485 395 500 450 C515 395 585 385 610 445 C640 520 570 580 500 640 Z"></path>
+      <circle cx="390" cy="445" r="7"></circle>
+      <circle cx="500" cy="450" r="7"></circle>
+      <circle cx="610" cy="445" r="7"></circle>
+      <circle cx="500" cy="640" r="7"></circle>
+    </g>
+  </svg>
+
   <div class="timeline-box">
     <h2 id="timelineTitle">Searching the multiverse...</h2>
-    <p id="foundText" class="found-hidden">Tanima found ❤️</p>
+
+    <div id="scanLog" class="scan-log">
+      <p class="scan-line hidden-line">Scanning timelines...</p>
+      <p class="scan-line hidden-line">Connection detected...</p>
+      <p class="scan-line hidden-line">Soul recognized...</p>
+      <p class="scan-line hidden-line">Synchronizing universes...</p>
+    </div>
+
+    <p id="foundText" class="found-hidden">Tanima Das found ❤️</p>
   </div>
 </section>
 
@@ -82,7 +121,7 @@
   </main>
 </section>
 
-<script src="script.js"></script>
+<script src="script.js?v=constellation2"></script>
 </body>
 </html>
 
@@ -112,7 +151,7 @@
       <p>In every universe, every timeline, every lifetime.</p>
 
       <div class="ending-buttons">
-      <a class="replay-btn" href="index.html?replay=1">Find us in another universe ⚡</a>
+      <a class="replay-btn" href="memory.html">Find us in another universe ⚡</a>
 
       <button id="btsBtn" class="bts-btn hidden-bts">
         Behind the scenes 😉
@@ -128,26 +167,15 @@
           Built line by line in HTML, CSS, and JavaScript.
         </p>
 
-        <div class="code-window">
-<pre>
-HTML → structure of every page
-CSS → all animations, stars, flowers, neon glows
-JavaScript → multiverse transitions, replay system, fullscreen video logic
+        
+        <p class="handmade-line">
+          This entire experience was handcrafted<br>
+          just to make you smile ❤️
+        </p>
 
-Features included:
-- Birthday intro screen
-- Flash lightning transition
-- Timeline search animation
-- Multiverse replay system
-- Bengali ending
-- Flower bloom animations
-- Audio integration
-- Fullscreen cinematic video
-- Galaxy particles
-- Replay universe logic
-
-This entire experience was handcrafted
-just to make you smile ❤️
+<div class="code-window">
+<pre id="actualCode">
+Loading the real code...
 </pre>
         </div>
 
@@ -159,6 +187,128 @@ just to make you smile ❤️
     </div>
   </section>
 <script src="ending.js"></script>
+</body>
+</html>
+
+
+
+===== MEMORY.HTML =====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Another Universe ❤️</title>
+  <link rel="stylesheet" href="style.css?v=memory-final" />
+</head>
+<body class="memory-body">
+
+<section id="memoryTransition" class="memory-transition">
+  <div class="memory-stars"></div>
+
+  <svg class="memory-constellations" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g>
+      <line x1="140" y1="210" x2="280" y2="150"></line>
+      <line x1="280" y1="150" x2="430" y2="260"></line>
+      <line x1="430" y1="260" x2="590" y2="190"></line>
+      <circle cx="140" cy="210" r="7"></circle>
+      <circle cx="280" cy="150" r="7"></circle>
+      <circle cx="430" cy="260" r="7"></circle>
+      <circle cx="590" cy="190" r="7"></circle>
+    </g>
+
+    <g>
+      <path d="M500 665 C420 590 355 530 388 448 C418 378 485 405 500 455 C515 405 582 378 612 448 C645 530 580 590 500 665 Z"></path>
+      <circle cx="388" cy="448" r="7"></circle>
+      <circle cx="500" cy="455" r="7"></circle>
+      <circle cx="612" cy="448" r="7"></circle>
+      <circle cx="500" cy="665" r="7"></circle>
+    </g>
+  </svg>
+
+  <div class="memory-transition-box">
+    <h1>Searching for us in another universe...</h1>
+    <p class="memory-scan line1">Scanning memories...</p>
+    <p class="memory-scan line2">Timeline connection detected...</p>
+    <p class="memory-scan line3">Love recognized...</p>
+    <p class="memory-found">Another lifetime found ❤️</p>
+  </div>
+</section>
+
+<section id="memoryUniverse" class="memory-universe-page hidden-memory">
+  <div class="memory-stars"></div>
+
+  <div class="memory-message">
+    <h1>Some universes are temporary...</h1>
+    <p>But somehow...</p>
+    <p>I always find you again.</p>
+  </div>
+
+  <div id="memoryContainer" class="memory-container"></div>
+
+  <div id="memoryFinal" class="memory-final">
+    In every universe... I still find you. ❤️
+  </div>
+
+  <a id="restartUniverse" class="restart-universe hidden-memory" href="index.html">
+    Restart our universe ⚡
+  </a>
+</section>
+
+<script>
+const memoryPhotos = [
+    "memory1.jpg",
+    "memory2.jpg",
+    "memory3.jpg",
+    "memory4.jpg",
+    "memory5.jpg",
+    "memory6.jpg",
+    "memory7.jpg",
+    "memory8.jpg",
+    "memory9.jpg",
+    "memory10.jpg",
+    "memory11.jpg",
+    "memory12.jpg",
+    "memory13.jpg",
+    "memory14.jpg",
+    "memory15.jpg"
+];
+
+const transition = document.getElementById("memoryTransition");
+const universe = document.getElementById("memoryUniverse");
+const container = document.getElementById("memoryContainer");
+const restart = document.getElementById("restartUniverse");
+
+function placeMemory(photoName, index) {
+  const img = document.createElement("img");
+  img.src = photoName;
+  img.className = "floating-memory memory-pos-" + ((index % 8) + 1);
+  img.alt = "A memory";
+  container.appendChild(img);
+}
+
+setTimeout(() => {
+  transition.classList.add("fade-away-memory");
+
+  setTimeout(() => {
+    transition.style.display = "none";
+    universe.classList.remove("hidden-memory");
+
+    memoryPhotos.forEach((photo, index) => {
+      setTimeout(() => {
+        placeMemory(photo, index);
+      }, 700 + index * 850);
+    });
+
+    setTimeout(() => {
+      restart.classList.remove("hidden-memory");
+    }, 15500);
+
+  }, 1200);
+}, 6200);
+</script>
+
 </body>
 </html>
 
@@ -615,6 +765,494 @@ video{width:100%;display:block;background:#000}
 }
 
 
+#actualCode{
+  color:#ffb7dd;
+  font-size:.78rem;
+  line-height:1.45;
+  text-align:left;
+  max-height:55vh;
+  overflow:auto;
+  white-space:pre-wrap;
+}
+
+
+.handmade-line{
+  margin-top:18px;
+  margin-bottom:10px;
+  text-align:center;
+  font-size:clamp(1rem,3vw,1.35rem);
+  color:#ffe4f4;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.7),
+    0 0 28px rgba(255,0,160,0.8);
+  line-height:1.6;
+}
+
+
+.scan-log{
+  margin-top:8px;
+  margin-bottom:30px;
+  min-height:140px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.scan-line{
+  margin:0;
+  font-size:clamp(1rem,3.2vw,1.4rem) !important;
+  color:#ffd9ef !important;
+  letter-spacing:.08em;
+  text-shadow:0 0 12px rgba(255,0,160,.85);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.hidden-line{
+  opacity:0;
+  transform:translateY(10px);
+}
+
+.show-line{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* SUPER OBVIOUS CONSTELLATION TRANSITION FIX */
+.timeline{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:9999999 !important;
+  display:grid !important;
+  place-items:center !important;
+  text-align:center !important;
+  background:
+    radial-gradient(circle at center, rgba(255, 80, 180, 0.16), rgba(0,0,0,0.98) 62%),
+    linear-gradient(180deg, #160024 0%, #000 100%) !important;
+  overflow:hidden !important;
+}
+
+.timeline.hidden{
+  display:none !important;
+}
+
+.timeline-stars{
+  position:absolute !important;
+  inset:-200px !important;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255,0,160,.9) 1px, transparent 2px),
+    radial-gradient(circle, rgba(115,220,255,.75) 1px, transparent 1.7px) !important;
+  background-size:38px 38px, 68px 68px, 110px 110px !important;
+  opacity:.55 !important;
+  animation:driftStars 11s linear infinite !important;
+}
+
+.constellation-map{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+  opacity:.95;
+  filter: drop-shadow(0 0 16px rgba(255, 70, 180, .9));
+  animation: constellationFloat 8s ease-in-out infinite;
+}
+
+.constellation line,
+.constellation path{
+  fill:none;
+  stroke:rgba(255, 210, 240, .86);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-dasharray:12 14;
+  animation: constellationDash 3.2s linear infinite;
+}
+
+.constellation circle{
+  fill:white;
+  stroke:rgba(255, 0, 170, .95);
+  stroke-width:3;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,.95));
+  animation: starPulse 1.8s ease-in-out infinite;
+}
+
+.heart-constellation path{
+  stroke:rgba(255, 80, 170, .95);
+  stroke-width:4;
+}
+
+@keyframes constellationDash{
+  from{ stroke-dashoffset:0; }
+  to{ stroke-dashoffset:-52; }
+}
+
+@keyframes constellationFloat{
+  0%,100%{ transform:scale(1) rotate(0deg); opacity:.86; }
+  50%{ transform:scale(1.035) rotate(.4deg); opacity:1; }
+}
+
+@keyframes starPulse{
+  0%,100%{ transform:scale(1); opacity:.7; }
+  50%{ transform:scale(1.35); opacity:1; }
+}
+
+.timeline-box{
+  position:relative !important;
+  z-index:3 !important;
+  width:min(900px,94%) !important;
+  min-height:430px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:24px !important;
+  border-radius:32px !important;
+  background:rgba(0,0,0,.18) !important;
+  backdrop-filter:blur(2px) !important;
+}
+
+#timelineTitle{
+  margin:0 0 28px !important;
+  font-size:clamp(2rem,7vw,4.2rem) !important;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 36px rgba(255,0,160,1),
+    0 0 80px rgba(255,0,160,.55) !important;
+}
+
+.scan-log{
+  margin-top:8px !important;
+  margin-bottom:30px !important;
+  min-height:150px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:12px !important;
+}
+
+.scan-line{
+  margin:0 !important;
+  font-size:clamp(1rem,3.2vw,1.45rem) !important;
+  color:#ffd9ef !important;
+  letter-spacing:.08em !important;
+  text-shadow:0 0 14px rgba(255,0,160,1) !important;
+  transition:opacity .7s ease, transform .7s ease !important;
+}
+
+.hidden-line{
+  opacity:0 !important;
+  transform:translateY(10px) !important;
+}
+
+.show-line{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+}
+
+#foundText{
+  margin-top:18px !important;
+  font-size:clamp(1.9rem,6vw,3.7rem) !important;
+  color:#ffd7ef !important;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 35px rgba(255,0,160,1),
+    0 0 75px rgba(255,0,160,.65) !important;
+  transition:opacity .8s ease, transform .8s ease !important;
+}
+
+.found-hidden{
+  opacity:0 !important;
+  transform:translateY(14px) !important;
+}
+
+.found-show{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+}
+
+
+/* =========================================================
+   FULL MEMORY UNIVERSE PAGE - RELIABLE GITHUB PAGES VERSION
+========================================================= */
+
+.memory-body{
+  margin:0;
+  min-height:100vh;
+  background:#000;
+  overflow:hidden;
+  color:white;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+
+.memory-transition,
+.memory-universe-page{
+  position:fixed;
+  inset:0;
+  min-height:100vh;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at center, rgba(255,70,175,.18), rgba(0,0,0,.98) 62%),
+    linear-gradient(180deg,#160024,#000);
+}
+
+.memory-transition{
+  z-index:99999;
+  display:grid;
+  place-items:center;
+  transition:opacity 1.2s ease;
+}
+
+.fade-away-memory{
+  opacity:0;
+}
+
+.memory-stars::before{
+  content:"";
+  position:absolute;
+  inset:-200px;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,0,160,.85) 1px, transparent 2px),
+    radial-gradient(circle, rgba(120,220,255,.7) 1px, transparent 1.8px);
+  background-size:42px 42px, 72px 72px, 112px 112px;
+  opacity:.45;
+  animation:memoryStarsMove 18s linear infinite;
+}
+
+@keyframes memoryStarsMove{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-220px); }
+}
+
+.memory-constellations{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:.9;
+  z-index:1;
+  filter:drop-shadow(0 0 18px rgba(255,80,180,.9));
+  animation:memoryConstellationFloat 7s ease-in-out infinite;
+}
+
+.memory-constellations line,
+.memory-constellations path{
+  fill:none;
+  stroke:rgba(255,220,245,.9);
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-dasharray:12 14;
+  animation:memoryDash 3s linear infinite;
+}
+
+.memory-constellations circle{
+  fill:white;
+  stroke:rgba(255,0,160,.95);
+  stroke-width:3;
+  filter:drop-shadow(0 0 13px white);
+  animation:memoryStarPulse 1.7s ease-in-out infinite;
+}
+
+@keyframes memoryDash{
+  from{ stroke-dashoffset:0; }
+  to{ stroke-dashoffset:-52; }
+}
+
+@keyframes memoryConstellationFloat{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.04); }
+}
+
+@keyframes memoryStarPulse{
+  0%,100%{ opacity:.65; transform:scale(1); }
+  50%{ opacity:1; transform:scale(1.35); }
+}
+
+.memory-transition-box{
+  position:relative;
+  z-index:3;
+  text-align:center;
+  width:min(900px,94%);
+  padding:24px;
+}
+
+.memory-transition-box h1{
+  margin:0 0 34px;
+  font-size:clamp(2rem,7vw,4.3rem);
+  line-height:1.05;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 36px rgba(255,0,160,1),
+    0 0 80px rgba(255,0,160,.55);
+}
+
+.memory-scan{
+  opacity:0;
+  margin:12px 0;
+  font-size:clamp(1rem,3.2vw,1.45rem);
+  color:#ffd9ef;
+  letter-spacing:.08em;
+  text-shadow:0 0 14px rgba(255,0,160,1);
+}
+
+.line1{ animation:memoryScanLine .8s ease forwards; animation-delay:.8s; }
+.line2{ animation:memoryScanLine .8s ease forwards; animation-delay:1.5s; }
+.line3{ animation:memoryScanLine .8s ease forwards; animation-delay:2.2s; }
+
+.memory-found{
+  opacity:0;
+  margin-top:30px;
+  font-size:clamp(1.9rem,6vw,3.7rem);
+  color:#ffd7ef;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 35px rgba(255,0,160,1),
+    0 0 75px rgba(255,0,160,.65);
+  animation:memoryFoundAppear 1s ease forwards;
+  animation-delay:3.7s;
+}
+
+@keyframes memoryScanLine{
+  to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes memoryFoundAppear{
+  from{ opacity:0; transform:translateY(16px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.hidden-memory{
+  display:none !important;
+}
+
+.memory-universe-page{
+  z-index:99998;
+}
+
+.memory-message{
+  position:absolute;
+  top:6%;
+  left:0;
+  width:100%;
+  text-align:center;
+  z-index:4;
+  padding:0 16px;
+}
+
+.memory-message h1{
+  margin:0 0 14px;
+  font-size:clamp(1.8rem,6vw,3.5rem);
+  text-shadow:0 0 22px rgba(255,0,160,.9);
+}
+
+.memory-message p{
+  margin:8px 0;
+  font-size:clamp(1.15rem,4vw,2rem);
+  color:#ffe1f3;
+  text-shadow:0 0 16px rgba(255,0,160,.85);
+}
+
+.memory-container{
+  position:absolute;
+  inset:0;
+  z-index:2;
+}
+
+.floating-memory{
+  position:absolute;
+  width:clamp(130px,25vw,260px);
+  border-radius:22px;
+  object-fit:cover;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.18),
+    0 0 28px rgba(255,80,180,.72),
+    0 20px 55px rgba(0,0,0,.6);
+  opacity:0;
+  animation:
+    memoryPhotoAppear 2s ease forwards,
+    memoryPhotoFloat 8s ease-in-out infinite;
+}
+
+@keyframes memoryPhotoAppear{
+  from{ opacity:0; transform:translateY(40px) scale(.88) rotate(-3deg); }
+  to{ opacity:1; transform:translateY(0) scale(1) rotate(0deg); }
+}
+
+@keyframes memoryPhotoFloat{
+  0%,100%{ translate:0 0; }
+  50%{ translate:0 -18px; }
+}
+
+.memory-pos-1{ left:6%; top:27%; animation-delay:0s, 0s; }
+.memory-pos-2{ right:7%; top:22%; animation-delay:0s, .3s; }
+.memory-pos-3{ left:35%; top:34%; animation-delay:0s, .6s; }
+.memory-pos-4{ left:9%; bottom:14%; animation-delay:0s, .9s; }
+.memory-pos-5{ right:9%; bottom:12%; animation-delay:0s, 1.2s; }
+.memory-pos-6{ left:42%; bottom:8%; animation-delay:0s, 1.5s; }
+.memory-pos-7{ left:23%; top:58%; animation-delay:0s, 1.8s; }
+.memory-pos-8{ right:24%; top:55%; animation-delay:0s, 2.1s; }
+
+.memory-final{
+  position:absolute;
+  bottom:8%;
+  left:0;
+  width:100%;
+  text-align:center;
+  z-index:5;
+  opacity:0;
+  font-size:clamp(1.5rem,5.5vw,3rem);
+  color:#ffd7ef;
+  padding:0 16px;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.85),
+    0 0 35px rgba(255,0,160,1);
+  animation:memoryFinalAppear 2s ease forwards;
+  animation-delay:13s;
+}
+
+@keyframes memoryFinalAppear{
+  to{ opacity:1; }
+}
+
+.restart-universe{
+  position:absolute;
+  left:50%;
+  bottom:2.5%;
+  transform:translateX(-50%);
+  z-index:6;
+  text-decoration:none;
+  color:white;
+  padding:14px 24px;
+  border-radius:999px;
+  border:1px solid rgba(255,220,245,.95);
+  background:linear-gradient(135deg,rgba(255,0,140,.55),rgba(255,120,200,.25));
+  font-size:clamp(.95rem,3.2vw,1.2rem);
+  font-weight:900;
+  box-shadow:
+    0 0 26px rgba(255,0,160,.95),
+    0 0 55px rgba(255,0,160,.45);
+}
+
+@media (max-width:700px){
+  .floating-memory{
+    width:clamp(105px,30vw,165px);
+  }
+
+  .memory-message{
+    top:5%;
+  }
+
+  .memory-pos-3{ left:36%; top:42%; }
+  .memory-pos-6{ left:38%; bottom:14%; }
+}
+
+
 
 ===== SCRIPT.JS =====
 
@@ -635,13 +1273,20 @@ function vibrateHeart(){
 }
 
 function resetTimeline(){
-  foundText.classList.remove("found-show");
-  foundText.classList.add("found-hidden");
+  if(foundText){
+    foundText.classList.remove("found-show");
+    foundText.classList.add("found-hidden");
+  }
+
+  document.querySelectorAll(".scan-line").forEach(line => {
+    line.classList.remove("show-line");
+    line.classList.add("hidden-line");
+  });
 }
 
 function runTimelineTransition(options){
   const searchText = options.searchText || "Searching the multiverse...";
-  const foundMessage = options.foundMessage || "Tanima found ❤️";
+  const foundMessage = options.foundMessage || "Tanima Das found ❤️";
   const after = options.after || function(){};
 
   resetTimeline();
@@ -650,19 +1295,29 @@ function runTimelineTransition(options){
   foundText.textContent = foundMessage;
 
   timeline.classList.remove("hidden");
+  timeline.style.display = "grid";
+  timeline.style.opacity = "1";
 
-  // Wait first, then reveal the found text so it doesn't show instantly.
+  const scanLines = document.querySelectorAll(".scan-line");
+
+  scanLines.forEach((line, index) => {
+    setTimeout(() => {
+      line.classList.remove("hidden-line");
+      line.classList.add("show-line");
+    }, 700 + (index * 650));
+  });
+
   setTimeout(() => {
     foundText.classList.remove("found-hidden");
     foundText.classList.add("found-show");
-  }, 1900);
+  }, 3900);
 
-  // Keep the found text readable before moving on.
   setTimeout(() => {
     timeline.classList.add("hidden");
+    timeline.style.display = "";
     resetTimeline();
     after();
-  }, 5000);
+  }, 7800);
 }
 
 boltBtn.addEventListener("click", async () => {
@@ -709,29 +1364,30 @@ startBtn.addEventListener("click", async () => {
   }catch(e){}
 });
 
-// Replay from the ending page: show another multiverse transition first.
 window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
 
   if(params.get("replay") === "1"){
     intro.classList.add("hidden");
     videoPage.classList.add("hidden");
+    resetTimeline();
 
-    runTimelineTransition({
-      searchText: "Searching for us in another universe...",
-      foundMessage: "Another lifetime found ❤️",
-      after: () => {
-        intro.classList.remove("hidden");
-        videoPage.classList.add("hidden");
+    setTimeout(() => {
+      runTimelineTransition({
+        searchText: "Searching for us in another universe...",
+        foundMessage: "Another lifetime found ❤️",
+        after: () => {
+          intro.classList.remove("hidden");
+          videoPage.classList.add("hidden");
 
-        // clean URL so refreshing doesn't keep replaying the transition
-        if(window.history && window.history.replaceState){
-          window.history.replaceState({}, document.title, "index.html");
+          if(window.history && window.history.replaceState){
+            window.history.replaceState({}, document.title, "index.html");
+          }
+
+          window.scrollTo(0,0);
         }
-
-        window.scrollTo(0,0);
-      }
-    });
+      });
+    }, 400);
   }
 });
 
@@ -767,6 +1423,29 @@ window.addEventListener("DOMContentLoaded", () => {
     closeBts.addEventListener("click", () => {
       btsModal.classList.add("hidden-bts");
     });
+  }
+
+
+  const actualCode = document.getElementById("actualCode");
+
+  async function loadActualCode(){
+    if(!actualCode) return;
+
+    try{
+      const response = await fetch("FULL_SOURCE_CODE.txt");
+      const text = await response.text();
+      actualCode.textContent = text;
+    }catch(e){
+      actualCode.textContent = `The real source code is included in this website folder as:
+
+FULL_SOURCE_CODE.txt
+
+It contains the HTML, CSS, and JavaScript that made this whole birthday multiverse experience work. ❤️`;
+    }
+  }
+
+  if(btsBtn){
+    btsBtn.addEventListener("click", loadActualCode);
   }
 
 });

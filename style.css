@@ -657,3 +657,279 @@ video{width:100%;display:block;background:#000}
   opacity:1 !important;
   transform:translateY(0) !important;
 }
+
+
+/* =========================================================
+   FULL MEMORY UNIVERSE PAGE - RELIABLE GITHUB PAGES VERSION
+========================================================= */
+
+.memory-body{
+  margin:0;
+  min-height:100vh;
+  background:#000;
+  overflow:hidden;
+  color:white;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+
+.memory-transition,
+.memory-universe-page{
+  position:fixed;
+  inset:0;
+  min-height:100vh;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at center, rgba(255,70,175,.18), rgba(0,0,0,.98) 62%),
+    linear-gradient(180deg,#160024,#000);
+}
+
+.memory-transition{
+  z-index:99999;
+  display:grid;
+  place-items:center;
+  transition:opacity 1.2s ease;
+}
+
+.fade-away-memory{
+  opacity:0;
+}
+
+.memory-stars::before{
+  content:"";
+  position:absolute;
+  inset:-200px;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,0,160,.85) 1px, transparent 2px),
+    radial-gradient(circle, rgba(120,220,255,.7) 1px, transparent 1.8px);
+  background-size:42px 42px, 72px 72px, 112px 112px;
+  opacity:.45;
+  animation:memoryStarsMove 18s linear infinite;
+}
+
+@keyframes memoryStarsMove{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-220px); }
+}
+
+.memory-constellations{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:.9;
+  z-index:1;
+  filter:drop-shadow(0 0 18px rgba(255,80,180,.9));
+  animation:memoryConstellationFloat 7s ease-in-out infinite;
+}
+
+.memory-constellations line,
+.memory-constellations path{
+  fill:none;
+  stroke:rgba(255,220,245,.9);
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-dasharray:12 14;
+  animation:memoryDash 3s linear infinite;
+}
+
+.memory-constellations circle{
+  fill:white;
+  stroke:rgba(255,0,160,.95);
+  stroke-width:3;
+  filter:drop-shadow(0 0 13px white);
+  animation:memoryStarPulse 1.7s ease-in-out infinite;
+}
+
+@keyframes memoryDash{
+  from{ stroke-dashoffset:0; }
+  to{ stroke-dashoffset:-52; }
+}
+
+@keyframes memoryConstellationFloat{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.04); }
+}
+
+@keyframes memoryStarPulse{
+  0%,100%{ opacity:.65; transform:scale(1); }
+  50%{ opacity:1; transform:scale(1.35); }
+}
+
+.memory-transition-box{
+  position:relative;
+  z-index:3;
+  text-align:center;
+  width:min(900px,94%);
+  padding:24px;
+}
+
+.memory-transition-box h1{
+  margin:0 0 34px;
+  font-size:clamp(2rem,7vw,4.3rem);
+  line-height:1.05;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 36px rgba(255,0,160,1),
+    0 0 80px rgba(255,0,160,.55);
+}
+
+.memory-scan{
+  opacity:0;
+  margin:12px 0;
+  font-size:clamp(1rem,3.2vw,1.45rem);
+  color:#ffd9ef;
+  letter-spacing:.08em;
+  text-shadow:0 0 14px rgba(255,0,160,1);
+}
+
+.line1{ animation:memoryScanLine .8s ease forwards; animation-delay:.8s; }
+.line2{ animation:memoryScanLine .8s ease forwards; animation-delay:1.5s; }
+.line3{ animation:memoryScanLine .8s ease forwards; animation-delay:2.2s; }
+
+.memory-found{
+  opacity:0;
+  margin-top:30px;
+  font-size:clamp(1.9rem,6vw,3.7rem);
+  color:#ffd7ef;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 35px rgba(255,0,160,1),
+    0 0 75px rgba(255,0,160,.65);
+  animation:memoryFoundAppear 1s ease forwards;
+  animation-delay:3.7s;
+}
+
+@keyframes memoryScanLine{
+  to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes memoryFoundAppear{
+  from{ opacity:0; transform:translateY(16px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.hidden-memory{
+  display:none !important;
+}
+
+.memory-universe-page{
+  z-index:99998;
+}
+
+.memory-message{
+  position:absolute;
+  top:6%;
+  left:0;
+  width:100%;
+  text-align:center;
+  z-index:4;
+  padding:0 16px;
+}
+
+.memory-message h1{
+  margin:0 0 14px;
+  font-size:clamp(1.8rem,6vw,3.5rem);
+  text-shadow:0 0 22px rgba(255,0,160,.9);
+}
+
+.memory-message p{
+  margin:8px 0;
+  font-size:clamp(1.15rem,4vw,2rem);
+  color:#ffe1f3;
+  text-shadow:0 0 16px rgba(255,0,160,.85);
+}
+
+.memory-container{
+  position:absolute;
+  inset:0;
+  z-index:2;
+}
+
+.floating-memory{
+  position:absolute;
+  width:clamp(130px,25vw,260px);
+  border-radius:22px;
+  object-fit:cover;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.18),
+    0 0 28px rgba(255,80,180,.72),
+    0 20px 55px rgba(0,0,0,.6);
+  opacity:0;
+  animation:
+    memoryPhotoAppear 2s ease forwards,
+    memoryPhotoFloat 8s ease-in-out infinite;
+}
+
+@keyframes memoryPhotoAppear{
+  from{ opacity:0; transform:translateY(40px) scale(.88) rotate(-3deg); }
+  to{ opacity:1; transform:translateY(0) scale(1) rotate(0deg); }
+}
+
+@keyframes memoryPhotoFloat{
+  0%,100%{ translate:0 0; }
+  50%{ translate:0 -18px; }
+}
+
+.memory-pos-1{ left:6%; top:27%; animation-delay:0s, 0s; }
+.memory-pos-2{ right:7%; top:22%; animation-delay:0s, .3s; }
+.memory-pos-3{ left:35%; top:34%; animation-delay:0s, .6s; }
+.memory-pos-4{ left:9%; bottom:14%; animation-delay:0s, .9s; }
+.memory-pos-5{ right:9%; bottom:12%; animation-delay:0s, 1.2s; }
+.memory-pos-6{ left:42%; bottom:8%; animation-delay:0s, 1.5s; }
+.memory-pos-7{ left:23%; top:58%; animation-delay:0s, 1.8s; }
+.memory-pos-8{ right:24%; top:55%; animation-delay:0s, 2.1s; }
+
+.memory-final{
+  position:absolute;
+  bottom:8%;
+  left:0;
+  width:100%;
+  text-align:center;
+  z-index:5;
+  opacity:0;
+  font-size:clamp(1.5rem,5.5vw,3rem);
+  color:#ffd7ef;
+  padding:0 16px;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.85),
+    0 0 35px rgba(255,0,160,1);
+  animation:memoryFinalAppear 2s ease forwards;
+  animation-delay:13s;
+}
+
+@keyframes memoryFinalAppear{
+  to{ opacity:1; }
+}
+
+.restart-universe{
+  position:absolute;
+  left:50%;
+  bottom:2.5%;
+  transform:translateX(-50%);
+  z-index:6;
+  text-decoration:none;
+  color:white;
+  padding:14px 24px;
+  border-radius:999px;
+  border:1px solid rgba(255,220,245,.95);
+  background:linear-gradient(135deg,rgba(255,0,140,.55),rgba(255,120,200,.25));
+  font-size:clamp(.95rem,3.2vw,1.2rem);
+  font-weight:900;
+  box-shadow:
+    0 0 26px rgba(255,0,160,.95),
+    0 0 55px rgba(255,0,160,.45);
+}
+
+@media (max-width:700px){
+  .floating-memory{
+    width:clamp(105px,30vw,165px);
+  }
+
+  .memory-message{
+    top:5%;
+  }
+
+  .memory-pos-3{ left:36%; top:42%; }
+  .memory-pos-6{ left:38%; bottom:14%; }
+}

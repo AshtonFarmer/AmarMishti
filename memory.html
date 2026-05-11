@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Another Universe ❤️</title>
+  <link rel="stylesheet" href="style.css?v=memory-final" />
+</head>
+<body class="memory-body">
+
+<section id="memoryTransition" class="memory-transition">
+  <div class="memory-stars"></div>
+
+  <svg class="memory-constellations" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g>
+      <line x1="140" y1="210" x2="280" y2="150"></line>
+      <line x1="280" y1="150" x2="430" y2="260"></line>
+      <line x1="430" y1="260" x2="590" y2="190"></line>
+      <circle cx="140" cy="210" r="7"></circle>
+      <circle cx="280" cy="150" r="7"></circle>
+      <circle cx="430" cy="260" r="7"></circle>
+      <circle cx="590" cy="190" r="7"></circle>
+    </g>
+
+    <g>
+      <path d="M500 665 C420 590 355 530 388 448 C418 378 485 405 500 455 C515 405 582 378 612 448 C645 530 580 590 500 665 Z"></path>
+      <circle cx="388" cy="448" r="7"></circle>
+      <circle cx="500" cy="455" r="7"></circle>
+      <circle cx="612" cy="448" r="7"></circle>
+      <circle cx="500" cy="665" r="7"></circle>
+    </g>
+  </svg>
+
+  <div class="memory-transition-box">
+    <h1>Searching for us in another universe...</h1>
+    <p class="memory-scan line1">Scanning memories...</p>
+    <p class="memory-scan line2">Timeline connection detected...</p>
+    <p class="memory-scan line3">Love recognized...</p>
+    <p class="memory-found">Another lifetime found ❤️</p>
+  </div>
+</section>
+
+<section id="memoryUniverse" class="memory-universe-page hidden-memory">
+  <div class="memory-stars"></div>
+
+  <div class="memory-message">
+    <h1>Some universes are temporary...</h1>
+    <p>But somehow...</p>
+    <p>I always find you again.</p>
+  </div>
+
+  <div id="memoryContainer" class="memory-container"></div>
+
+  <div id="memoryFinal" class="memory-final">
+    In every universe... I still find you. ❤️
+  </div>
+
+  <a id="restartUniverse" class="restart-universe hidden-memory" href="index.html">
+    Restart our universe ⚡
+  </a>
+</section>
+
+<script>
+const memoryPhotos = [
+    "memory1.jpg",
+    "memory2.jpg",
+    "memory3.jpg",
+    "memory4.jpg",
+    "memory5.jpg",
+    "memory6.jpg",
+    "memory7.jpg",
+    "memory8.jpg",
+    "memory9.jpg",
+    "memory10.jpg",
+    "memory11.jpg",
+    "memory12.jpg",
+    "memory13.jpg",
+    "memory14.jpg",
+    "memory15.jpg"
+];
+
+const transition = document.getElementById("memoryTransition");
+const universe = document.getElementById("memoryUniverse");
+const container = document.getElementById("memoryContainer");
+const restart = document.getElementById("restartUniverse");
+
+function placeMemory(photoName, index) {
+  const img = document.createElement("img");
+  img.src = photoName;
+  img.className = "floating-memory memory-pos-" + ((index % 8) + 1);
+  img.alt = "A memory";
+  container.appendChild(img);
+}
+
+setTimeout(() => {
+  transition.classList.add("fade-away-memory");
+
+  setTimeout(() => {
+    transition.style.display = "none";
+    universe.classList.remove("hidden-memory");
+
+    memoryPhotos.forEach((photo, index) => {
+      setTimeout(() => {
+        placeMemory(photo, index);
+      }, 700 + index * 850);
+    });
+
+    setTimeout(() => {
+      restart.classList.remove("hidden-memory");
+    }, 15500);
+
+  }, 1200);
+}, 6200);
+</script>
+
+</body>
+</html>
