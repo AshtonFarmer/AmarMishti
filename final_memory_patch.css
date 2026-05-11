@@ -1,0 +1,80 @@
+
+.memory-universe{
+  position:fixed;
+  inset:0;
+  z-index:99999999;
+  overflow:hidden;
+  background:radial-gradient(circle at center,#17002f,#000);
+}
+
+.memory-universe.hidden{
+  display:none;
+}
+
+.memory-stars::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(circle,white 1px,transparent 1.7px);
+  background-size:55px 55px;
+  opacity:.25;
+  animation:moveMemoryStars 30s linear infinite;
+}
+
+.memory-intro{
+  position:absolute;
+  top:10%;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-size:2rem;
+  line-height:1.8;
+  text-shadow:0 0 25px rgba(255,255,255,.35);
+  z-index:2;
+}
+
+.memory-photo{
+  position:absolute;
+  width:250px;
+  border-radius:22px;
+  box-shadow:0 0 35px rgba(255,255,255,.35);
+  opacity:0;
+  transform:translateY(40px) scale(.9);
+  animation:
+    memoryAppear 2s forwards,
+    memoryFloat 8s ease-in-out infinite;
+}
+
+.memory-final-line{
+  position:absolute;
+  bottom:8%;
+  width:100%;
+  text-align:center;
+  color:#ffd7ef;
+  font-size:2rem;
+  z-index:3;
+  opacity:0;
+  animation:finalLineAppear 4s forwards;
+  animation-delay:18s;
+}
+
+@keyframes moveMemoryStars{
+  from{transform:translateY(0)}
+  to{transform:translateY(-250px)}
+}
+
+@keyframes memoryAppear{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes memoryFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-16px)}
+}
+
+@keyframes finalLineAppear{
+  to{opacity:1}
+}
