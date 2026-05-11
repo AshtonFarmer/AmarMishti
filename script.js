@@ -164,7 +164,7 @@ function startCarUniverseSequence(afterSequence){
     const scene = scenes[index];
     scene.classList.add("active-scene");
 
-    restartAnimation(scene.querySelector(".car-shape"));
+    restartAnimation(scene.querySelector(".vehicle-img"));
     restartAnimation(scene.querySelector(".car-smoke-text"));
   }
 

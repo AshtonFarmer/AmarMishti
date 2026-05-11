@@ -1704,3 +1704,82 @@ video{width:100%;display:block;background:#000}
     transform:translate(-50%,-50%) scale(1);
   }
 }
+
+
+/* =========================================================
+   REAL VEHICLE SILHOUETTE IMAGE FIX
+========================================================= */
+
+.vehicle-img{
+  position:absolute !important;
+  bottom:10% !important;
+  left:-42% !important;
+  width:clamp(270px, 40vw, 520px) !important;
+  height:auto !important;
+  z-index:4 !important;
+  object-fit:contain !important;
+  opacity:1 !important;
+  animation:realCarDrive 7.2s linear forwards !important;
+  filter:
+    drop-shadow(0 0 16px rgba(255,255,255,.20))
+    drop-shadow(0 0 34px rgba(255,170,90,.30)) !important;
+}
+
+.f1-img{
+  width:clamp(310px, 48vw, 620px) !important;
+  bottom:10.5% !important;
+  filter:
+    drop-shadow(0 0 24px rgba(255,0,60,.65))
+    drop-shadow(0 0 42px rgba(0,120,255,.28)) !important;
+}
+
+.bmw-img{
+  width:clamp(290px, 43vw, 560px) !important;
+  bottom:9.5% !important;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,.28))
+    drop-shadow(0 0 38px rgba(255,180,110,.23)) !important;
+}
+
+@keyframes realCarDrive{
+  0%{
+    left:-48%;
+    transform:translateY(0) scale(1);
+  }
+  45%{
+    transform:translateY(-4px) scale(1.02);
+  }
+  100%{
+    left:112%;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* hide old CSS polygon vehicles if any old markup remains */
+.car-shape{
+  display:none !important;
+}
+
+.car-smoke-text{
+  z-index:5 !important;
+}
+
+/* extra light/smoke trail behind image vehicles */
+.vehicle-img::after{
+  content:"";
+}
+
+@media (max-width:700px){
+  .vehicle-img{
+    width:360px !important;
+    bottom:12% !important;
+  }
+
+  .f1-img{
+    width:410px !important;
+  }
+
+  .bmw-img{
+    width:380px !important;
+  }
+}
