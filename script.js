@@ -62,6 +62,85 @@ function runTimelineTransition(options){
   }, 7800);
 }
 
+
+
+
+
+/* =========================================================
+   VERIFIED WORKING CAR UNIVERSE FLOW
+========================================================= */
+
+const carUniverse = document.getElementById("carUniverse");
+const carScenes = Array.from(document.querySelectorAll("#carUniverse .car-scene"));
+const carNames = ["Jeep Universe", "F1 Universe", "BMW Universe"];
+
+let carTimer1;
+let carTimer2;
+let carTimer3;
+let carTimer4;
+
+function restartCarAnim(el, className){
+  if(!el) return;
+  el.classList.remove(className);
+  el.offsetHeight;
+  el.classList.add(className);
+}
+
+function showCarScene(index){
+  carScenes.forEach(scene => scene.classList.remove("active"));
+
+  const current = carScenes[index];
+  if(!current) return;
+
+  current.classList.add("active");
+
+  const car = current.querySelector(".car");
+  const text = current.querySelector(".car-text");
+
+  if(car) car.classList.remove("drive");
+  if(text) text.classList.remove("animate");
+
+  setTimeout(() => {
+    restartCarAnim(text, "animate");
+  }, 250);
+
+  setTimeout(() => {
+    restartCarAnim(car, "drive");
+  }, 1300);
+}
+
+function startCarUniverseSequence(afterSequence){
+  if(!carUniverse || carScenes.length === 0){
+    afterSequence();
+    return;
+  }
+
+  clearTimeout(carTimer1);
+  clearTimeout(carTimer2);
+  clearTimeout(carTimer3);
+  clearTimeout(carTimer4);
+
+  carUniverse.classList.remove("hidden");
+  carUniverse.style.opacity = "1";
+
+  showCarScene(0);
+
+  carTimer1 = setTimeout(() => showCarScene(1), 8000);
+  carTimer2 = setTimeout(() => showCarScene(2), 16000);
+
+  carTimer3 = setTimeout(() => {
+    carUniverse.style.transition = "opacity 1.4s ease";
+    carUniverse.style.opacity = "0";
+
+    carTimer4 = setTimeout(() => {
+      carUniverse.classList.add("hidden");
+      carUniverse.style.opacity = "";
+      carUniverse.style.transition = "";
+      afterSequence();
+    }, 1500);
+  }, 23500);
+}
+
 boltBtn.addEventListener("click", async () => {
   vibrateHeart();
 
@@ -70,16 +149,19 @@ boltBtn.addEventListener("click", async () => {
     await bgMusic.play();
   }catch(e){}
 
-  runTimelineTransition({
-    searchText: "Searching the multiverse...",
-    foundMessage: "Tanima Das found ❤️",
-    after: () => {
-      intro.classList.add("hidden");
-      videoPage.classList.remove("hidden");
-      window.scrollTo(0,0);
-    }
+  startCarUniverseSequence(() => {
+    runTimelineTransition({
+      searchText: "Searching the multiverse...",
+      foundMessage: "Tanima Das found ❤️",
+      after: () => {
+        intro.classList.add("hidden");
+        videoPage.classList.remove("hidden");
+        window.scrollTo(0,0);
+      }
+    });
   });
 });
+
 
 startBtn.addEventListener("click", async () => {
   startBtn.classList.add("hidden-btn");
