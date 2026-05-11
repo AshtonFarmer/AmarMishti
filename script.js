@@ -62,6 +62,57 @@ function runTimelineTransition(options){
   }, 7800);
 }
 
+function restartAnimation(el){
+  if(!el) return;
+  el.style.animation = "none";
+  el.offsetHeight;
+  el.style.animation = "";
+}
+
+function startCarUniverseSequence(afterSequence){
+  const carUniverse = document.getElementById("carUniverse");
+  const scenes = Array.from(document.querySelectorAll("#carUniverse .car-scene"));
+
+  if(!carUniverse || scenes.length === 0){
+    afterSequence();
+    return;
+  }
+
+  carUniverse.classList.remove("hidden");
+  carUniverse.style.display = "block";
+  carUniverse.style.opacity = "1";
+
+  function showScene(index){
+    scenes.forEach(scene => scene.classList.remove("active-scene"));
+
+    const scene = scenes[index];
+    scene.classList.add("active-scene");
+
+    restartAnimation(scene.querySelector(".vehicle-svg"));
+    restartAnimation(scene.querySelector(".car-smoke-text"));
+  }
+
+  showScene(0);
+
+  setTimeout(() => showScene(1), 6900);
+  setTimeout(() => showScene(2), 13800);
+
+  setTimeout(() => {
+    carUniverse.style.transition = "opacity 1.4s ease";
+    carUniverse.style.opacity = "0";
+
+    setTimeout(() => {
+      carUniverse.classList.add("hidden");
+      carUniverse.style.display = "";
+      carUniverse.style.opacity = "";
+      carUniverse.style.transition = "";
+
+      afterSequence();
+    }, 1500);
+
+  }, 20700);
+}
+
 boltBtn.addEventListener("click", async () => {
   vibrateHeart();
 
@@ -70,19 +121,24 @@ boltBtn.addEventListener("click", async () => {
     await bgMusic.play();
   }catch(e){}
 
-  runTimelineTransition({
-    searchText: "Searching the multiverse...",
-    foundMessage: "Tanima Das found ❤️",
-    after: () => {
-      intro.classList.add("hidden");
-      videoPage.classList.remove("hidden");
-      window.scrollTo(0,0);
-    }
+  startCarUniverseSequence(() => {
+
+    runTimelineTransition({
+      searchText: "Searching the multiverse...",
+      foundMessage: "Tanima Das found ❤️",
+      after: () => {
+        intro.classList.add("hidden");
+        videoPage.classList.remove("hidden");
+        window.scrollTo(0,0);
+      }
+    });
+
   });
 });
 
 startBtn.addEventListener("click", async () => {
   startBtn.classList.add("hidden-btn");
+
   video.controls = true;
   video.muted = false;
   video.currentTime = 0;
@@ -104,54 +160,4 @@ startBtn.addEventListener("click", async () => {
       await video.webkitRequestFullscreen();
     }
   }catch(e){}
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-
-  if(params.get("replay") === "1"){
-    intro.classList.add("hidden");
-    videoPage.classList.add("hidden");
-    resetTimeline();
-
-    setTimeout(() => {
-      runTimelineTransition({
-        searchText: "Searching for us in another universe...",
-        foundMessage: "Another lifetime found ❤️",
-        after: () => {
-          intro.classList.remove("hidden");
-          videoPage.classList.add("hidden");
-
-          if(window.history && window.history.replaceState){
-            window.history.replaceState({}, document.title, "index.html");
-          }
-
-          window.scrollTo(0,0);
-        }
-      });
-    }, 400);
-  }
-});
-
-
-// Birthday page fade-in after sunset heartbeat restart
-window.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const overlay = document.getElementById("birthdayFadeOverlay");
-
-  if(params.get("fadein") === "1" && overlay){
-    overlay.classList.remove("hidden-fade");
-
-    setTimeout(() => {
-      overlay.classList.add("fade-away-birthday");
-    }, 300);
-
-    setTimeout(() => {
-      overlay.classList.add("hidden-fade");
-
-      if(window.history && window.history.replaceState){
-        window.history.replaceState({}, document.title, "index.html");
-      }
-    }, 2600);
-  }
 });
