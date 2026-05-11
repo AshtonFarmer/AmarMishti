@@ -1,6 +1,9 @@
-const scenes = document.querySelectorAll(".scene");
+const scenes = Array.from(document.querySelectorAll(".scene"));
+const label = document.getElementById("sceneLabel");
+const names = ["Jeep Universe", "F1 Universe", "BMW Universe"];
 
 function restart(el){
+  if(!el) return;
   el.style.animation = "none";
   el.offsetHeight;
   el.style.animation = "";
@@ -11,15 +14,12 @@ function showScene(index){
 
   const current = scenes[index];
   current.classList.add("active");
+  label.textContent = names[index];
 
-  const car = current.querySelector(".car");
-  const text = current.querySelector(".text");
-
-  restart(car);
-  restart(text);
+  restart(current.querySelector(".car"));
+  restart(current.querySelector(".text"));
 }
 
 showScene(0);
-
-setTimeout(() => showScene(1), 6800);
-setTimeout(() => showScene(2), 13600);
+setTimeout(() => showScene(1), 7500);
+setTimeout(() => showScene(2), 15000);
