@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css?v=constellation2" />
+  <link rel="stylesheet" href="style.css?v=carforce1" />
 </head>
 <body>
 <div id="birthdayFadeOverlay" class="birthday-fade-overlay hidden-fade"></div>
@@ -52,27 +52,27 @@
 
 <section id="carUniverse" class="car-universe hidden">
   <div class="car-scene jeep-scene active-scene">
-    <div class="road"></div>
-    <div class="stars-bg"></div>
-    <div class="car jeep-car"></div>
-    <div class="smoke-text">Built different. Driven by love.</div>
+    <div class="car-stars"></div>
+    <div class="car-road"></div>
+    <div class="car-shape jeep-shape"></div>
+    <div class="car-smoke-text">Built different. Driven by love.</div>
   </div>
 
   <div class="car-scene f1-scene">
-    <div class="road neon-road"></div>
-    <div class="stars-bg"></div>
-    <div class="car f1-car"></div>
-    <div class="smoke-text">You'll always be my favorite destination.</div>
+    <div class="car-stars"></div>
+    <div class="car-road neon-road"></div>
+    <div class="car-shape f1-shape"></div>
+    <div class="car-smoke-text">You'll always be my favorite destination.</div>
   </div>
 
   <div class="car-scene bmw-scene">
-    <div class="road city-road"></div>
+    <div class="car-stars"></div>
+    <div class="car-road city-road"></div>
     <div class="rain-overlay"></div>
-    <div class="car bmw-car"></div>
-    <div class="smoke-text">My favorite road always leads to you.</div>
+    <div class="car-shape bmw-shape"></div>
+    <div class="car-smoke-text">My favorite road always leads to you.</div>
   </div>
 </section>
-
 
 <section id="timeline" class="timeline hidden">
   <div class="timeline-stars"></div>
@@ -147,7 +147,7 @@
   </main>
 </section>
 
-<script src="script.js?v=constellation2"></script>
+<script src="script.js?v=carforce1"></script>
 </body>
 </html>
 
@@ -1937,16 +1937,17 @@ video{width:100%;display:block;background:#000}
   }
 }
 
+
 /* =========================================================
-   CAR UNIVERSE SEQUENCE - FULLY INTEGRATED
+   FORCE FIXED CAR UNIVERSE SEQUENCE
 ========================================================= */
 
 .car-universe{
-  position:fixed;
-  inset:0;
-  z-index:999998;
-  overflow:hidden;
-  background:#000;
+  position:fixed !important;
+  inset:0 !important;
+  z-index:99999999 !important;
+  background:#000 !important;
+  overflow:hidden !important;
 }
 
 .car-universe.hidden{
@@ -1954,143 +1955,128 @@ video{width:100%;display:block;background:#000}
 }
 
 .car-scene{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transition:opacity 1.4s ease;
+  position:absolute !important;
+  inset:0 !important;
+  opacity:0 !important;
+  transition:opacity 1.4s ease !important;
   background:
-    radial-gradient(circle at center, rgba(40,10,70,.5), rgba(0,0,0,1) 70%),
-    #000;
+    radial-gradient(circle at center, rgba(45,10,80,.58), rgba(0,0,0,1) 70%),
+    #000 !important;
 }
 
 .car-scene.active-scene{
-  opacity:1;
+  opacity:1 !important;
 }
 
-.stars-bg::before{
+.car-stars::before{
   content:"";
   position:absolute;
   inset:-200px;
   background-image:
     radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(255,140,200,.7) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,190,90,.55) 1px, transparent 1.8px);
-  background-size:55px 55px, 95px 95px, 130px 130px;
-  opacity:.38;
-  animation:carStarsMove 22s linear infinite;
+    radial-gradient(circle, rgba(255,150,210,.7) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,205,95,.55) 1px, transparent 1.8px);
+  background-size:52px 52px, 92px 92px, 128px 128px;
+  opacity:.40;
+  animation:carStarDrift 22s linear infinite;
 }
 
-@keyframes carStarsMove{
-  from{ transform:translateY(0px); }
-  to{ transform:translateY(-250px); }
+@keyframes carStarDrift{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-260px); }
 }
 
-.car-universe .road{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:26%;
-  background:
-    linear-gradient(to bottom, rgba(60,60,60,.95), rgba(12,12,12,1));
-  box-shadow:0 -28px 65px rgba(255,120,190,.12);
+.car-road{
+  position:absolute !important;
+  left:0 !important;
+  bottom:0 !important;
+  width:100% !important;
+  height:27% !important;
+  background:linear-gradient(to bottom, rgba(58,58,58,.96), rgba(10,10,10,1)) !important;
+  box-shadow:0 -30px 70px rgba(255,120,190,.14) !important;
 }
 
-.car-universe .road::before{
+.car-road::before{
   content:"";
   position:absolute;
   left:0;
   top:50%;
-  width:200%;
+  width:220%;
   height:4px;
-  background:
-    repeating-linear-gradient(
-      to right,
-      rgba(255,255,255,.9) 0 70px,
-      transparent 70px 140px
-    );
-  animation:carRoadMove 1.6s linear infinite;
+  background:repeating-linear-gradient(to right, rgba(255,255,255,.9) 0 70px, transparent 70px 140px);
+  animation:carRoadRush 1.45s linear infinite;
 }
 
-@keyframes carRoadMove{
+@keyframes carRoadRush{
   from{ transform:translateX(0); }
   to{ transform:translateX(-140px); }
 }
 
 .neon-road{
   box-shadow:
-    0 -22px 65px rgba(255,0,80,.45),
-    0 -22px 85px rgba(0,140,255,.28) !important;
+    0 -22px 70px rgba(255,0,80,.5),
+    0 -22px 95px rgba(0,140,255,.3) !important;
 }
 
 .city-road{
-  background:
-    linear-gradient(to bottom, rgba(75,75,75,.95), rgba(8,8,8,1)) !important;
+  background:linear-gradient(to bottom, rgba(78,78,78,.96), rgba(7,7,7,1)) !important;
   box-shadow:
-    0 -22px 65px rgba(255,255,255,.12),
-    0 -22px 80px rgba(255,170,90,.16) !important;
+    0 -22px 65px rgba(255,255,255,.13),
+    0 -22px 90px rgba(255,180,95,.18) !important;
 }
 
 .rain-overlay{
   position:absolute;
   inset:0;
-  background:
-    repeating-linear-gradient(
-      105deg,
-      rgba(255,255,255,.08) 0 2px,
-      transparent 2px 18px
-    );
+  background:repeating-linear-gradient(105deg, rgba(255,255,255,.08) 0 2px, transparent 2px 18px);
   opacity:.16;
-  animation:carRainMove .5s linear infinite;
+  animation:carRain 0.45s linear infinite;
 }
 
-@keyframes carRainMove{
+@keyframes carRain{
   from{ transform:translateY(-18px); }
   to{ transform:translateY(18px); }
 }
 
-.car-universe .car{
-  position:absolute;
-  bottom:13%;
-  left:-35%;
-  width:280px;
-  height:115px;
-  animation:driveAcrossIntegrated 7.2s linear forwards;
-  filter:drop-shadow(0 0 22px rgba(255,180,120,.25));
+.car-shape{
+  position:absolute !important;
+  bottom:14% !important;
+  left:-38% !important;
+  width:300px !important;
+  height:118px !important;
+  animation:carDriveAcross 7.2s linear forwards !important;
+  filter:drop-shadow(0 0 26px rgba(255,185,115,.35));
 }
 
-@keyframes driveAcrossIntegrated{
-  from{ left:-35%; transform:translateY(0); }
-  50%{ transform:translateY(-4px); }
+@keyframes carDriveAcross{
+  from{ left:-38%; transform:translateY(0); }
+  50%{ transform:translateY(-5px); }
   to{ left:115%; transform:translateY(0); }
 }
 
-.jeep-car{
-  background:linear-gradient(to bottom,#242424,#000);
+.jeep-shape{
+  background:linear-gradient(to bottom, #2d2d2d, #000);
   clip-path:polygon(5% 65%,18% 40%,55% 35%,70% 20%,88% 22%,96% 60%,100% 72%,95% 85%,8% 85%);
 }
 
-.f1-car{
-  width:340px !important;
-  height:85px !important;
-  background:linear-gradient(to right,#ff2945,#740000);
+.f1-shape{
+  width:355px !important;
+  height:90px !important;
+  background:linear-gradient(to right,#ff2945,#720000);
   clip-path:polygon(0% 60%,18% 42%,40% 38%,60% 22%,85% 28%,100% 58%,90% 78%,10% 82%);
-  filter:
-    drop-shadow(0 0 28px rgba(255,0,60,.6))
-    drop-shadow(0 0 42px rgba(0,120,255,.25)) !important;
+  filter:drop-shadow(0 0 30px rgba(255,0,60,.65)) drop-shadow(0 0 44px rgba(0,120,255,.28)) !important;
 }
 
-.bmw-car{
-  width:300px !important;
-  height:96px !important;
-  background:linear-gradient(to bottom,#3a3a3a,#000);
+.bmw-shape{
+  width:320px !important;
+  height:100px !important;
+  background:linear-gradient(to bottom,#3d3d3d,#000);
   clip-path:polygon(5% 70%,20% 45%,40% 30%,68% 28%,90% 45%,100% 68%,96% 82%,6% 82%);
-  filter:
-    drop-shadow(0 0 24px rgba(255,255,255,.2))
-    drop-shadow(0 0 45px rgba(255,175,95,.18)) !important;
+  filter:drop-shadow(0 0 26px rgba(255,255,255,.22)) drop-shadow(0 0 48px rgba(255,175,95,.20)) !important;
 }
 
-.car-universe .car::before,
-.car-universe .car::after{
+.car-shape::before,
+.car-shape::after{
   content:"";
   position:absolute;
   bottom:-18px;
@@ -2102,10 +2088,10 @@ video{width:100%;display:block;background:#000}
   box-shadow:0 0 12px rgba(255,255,255,.22);
 }
 
-.car-universe .car::before{ left:18%; }
-.car-universe .car::after{ right:14%; }
+.car-shape::before{ left:18%; }
+.car-shape::after{ right:14%; }
 
-.smoke-text{
+.car-smoke-text{
   position:absolute;
   left:50%;
   top:35%;
@@ -2114,20 +2100,20 @@ video{width:100%;display:block;background:#000}
   text-align:center;
   opacity:0;
   font-size:clamp(1.85rem,5.5vw,4.2rem);
-  color:rgba(255,255,255,.94);
+  color:rgba(255,255,255,.95);
   text-shadow:
-    0 0 22px rgba(255,255,255,.55),
-    0 0 58px rgba(255,180,120,.42),
-    0 0 95px rgba(255,80,160,.24);
-  filter:blur(12px);
-  animation:carSmokeReveal 4.5s ease forwards;
+    0 0 22px rgba(255,255,255,.58),
+    0 0 58px rgba(255,180,120,.45),
+    0 0 95px rgba(255,80,160,.25);
+  filter:blur(14px);
+  animation:carSmokeRevealForce 4.6s ease forwards;
   animation-delay:2s;
 }
 
-@keyframes carSmokeReveal{
+@keyframes carSmokeRevealForce{
   0%{
     opacity:0;
-    filter:blur(18px);
+    filter:blur(20px);
     transform:translate(-50%,-50%) scale(.92);
   }
   45%{
@@ -2209,27 +2195,7 @@ function runTimelineTransition(options){
   }, 7800);
 }
 
-boltBtn.addEventListener("click", async () => {
-  vibrateHeart();
 
-  try{
-    bgMusic.volume = 0.35;
-    await bgMusic.play();
-  }catch(e){}
-
-  // New flow: birthday page -> car universe -> multiverse search -> video page
-  startCarUniverseSequence(() => {
-    runTimelineTransition({
-      searchText: "Searching the multiverse...",
-      foundMessage: "Tanima Das found ❤️",
-      after: () => {
-        intro.classList.add("hidden");
-        videoPage.classList.remove("hidden");
-        window.scrollTo(0,0);
-      }
-    });
-  });
-});
 
 startBtn.addEventListener("click", async () => {
   startBtn.classList.add("hidden-btn");
@@ -2306,57 +2272,39 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
 /* =========================================================
-   CAR UNIVERSE SEQUENCE - FULLY INTEGRATED
+   FORCE FIXED CAR UNIVERSE FLOW
 ========================================================= */
 
-const carUniverse = document.getElementById("carUniverse");
-const carScenes = document.querySelectorAll(".car-scene");
-
-function resetCarSceneAnimations(scene){
-  const car = scene.querySelector(".car");
-  const text = scene.querySelector(".smoke-text");
-
-  if(car){
-    car.style.animation = "none";
-    car.offsetHeight;
-    car.style.animation = "";
-  }
-
-  if(text){
-    text.style.animation = "none";
-    text.offsetHeight;
-    text.style.animation = "";
-  }
+function restartAnimation(el){
+  if(!el) return;
+  el.style.animation = "none";
+  el.offsetHeight;
+  el.style.animation = "";
 }
 
 function startCarUniverseSequence(afterSequence){
+  const carUniverse = document.getElementById("carUniverse");
+  const scenes = document.querySelectorAll(".car-scene");
+
   carUniverse.classList.remove("hidden");
   carUniverse.style.opacity = "1";
 
-  let current = 0;
-
   function showScene(index){
-    carScenes.forEach(scene => {
-      scene.classList.remove("active-scene");
-    });
+    scenes.forEach(scene => scene.classList.remove("active-scene"));
 
-    const scene = carScenes[index];
+    const scene = scenes[index];
     scene.classList.add("active-scene");
-    resetCarSceneAnimations(scene);
+
+    restartAnimation(scene.querySelector(".car-shape"));
+    restartAnimation(scene.querySelector(".car-smoke-text"));
   }
 
   showScene(0);
 
-  setTimeout(() => {
-    current = 1;
-    showScene(current);
-  }, 7200);
-
-  setTimeout(() => {
-    current = 2;
-    showScene(current);
-  }, 14400);
+  setTimeout(() => showScene(1), 7200);
+  setTimeout(() => showScene(2), 14400);
 
   setTimeout(() => {
     carUniverse.style.transition = "opacity 1.8s ease";
@@ -2367,13 +2315,31 @@ function startCarUniverseSequence(afterSequence){
       carUniverse.style.opacity = "";
       carUniverse.style.transition = "";
 
-      if(afterSequence){
-        afterSequence();
-      }
+      if(afterSequence) afterSequence();
     }, 1900);
-
   }, 21600);
 }
+
+boltBtn.addEventListener("click", async () => {
+  vibrateHeart();
+
+  try{
+    bgMusic.volume = 0.35;
+    await bgMusic.play();
+  }catch(e){}
+
+  startCarUniverseSequence(() => {
+    runTimelineTransition({
+      searchText: "Searching the multiverse...",
+      foundMessage: "Tanima Das found ❤️",
+      after: () => {
+        intro.classList.add("hidden");
+        videoPage.classList.remove("hidden");
+        window.scrollTo(0,0);
+      }
+    });
+  });
+});
 
 
 

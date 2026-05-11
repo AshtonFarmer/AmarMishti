@@ -62,27 +62,7 @@ function runTimelineTransition(options){
   }, 7800);
 }
 
-boltBtn.addEventListener("click", async () => {
-  vibrateHeart();
 
-  try{
-    bgMusic.volume = 0.35;
-    await bgMusic.play();
-  }catch(e){}
-
-  // New flow: birthday page -> car universe -> multiverse search -> video page
-  startCarUniverseSequence(() => {
-    runTimelineTransition({
-      searchText: "Searching the multiverse...",
-      foundMessage: "Tanima Das found ❤️",
-      after: () => {
-        intro.classList.add("hidden");
-        videoPage.classList.remove("hidden");
-        window.scrollTo(0,0);
-      }
-    });
-  });
-});
 
 startBtn.addEventListener("click", async () => {
   startBtn.classList.add("hidden-btn");
@@ -159,57 +139,39 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
 /* =========================================================
-   CAR UNIVERSE SEQUENCE - FULLY INTEGRATED
+   FORCE FIXED CAR UNIVERSE FLOW
 ========================================================= */
 
-const carUniverse = document.getElementById("carUniverse");
-const carScenes = document.querySelectorAll(".car-scene");
-
-function resetCarSceneAnimations(scene){
-  const car = scene.querySelector(".car");
-  const text = scene.querySelector(".smoke-text");
-
-  if(car){
-    car.style.animation = "none";
-    car.offsetHeight;
-    car.style.animation = "";
-  }
-
-  if(text){
-    text.style.animation = "none";
-    text.offsetHeight;
-    text.style.animation = "";
-  }
+function restartAnimation(el){
+  if(!el) return;
+  el.style.animation = "none";
+  el.offsetHeight;
+  el.style.animation = "";
 }
 
 function startCarUniverseSequence(afterSequence){
+  const carUniverse = document.getElementById("carUniverse");
+  const scenes = document.querySelectorAll(".car-scene");
+
   carUniverse.classList.remove("hidden");
   carUniverse.style.opacity = "1";
 
-  let current = 0;
-
   function showScene(index){
-    carScenes.forEach(scene => {
-      scene.classList.remove("active-scene");
-    });
+    scenes.forEach(scene => scene.classList.remove("active-scene"));
 
-    const scene = carScenes[index];
+    const scene = scenes[index];
     scene.classList.add("active-scene");
-    resetCarSceneAnimations(scene);
+
+    restartAnimation(scene.querySelector(".car-shape"));
+    restartAnimation(scene.querySelector(".car-smoke-text"));
   }
 
   showScene(0);
 
-  setTimeout(() => {
-    current = 1;
-    showScene(current);
-  }, 7200);
-
-  setTimeout(() => {
-    current = 2;
-    showScene(current);
-  }, 14400);
+  setTimeout(() => showScene(1), 7200);
+  setTimeout(() => showScene(2), 14400);
 
   setTimeout(() => {
     carUniverse.style.transition = "opacity 1.8s ease";
@@ -220,10 +182,28 @@ function startCarUniverseSequence(afterSequence){
       carUniverse.style.opacity = "";
       carUniverse.style.transition = "";
 
-      if(afterSequence){
-        afterSequence();
-      }
+      if(afterSequence) afterSequence();
     }, 1900);
-
   }, 21600);
 }
+
+boltBtn.addEventListener("click", async () => {
+  vibrateHeart();
+
+  try{
+    bgMusic.volume = 0.35;
+    await bgMusic.play();
+  }catch(e){}
+
+  startCarUniverseSequence(() => {
+    runTimelineTransition({
+      searchText: "Searching the multiverse...",
+      foundMessage: "Tanima Das found ❤️",
+      after: () => {
+        intro.classList.add("hidden");
+        videoPage.classList.remove("hidden");
+        window.scrollTo(0,0);
+      }
+    });
+  });
+});
