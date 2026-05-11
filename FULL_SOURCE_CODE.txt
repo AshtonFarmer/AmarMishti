@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css?v=iframecars1" />
+  <link rel="stylesheet" href="style.css?v=finaldrive1" />
 </head>
 <body>
 
@@ -127,272 +127,7 @@
   </main>
 </section>
 
-<script src="script.js?v=iframecars1"></script>
-</body>
-</html>
-
-
-
-===== ENDING.HTML =====
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Ami tomake bhalobashi ❤️</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="ending-body">
-  <section class="ending-page">
-    <div class="flower-bg">
-      <span>🌹</span><span>🌸</span><span>🌺</span><span>🌷</span><span>💐</span>
-      <span>🌹</span><span>🌸</span><span>🌺</span><span>🌷</span><span>💐</span>
-      <span>🌹</span><span>🌸</span><span>🌺</span><span>🌷</span><span>💐</span>
-    </div>
-
-    <div class="ending-message">
-      <h1>Ami tomake bhalobashi ❤️</h1>
-      <p>I love you.</p>
-      <p>In every universe, every timeline, every lifetime.</p>
-
-      <div class="ending-buttons">
-      <a class="replay-btn" href="memory.html">Find us in another universe ⚡</a>
-
-      <button id="btsBtn" class="bts-btn hidden-bts">
-        Behind the scenes 😉
-      </button>
-    </div>
-
-    <div id="btsModal" class="bts-modal hidden-bts">
-      <div class="bts-content">
-        <h2>Behind the scenes ⚡</h2>
-
-        <p>
-          Every universe. Every timeline. Every animation.<br>
-          Built line by line in HTML, CSS, and JavaScript.
-        </p>
-
-        
-        <p class="handmade-line">
-          This entire experience was handcrafted<br>
-          just to make you smile ❤️
-        </p>
-
-<div class="code-window">
-<pre id="actualCode">
-Loading the real code...
-</pre>
-        </div>
-
-        <button id="closeBts" class="close-bts">
-          Close ♡
-        </button>
-      </div>
-    </div>
-    </div>
-  </section>
-<script src="ending.js"></script>
-</body>
-</html>
-
-
-
-===== MEMORY.HTML =====
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Another Universe ❤️</title>
-  <link rel="stylesheet" href="style.css?v=memory-final" />
-</head>
-<body class="memory-body">
-
-<section id="memoryTransition" class="memory-transition">
-  <div class="memory-stars"></div>
-
-  <svg class="memory-constellations" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g>
-      <line x1="140" y1="210" x2="280" y2="150"></line>
-      <line x1="280" y1="150" x2="430" y2="260"></line>
-      <line x1="430" y1="260" x2="590" y2="190"></line>
-      <circle cx="140" cy="210" r="7"></circle>
-      <circle cx="280" cy="150" r="7"></circle>
-      <circle cx="430" cy="260" r="7"></circle>
-      <circle cx="590" cy="190" r="7"></circle>
-    </g>
-
-    <g>
-      <path d="M500 665 C420 590 355 530 388 448 C418 378 485 405 500 455 C515 405 582 378 612 448 C645 530 580 590 500 665 Z"></path>
-      <circle cx="388" cy="448" r="7"></circle>
-      <circle cx="500" cy="455" r="7"></circle>
-      <circle cx="612" cy="448" r="7"></circle>
-      <circle cx="500" cy="665" r="7"></circle>
-    </g>
-  </svg>
-
-  <div class="memory-transition-box">
-    <h1>Searching for us in another universe...</h1>
-    <p class="memory-scan line1">Scanning memories...</p>
-    <p class="memory-scan line2">Timeline connection detected...</p>
-    <p class="memory-scan line3">Love recognized...</p>
-    <p class="memory-found">Another lifetime found ❤️</p>
-  </div>
-</section>
-
-<section id="memoryUniverse" class="memory-universe-page hidden-memory">
-  <div class="memory-stars"></div>
-
-  <div class="memory-message">
-    <h1>Some universes are temporary...</h1>
-    <p>But somehow...</p>
-    <p>I always find you again.</p>
-  </div>
-
-  <div id="memoryContainer" class="memory-container"></div>
-
-  <div id="memoryFinal" class="memory-final">
-    In every universe... I still find you. ❤️
-  </div>
-
-  <button id="restartUniverse" class="restart-universe hidden-memory">
-    Restart our universe ⚡
-  </button>
-</section>
-
-
-<div id="memoryFadeCurtain" class="memory-fade-curtain hidden-sunset"></div>
-
-<div id="sunsetCollapse" class="sunset-collapse hidden-sunset">
-  <div class="sunset-stars"></div>
-
-  <div class="restarting-fate">Restarting fate...</div>
-
-  <div class="sunset-portal">
-    <div class="sunset-orb">
-      <div class="sunset-orb-core"></div>
-      <div class="sunset-orb-ring"></div>
-      <div class="sunset-orb-aura"></div>
-    </div>
-  </div>
-</div><script>
-const memoryPhotos = [
-    "memory1.jpg",
-    "memory2.jpg",
-    "memory3.jpg",
-    "memory4.jpg",
-    "memory5.jpg",
-    "memory6.jpg",
-    "memory7.jpg",
-    "memory8.jpg",
-    "memory9.jpg",
-    "memory10.jpg",
-    "memory11.jpg",
-    "memory12.jpg",
-    "memory13.jpg",
-    "memory14.jpg",
-    "memory15.jpg"
-];
-
-const transition = document.getElementById("memoryTransition");
-const universe = document.getElementById("memoryUniverse");
-const container = document.getElementById("memoryContainer");
-const restart = document.getElementById("restartUniverse");
-const sunsetCollapse = document.getElementById("sunsetCollapse");
-
-function placeMemory(photoName, index) {
-  const img = document.createElement("img");
-  img.src = photoName;
-  img.className = "floating-memory memory-pos-" + ((index % 8) + 1);
-  img.alt = "A memory";
-  container.appendChild(img);
-}
-
-function startSunsetRestart() {
-  sunsetCollapse.classList.remove("hidden-sunset");
-
-  if(navigator.vibrate){
-    navigator.vibrate([160,80,120,80,160]);
-  }
-
-  // Let the detailed sunset orb open, shrink, heartbeat, then fade into the birthday page.
-  setTimeout(() => {
-    window.location.href = "index.html?fadein=1";
-  }, 7600);
-}
-
-setTimeout(() => {
-  transition.classList.add("fade-away-memory");
-
-  setTimeout(() => {
-    transition.style.display = "none";
-    universe.classList.remove("hidden-memory");
-
-    memoryPhotos.forEach((photo, index) => {
-      setTimeout(() => {
-        placeMemory(photo, index);
-      }, 700 + index * 850);
-    });
-
-    setTimeout(() => {
-      restart.classList.remove("hidden-memory");
-    }, 15500);
-
-  }, 1200);
-}, 6200);
-
-restart.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const curtain = document.getElementById("memoryFadeCurtain");
-  const message = document.querySelector(".memory-message");
-  const finalLine = document.getElementById("memoryFinal");
-
-  restart.style.pointerEvents = "none";
-  restart.style.transition = "opacity 1.2s ease, transform 1.2s ease";
-  restart.style.opacity = "0";
-  restart.style.transform = "translateX(-50%) translateY(18px) scale(.92)";
-
-  // Make the whole memory universe feel like it is slowly dissolving.
-  if(curtain){
-    curtain.classList.remove("hidden-sunset");
-    requestAnimationFrame(() => {
-      curtain.classList.add("fade-in-curtain");
-    });
-  }
-
-  if(message){
-    message.style.transition = "opacity 2.3s ease, transform 2.3s ease, filter 2.3s ease";
-    message.style.opacity = "0";
-    message.style.transform = "translateY(-30px) scale(.96)";
-    message.style.filter = "blur(5px)";
-  }
-
-  if(finalLine){
-    finalLine.style.transition = "opacity 2.3s ease, transform 2.3s ease, filter 2.3s ease";
-    finalLine.style.opacity = "0";
-    finalLine.style.transform = "translateY(30px) scale(.96)";
-    finalLine.style.filter = "blur(5px)";
-  }
-
-  document.querySelectorAll(".floating-memory").forEach((photo,index) => {
-    photo.style.transition =
-      "opacity 2.9s ease, transform 2.9s ease, filter 2.9s ease";
-    photo.style.transitionDelay = (index * 0.06) + "s";
-    photo.style.opacity = "0";
-    photo.style.transform =
-      "translateY(-160px) scale(.48) rotate(" + ((index % 2 === 0) ? "-12deg" : "12deg") + ")";
-    photo.style.filter = "blur(8px) brightness(.35)";
-  });
-
-  setTimeout(() => {
-    startSunsetRestart();
-  }, 3000);
-});
-</script>
-
+<script src="script.js?v=finaldrive1"></script>
 </body>
 </html>
 
@@ -602,14 +337,15 @@ body{
 
 .car{
   position:absolute;
-  left:50%;
+  left:-75vw;
   bottom:8vh;
   width:min(720px,88vw);
   height:auto;
-  transform:translateX(-50%);
-  filter:drop-shadow(0 0 18px rgba(255,255,255,.22)) drop-shadow(0 0 42px rgba(255,150,75,.45));
-  overflow:visible;
   z-index:5;
+  overflow:visible;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,.22))
+    drop-shadow(0 0 42px rgba(255,150,75,.45));
 }
 
 .f1{
@@ -627,9 +363,14 @@ body{
 
 @keyframes drive{
   from{
-    left:-70vw;
+    left:-75vw;
     transform:translateX(0);
   }
+  to{
+    left:115vw;
+    transform:translateX(0);
+  }
+}
   to{
     left:115vw;
     transform:translateX(0);
@@ -701,30 +442,24 @@ function restart(el, className){
   el.classList.add(className);
 }
 
-function showScene(index){
-  clearTimeout(currentTimer1);
-  clearTimeout(currentTimer2);
+function restart(el, className){
+  if(!el) return;
+  el.classList.remove(className);
+  el.offsetHeight;
+  el.classList.add(className);
+}
 
+function showScene(index){
   scenes.forEach(scene => scene.classList.remove("active"));
 
   const current = scenes[index];
   current.classList.add("active");
-  label.textContent = names[index];
 
   const car = current.querySelector(".car");
   const text = current.querySelector(".text");
 
-  // Show centered first so you can confirm it exists.
-  car.classList.remove("drive");
-  text.classList.remove("animate");
-
-  currentTimer1 = setTimeout(() => {
-    restart(text, "animate");
-  }, 250);
-
-  currentTimer2 = setTimeout(() => {
-    restart(car, "drive");
-  }, 1300);
+  restart(text, "animate");
+  restart(car, "drive");
 }
 
 showScene(0);
@@ -2482,63 +2217,4 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }, 2600);
   }
-});
-
-
-
-===== ENDING.JS =====
-
-
-window.addEventListener("DOMContentLoaded", () => {
-
-  const btsBtn = document.getElementById("btsBtn");
-  const btsModal = document.getElementById("btsModal");
-  const closeBts = document.getElementById("closeBts");
-
-  // Wait for flower animation to feel complete
-  setTimeout(() => {
-    if(btsBtn){
-      btsBtn.classList.remove("hidden-bts");
-
-      requestAnimationFrame(() => {
-        btsBtn.classList.add("show-bts");
-      });
-    }
-  }, 3200);
-
-  if(btsBtn){
-    btsBtn.addEventListener("click", () => {
-      btsModal.classList.remove("hidden-bts");
-    });
-  }
-
-  if(closeBts){
-    closeBts.addEventListener("click", () => {
-      btsModal.classList.add("hidden-bts");
-    });
-  }
-
-
-  const actualCode = document.getElementById("actualCode");
-
-  async function loadActualCode(){
-    if(!actualCode) return;
-
-    try{
-      const response = await fetch("FULL_SOURCE_CODE.txt");
-      const text = await response.text();
-      actualCode.textContent = text;
-    }catch(e){
-      actualCode.textContent = `The real source code is included in this website folder as:
-
-FULL_SOURCE_CODE.txt
-
-It contains the HTML, CSS, and JavaScript that made this whole birthday multiverse experience work. ❤️`;
-    }
-  }
-
-  if(btsBtn){
-    btsBtn.addEventListener("click", loadActualCode);
-  }
-
 });

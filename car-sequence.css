@@ -97,14 +97,15 @@ body{
 
 .car{
   position:absolute;
-  left:50%;
+  left:-75vw;
   bottom:8vh;
   width:min(720px,88vw);
   height:auto;
-  transform:translateX(-50%);
-  filter:drop-shadow(0 0 18px rgba(255,255,255,.22)) drop-shadow(0 0 42px rgba(255,150,75,.45));
-  overflow:visible;
   z-index:5;
+  overflow:visible;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,.22))
+    drop-shadow(0 0 42px rgba(255,150,75,.45));
 }
 
 .f1{
@@ -122,9 +123,14 @@ body{
 
 @keyframes drive{
   from{
-    left:-70vw;
+    left:-75vw;
     transform:translateX(0);
   }
+  to{
+    left:115vw;
+    transform:translateX(0);
+  }
+}
   to{
     left:115vw;
     transform:translateX(0);
