@@ -65,83 +65,33 @@ function runTimelineTransition(options){
 
 
 
+function playCarSequenceThen(afterSequence){
+  const overlay = document.getElementById("carSequenceOverlay");
+  const frame = document.getElementById("carSequenceFrame");
 
-/* =========================================================
-   VERIFIED WORKING CAR UNIVERSE FLOW - MOVING + FADING TEXT
-========================================================= */
-
-const carUniverse = document.getElementById("carUniverse");
-const carScenes = Array.from(document.querySelectorAll("#carUniverse .car-scene"));
-
-let carTimer1;
-let carTimer2;
-let carTimer3;
-let carTimer4;
-
-function restartClass(el, className){
-  if(!el) return;
-  el.classList.remove(className);
-  el.offsetHeight;
-  el.classList.add(className);
-}
-
-function showCarScene(index){
-  carScenes.forEach(scene => {
-    scene.classList.remove("active");
-    const oldCar = scene.querySelector(".car");
-    const oldText = scene.querySelector(".car-text");
-    if(oldCar) oldCar.classList.remove("drive");
-    if(oldText) oldText.classList.remove("animate");
-  });
-
-  const current = carScenes[index];
-  if(!current) return;
-
-  current.classList.add("active");
-
-  const car = current.querySelector(".car");
-  const text = current.querySelector(".car-text");
-
-  // Words fade in first
-  setTimeout(() => {
-    restartClass(text, "animate");
-  }, 250);
-
-  // Car starts driving after a short cinematic pause
-  setTimeout(() => {
-    restartClass(car, "drive");
-  }, 1250);
-}
-
-function startCarUniverseSequence(afterSequence){
-  if(!carUniverse || carScenes.length === 0){
+  if(!overlay || !frame){
     afterSequence();
     return;
   }
 
-  clearTimeout(carTimer1);
-  clearTimeout(carTimer2);
-  clearTimeout(carTimer3);
-  clearTimeout(carTimer4);
+  overlay.classList.remove("hidden-car-sequence");
+  overlay.classList.remove("fade-out-car-sequence");
 
-  carUniverse.classList.remove("hidden");
-  carUniverse.style.opacity = "1";
+  // Reload the iframe every time so the cars animate from the beginning.
+  frame.src = "car-sequence.html?v=" + Date.now();
 
-  showCarScene(0);
+  // Car sequence timing from verified standalone page:
+  // Jeep starts, F1 at 8s, BMW at 16s, finish around 23.5s.
+  setTimeout(() => {
+    overlay.classList.add("fade-out-car-sequence");
 
-  carTimer1 = setTimeout(() => showCarScene(1), 8000);
-  carTimer2 = setTimeout(() => showCarScene(2), 16000);
-
-  carTimer3 = setTimeout(() => {
-    carUniverse.style.transition = "opacity 1.4s ease";
-    carUniverse.style.opacity = "0";
-
-    carTimer4 = setTimeout(() => {
-      carUniverse.classList.add("hidden");
-      carUniverse.style.opacity = "";
-      carUniverse.style.transition = "";
+    setTimeout(() => {
+      frame.src = "about:blank";
+      overlay.classList.add("hidden-car-sequence");
+      overlay.classList.remove("fade-out-car-sequence");
       afterSequence();
     }, 1500);
+
   }, 23500);
 }
 
@@ -153,7 +103,7 @@ boltBtn.addEventListener("click", async () => {
     await bgMusic.play();
   }catch(e){}
 
-  startCarUniverseSequence(() => {
+  playCarSequenceThen(() => {
     runTimelineTransition({
       searchText: "Searching the multiverse...",
       foundMessage: "Tanima Das found ❤️",
