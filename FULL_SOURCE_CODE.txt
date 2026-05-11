@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css?v=realcars1" />
+  <link rel="stylesheet" href="style.css?v=inlinecars1" />
 </head>
 <body>
 <div id="birthdayFadeOverlay" class="birthday-fade-overlay hidden-fade"></div>
@@ -51,25 +51,118 @@
 
 
 <section id="carUniverse" class="car-universe hidden">
-  <div class="car-scene jeep-scene active-scene">
+  <div class="car-scene active-scene" data-scene="0">
     <div class="car-stars"></div>
     <div class="car-road"></div>
-    <img class="vehicle-img jeep-img" src="jeep-silhouette.png" alt="Jeep silhouette">
+    
+<svg class="vehicle-svg jeep-svg" viewBox="0 0 980 390" aria-label="Orange four-door Jeep Wrangler" role="img">
+  <defs>
+    <filter id="jeepGlow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff9a3d" flood-opacity=".85"/></filter>
+  </defs>
+  <g filter="url(#jeepGlow)">
+    <circle cx="105" cy="226" r="55" fill="#050505"/>
+    <circle cx="247" cy="296" r="63" fill="#050505"/>
+    <circle cx="678" cy="296" r="63" fill="#050505"/>
+    <path d="M95 178 Q95 158 118 158 L150 158 L205 105 L560 105 L665 178 L790 178 L850 235 L800 270 L95 270 Z" fill="#e85c12"/>
+    <rect x="225" y="82" width="335" height="30" rx="8" fill="#d95410"/>
+    <path d="M230 120 L355 120 L355 168 L190 168 Z" fill="#070a0e"/>
+    <path d="M375 120 L505 120 L560 168 L375 168 Z" fill="#070a0e"/>
+    <path d="M570 122 L635 168 L575 168 L520 120 Z" fill="#070a0e"/>
+    <line x1="355" y1="122" x2="355" y2="265" stroke="#2a1208" stroke-width="5"/>
+    <line x1="505" y1="125" x2="505" y2="265" stroke="#2a1208" stroke-width="5"/>
+    <rect x="305" y="193" width="35" height="9" rx="3" fill="#24140c"/>
+    <rect x="455" y="193" width="35" height="9" rx="3" fill="#24140c"/>
+    <rect x="115" y="232" width="675" height="38" rx="12" fill="#5f260c"/>
+    <rect x="158" y="228" width="168" height="64" rx="28" fill="#232323"/>
+    <rect x="583" y="228" width="169" height="64" rx="28" fill="#232323"/>
+    <circle cx="105" cy="226" r="42" fill="#050505" stroke="rgba(255,255,255,.35)" stroke-width="7"/>
+    <circle cx="247" cy="296" r="63" fill="#050505"/>
+    <circle cx="247" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <circle cx="678" cy="296" r="63" fill="#050505"/>
+    <circle cx="678" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <g fill="#181818">
+      <rect x="760" y="190" width="5" height="55" rx="2"/>
+      <rect x="774" y="190" width="5" height="55" rx="2"/>
+      <rect x="788" y="190" width="5" height="55" rx="2"/>
+      <rect x="802" y="190" width="5" height="55" rx="2"/>
+      <rect x="816" y="190" width="5" height="55" rx="2"/>
+    </g>
+    <ellipse cx="850" cy="212" rx="18" ry="15" fill="#ffe18b"/>
+    <polygon points="862,212 970,178 970,250" fill="rgba(255,205,120,.24)"/>
+    <text x="260" y="305" font-size="28" font-family="Arial Black, Arial" fill="rgba(255,220,170,.8)">WRANGLER</text>
+  </g>
+</svg>
+
     <div class="car-smoke-text">Built different. Driven by love.</div>
   </div>
 
-  <div class="car-scene f1-scene">
+  <div class="car-scene" data-scene="1">
     <div class="car-stars"></div>
     <div class="car-road neon-road"></div>
-    <img class="vehicle-img f1-img" src="f1-silhouette.png" alt="Race car silhouette">
+    
+<svg class="vehicle-svg f1-svg" viewBox="0 0 1080 340" aria-label="Red Bull Oracle style race car" role="img">
+  <defs>
+    <filter id="f1Glow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff1d3d" flood-opacity=".95"/></filter>
+  </defs>
+  <g filter="url(#f1Glow)">
+    <circle cx="212" cy="255" r="65" fill="#050505"/>
+    <circle cx="827" cy="255" r="65" fill="#050505"/>
+    <path d="M70 215 L195 178 L430 170 L585 122 L780 148 L1000 205 L930 246 L115 250 Z" fill="#121941"/>
+    <path d="M500 126 L585 80 L665 145 L570 164 Z" fill="#10122b"/>
+    <rect x="875" y="223" width="175" height="32" rx="8" fill="#121941"/>
+    <rect x="20" y="225" width="155" height="27" rx="8" fill="#121941"/>
+    <rect x="115" y="108" width="130" height="32" rx="8" fill="#121941"/>
+    <rect x="140" y="140" width="32" height="75" fill="#121941"/>
+    <path d="M210 190 C330 180 450 175 585 136 C650 150 720 158 765 160" fill="none" stroke="#ff2d41" stroke-width="14"/>
+    <path d="M230 205 C380 194 545 190 760 190" fill="none" stroke="#ffd32d" stroke-width="8"/>
+    <polygon points="670,154 790,160 900,198 790,195" fill="#c30014"/>
+    <text x="420" y="190" font-size="42" font-family="Arial Black, Arial" fill="#ffec45" stroke="#000" stroke-width="2">RED BULL</text>
+    <text x="460" y="232" font-size="30" font-family="Arial Black, Arial" fill="#fff" stroke="#000" stroke-width="2">ORACLE</text>
+    <ellipse cx="625" cy="135" rx="45" ry="28" fill="#06060c"/>
+    <path d="M550 150 Q600 70 690 150" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="7"/>
+    <circle cx="212" cy="255" r="65" fill="#050505"/>
+    <circle cx="212" cy="255" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <circle cx="827" cy="255" r="65" fill="#050505"/>
+    <circle cx="827" cy="255" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <polygon points="1000,218 1080,190 1080,250" fill="rgba(255,255,255,.18)"/>
+  </g>
+</svg>
+
     <div class="car-smoke-text">You'll always be my favorite destination.</div>
   </div>
 
-  <div class="car-scene bmw-scene">
+  <div class="car-scene" data-scene="2">
     <div class="car-stars"></div>
     <div class="car-road city-road"></div>
     <div class="rain-overlay"></div>
-    <img class="vehicle-img bmw-img" src="bmw-silhouette.png" alt="BMW silhouette">
+    
+<svg class="vehicle-svg bmw-svg" viewBox="0 0 980 360" aria-label="BMW style car" role="img">
+  <defs>
+    <filter id="bmwGlow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ffd19a" flood-opacity=".65"/></filter>
+  </defs>
+  <g filter="url(#bmwGlow)">
+    <circle cx="242" cy="285" r="63" fill="#050505"/>
+    <circle cx="717" cy="285" r="63" fill="#050505"/>
+    <path d="M90 234 Q90 175 120 175 L225 170 L360 92 L604 98 L740 175 L840 175 Q860 205 840 254 L120 254 Z" fill="#111114"/>
+    <path d="M365 112 L470 110 L470 168 L285 168 Z" fill="#070a0e"/>
+    <path d="M492 110 L595 115 L695 168 L492 168 Z" fill="#070a0e"/>
+    <path d="M150 184 C280 150 475 145 700 178 C760 185 805 198 820 205" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="6"/>
+    <rect x="782" y="193" width="23" height="37" rx="4" fill="#151517" stroke="rgba(235,235,255,.55)" stroke-width="2"/>
+    <rect x="808" y="193" width="23" height="37" rx="4" fill="#151517" stroke="rgba(235,235,255,.55)" stroke-width="2"/>
+    <ellipse cx="854" cy="205" rx="18" ry="14" fill="#fff5cd"/>
+    <polygon points="868,204 975,176 975,237" fill="rgba(255,235,190,.20)"/>
+    <circle cx="744" cy="181" r="18" fill="#f8f8f8" stroke="#111" stroke-width="3"/>
+    <path d="M744 164 A17 17 0 0 1 761 181 L744 181 Z" fill="#005cb9"/>
+    <path d="M744 181 L761 181 A17 17 0 0 1 744 198 Z" fill="#f8f8f8"/>
+    <path d="M744 181 L744 198 A17 17 0 0 1 727 181 Z" fill="#005cb9"/>
+    <path d="M727 181 A17 17 0 0 1 744 164 L744 181 Z" fill="#f8f8f8"/>
+    <circle cx="242" cy="285" r="63" fill="#050505"/>
+    <circle cx="242" cy="285" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <circle cx="717" cy="285" r="63" fill="#050505"/>
+    <circle cx="717" cy="285" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+  </g>
+</svg>
+
     <div class="car-smoke-text">My favorite road always leads to you.</div>
   </div>
 </section>
@@ -147,7 +240,7 @@
   </main>
 </section>
 
-<script src="script.js?v=realcars1"></script>
+<script src="script.js?v=inlinecars1"></script>
 </body>
 </html>
 
@@ -1939,270 +2032,58 @@ video{width:100%;display:block;background:#000}
 
 
 /* =========================================================
-   FORCE FIXED CAR UNIVERSE SEQUENCE
+   INLINE SVG CARS - NO IMAGE FILES NEEDED
 ========================================================= */
 
-.car-universe{
-  position:fixed !important;
-  inset:0 !important;
-  z-index:99999999 !important;
-  background:#000 !important;
-  overflow:hidden !important;
-}
-
-.car-universe.hidden{
-  display:none !important;
-}
-
-.car-scene{
+#carUniverse .vehicle-svg{
   position:absolute !important;
-  inset:0 !important;
-  opacity:0 !important;
-  transition:opacity 1.4s ease !important;
-  background:
-    radial-gradient(circle at center, rgba(45,10,80,.58), rgba(0,0,0,1) 70%),
-    #000 !important;
-}
-
-.car-scene.active-scene{
-  opacity:1 !important;
-}
-
-.car-stars::before{
-  content:"";
-  position:absolute;
-  inset:-200px;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(255,150,210,.7) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,205,95,.55) 1px, transparent 1.8px);
-  background-size:52px 52px, 92px 92px, 128px 128px;
-  opacity:.40;
-  animation:carStarDrift 22s linear infinite;
-}
-
-@keyframes carStarDrift{
-  from{ transform:translateY(0); }
-  to{ transform:translateY(-260px); }
-}
-
-.car-road{
-  position:absolute !important;
-  left:0 !important;
-  bottom:0 !important;
-  width:100% !important;
-  height:27% !important;
-  background:linear-gradient(to bottom, rgba(58,58,58,.96), rgba(10,10,10,1)) !important;
-  box-shadow:0 -30px 70px rgba(255,120,190,.14) !important;
-}
-
-.car-road::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:50%;
-  width:220%;
-  height:4px;
-  background:repeating-linear-gradient(to right, rgba(255,255,255,.9) 0 70px, transparent 70px 140px);
-  animation:carRoadRush 1.45s linear infinite;
-}
-
-@keyframes carRoadRush{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-140px); }
-}
-
-.neon-road{
-  box-shadow:
-    0 -22px 70px rgba(255,0,80,.5),
-    0 -22px 95px rgba(0,140,255,.3) !important;
-}
-
-.city-road{
-  background:linear-gradient(to bottom, rgba(78,78,78,.96), rgba(7,7,7,1)) !important;
-  box-shadow:
-    0 -22px 65px rgba(255,255,255,.13),
-    0 -22px 90px rgba(255,180,95,.18) !important;
-}
-
-.rain-overlay{
-  position:absolute;
-  inset:0;
-  background:repeating-linear-gradient(105deg, rgba(255,255,255,.08) 0 2px, transparent 2px 18px);
-  opacity:.16;
-  animation:carRain 0.45s linear infinite;
-}
-
-@keyframes carRain{
-  from{ transform:translateY(-18px); }
-  to{ transform:translateY(18px); }
-}
-
-.car-shape{
-  position:absolute !important;
-  bottom:14% !important;
-  left:-38% !important;
-  width:300px !important;
-  height:118px !important;
-  animation:carDriveAcross 7.2s linear forwards !important;
-  filter:drop-shadow(0 0 26px rgba(255,185,115,.35));
-}
-
-@keyframes carDriveAcross{
-  from{ left:-38%; transform:translateY(0); }
-  50%{ transform:translateY(-5px); }
-  to{ left:115%; transform:translateY(0); }
-}
-
-.jeep-shape{
-  background:linear-gradient(to bottom, #2d2d2d, #000);
-  clip-path:polygon(5% 65%,18% 40%,55% 35%,70% 20%,88% 22%,96% 60%,100% 72%,95% 85%,8% 85%);
-}
-
-.f1-shape{
-  width:355px !important;
-  height:90px !important;
-  background:linear-gradient(to right,#ff2945,#720000);
-  clip-path:polygon(0% 60%,18% 42%,40% 38%,60% 22%,85% 28%,100% 58%,90% 78%,10% 82%);
-  filter:drop-shadow(0 0 30px rgba(255,0,60,.65)) drop-shadow(0 0 44px rgba(0,120,255,.28)) !important;
-}
-
-.bmw-shape{
-  width:320px !important;
-  height:100px !important;
-  background:linear-gradient(to bottom,#3d3d3d,#000);
-  clip-path:polygon(5% 70%,20% 45%,40% 30%,68% 28%,90% 45%,100% 68%,96% 82%,6% 82%);
-  filter:drop-shadow(0 0 26px rgba(255,255,255,.22)) drop-shadow(0 0 48px rgba(255,175,95,.20)) !important;
-}
-
-.car-shape::before,
-.car-shape::after{
-  content:"";
-  position:absolute;
-  bottom:-18px;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#020202;
-  border:5px solid rgba(255,255,255,.18);
-  box-shadow:0 0 12px rgba(255,255,255,.22);
-}
-
-.car-shape::before{ left:18%; }
-.car-shape::after{ right:14%; }
-
-.car-smoke-text{
-  position:absolute;
-  left:50%;
-  top:35%;
-  transform:translate(-50%,-50%);
-  width:min(950px,92%);
-  text-align:center;
-  opacity:0;
-  font-size:clamp(1.85rem,5.5vw,4.2rem);
-  color:rgba(255,255,255,.95);
-  text-shadow:
-    0 0 22px rgba(255,255,255,.58),
-    0 0 58px rgba(255,180,120,.45),
-    0 0 95px rgba(255,80,160,.25);
-  filter:blur(14px);
-  animation:carSmokeRevealForce 4.6s ease forwards;
-  animation-delay:2s;
-}
-
-@keyframes carSmokeRevealForce{
-  0%{
-    opacity:0;
-    filter:blur(20px);
-    transform:translate(-50%,-50%) scale(.92);
-  }
-  45%{
-    opacity:1;
-    filter:blur(4px);
-  }
-  100%{
-    opacity:1;
-    filter:blur(.3px);
-    transform:translate(-50%,-50%) scale(1);
-  }
-}
-
-
-/* =========================================================
-   REAL VEHICLE SILHOUETTE IMAGE FIX
-========================================================= */
-
-.vehicle-img{
-  position:absolute !important;
-  bottom:10% !important;
-  left:-42% !important;
-  width:clamp(270px, 40vw, 520px) !important;
+  display:block !important;
+  left:-58vw !important;
+  bottom:8vh !important;
+  width:min(620px, 78vw) !important;
   height:auto !important;
-  z-index:4 !important;
-  object-fit:contain !important;
+  z-index:50 !important;
   opacity:1 !important;
-  animation:realCarDrive 7.2s linear forwards !important;
-  filter:
-    drop-shadow(0 0 16px rgba(255,255,255,.20))
-    drop-shadow(0 0 34px rgba(255,170,90,.30)) !important;
+  animation:inlineCarDrive 6.7s linear forwards !important;
+  overflow:visible !important;
 }
 
-.f1-img{
-  width:clamp(310px, 48vw, 620px) !important;
-  bottom:10.5% !important;
-  filter:
-    drop-shadow(0 0 24px rgba(255,0,60,.65))
-    drop-shadow(0 0 42px rgba(0,120,255,.28)) !important;
+#carUniverse .f1-svg{
+  width:min(720px, 88vw) !important;
+  bottom:9vh !important;
 }
 
-.bmw-img{
-  width:clamp(290px, 43vw, 560px) !important;
-  bottom:9.5% !important;
-  filter:
-    drop-shadow(0 0 18px rgba(255,255,255,.28))
-    drop-shadow(0 0 38px rgba(255,180,110,.23)) !important;
+#carUniverse .bmw-svg{
+  width:min(650px, 80vw) !important;
+  bottom:8.5vh !important;
 }
 
-@keyframes realCarDrive{
+@keyframes inlineCarDrive{
   0%{
-    left:-48%;
+    left:-70vw;
     transform:translateY(0) scale(1);
   }
-  45%{
-    transform:translateY(-4px) scale(1.02);
+  48%{
+    transform:translateY(-6px) scale(1.03);
   }
   100%{
-    left:112%;
+    left:112vw;
     transform:translateY(0) scale(1);
   }
-}
-
-/* hide old CSS polygon vehicles if any old markup remains */
-.car-shape{
-  display:none !important;
-}
-
-.car-smoke-text{
-  z-index:5 !important;
-}
-
-/* extra light/smoke trail behind image vehicles */
-.vehicle-img::after{
-  content:"";
 }
 
 @media (max-width:700px){
-  .vehicle-img{
-    width:360px !important;
-    bottom:12% !important;
-  }
-
-  .f1-img{
+  #carUniverse .vehicle-svg{
     width:410px !important;
+    bottom:11vh !important;
   }
 
-  .bmw-img{
-    width:380px !important;
+  #carUniverse .f1-svg{
+    width:470px !important;
+  }
+
+  #carUniverse .bmw-svg{
+    width:430px !important;
   }
 }
 
@@ -2274,7 +2155,24 @@ function runTimelineTransition(options){
   }, 7800);
 }
 
+boltBtn.addEventListener("click", async () => {
+  vibrateHeart();
 
+  try{
+    bgMusic.volume = 0.35;
+    await bgMusic.play();
+  }catch(e){}
+
+  runTimelineTransition({
+    searchText: "Searching the multiverse...",
+    foundMessage: "Tanima Das found ❤️",
+    after: () => {
+      intro.classList.add("hidden");
+      videoPage.classList.remove("hidden");
+      window.scrollTo(0,0);
+    }
+  });
+});
 
 startBtn.addEventListener("click", async () => {
   startBtn.classList.add("hidden-btn");
@@ -2349,75 +2247,6 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }, 2600);
   }
-});
-
-
-/* =========================================================
-   FORCE FIXED CAR UNIVERSE FLOW
-========================================================= */
-
-function restartAnimation(el){
-  if(!el) return;
-  el.style.animation = "none";
-  el.offsetHeight;
-  el.style.animation = "";
-}
-
-function startCarUniverseSequence(afterSequence){
-  const carUniverse = document.getElementById("carUniverse");
-  const scenes = document.querySelectorAll(".car-scene");
-
-  carUniverse.classList.remove("hidden");
-  carUniverse.style.opacity = "1";
-
-  function showScene(index){
-    scenes.forEach(scene => scene.classList.remove("active-scene"));
-
-    const scene = scenes[index];
-    scene.classList.add("active-scene");
-
-    restartAnimation(scene.querySelector(".vehicle-img"));
-    restartAnimation(scene.querySelector(".car-smoke-text"));
-  }
-
-  showScene(0);
-
-  setTimeout(() => showScene(1), 7200);
-  setTimeout(() => showScene(2), 14400);
-
-  setTimeout(() => {
-    carUniverse.style.transition = "opacity 1.8s ease";
-    carUniverse.style.opacity = "0";
-
-    setTimeout(() => {
-      carUniverse.classList.add("hidden");
-      carUniverse.style.opacity = "";
-      carUniverse.style.transition = "";
-
-      if(afterSequence) afterSequence();
-    }, 1900);
-  }, 21600);
-}
-
-boltBtn.addEventListener("click", async () => {
-  vibrateHeart();
-
-  try{
-    bgMusic.volume = 0.35;
-    await bgMusic.play();
-  }catch(e){}
-
-  startCarUniverseSequence(() => {
-    runTimelineTransition({
-      searchText: "Searching the multiverse...",
-      foundMessage: "Tanima Das found ❤️",
-      after: () => {
-        intro.classList.add("hidden");
-        videoPage.classList.remove("hidden");
-        window.scrollTo(0,0);
-      }
-    });
-  });
 });
 
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css?v=realcars1" />
+  <link rel="stylesheet" href="style.css?v=inlinecars1" />
 </head>
 <body>
 <div id="birthdayFadeOverlay" class="birthday-fade-overlay hidden-fade"></div>
@@ -49,25 +49,118 @@
 
 
 <section id="carUniverse" class="car-universe hidden">
-  <div class="car-scene jeep-scene active-scene">
+  <div class="car-scene active-scene" data-scene="0">
     <div class="car-stars"></div>
     <div class="car-road"></div>
-    <img class="vehicle-img jeep-img" src="jeep-silhouette.png" alt="Jeep silhouette">
+    
+<svg class="vehicle-svg jeep-svg" viewBox="0 0 980 390" aria-label="Orange four-door Jeep Wrangler" role="img">
+  <defs>
+    <filter id="jeepGlow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff9a3d" flood-opacity=".85"/></filter>
+  </defs>
+  <g filter="url(#jeepGlow)">
+    <circle cx="105" cy="226" r="55" fill="#050505"/>
+    <circle cx="247" cy="296" r="63" fill="#050505"/>
+    <circle cx="678" cy="296" r="63" fill="#050505"/>
+    <path d="M95 178 Q95 158 118 158 L150 158 L205 105 L560 105 L665 178 L790 178 L850 235 L800 270 L95 270 Z" fill="#e85c12"/>
+    <rect x="225" y="82" width="335" height="30" rx="8" fill="#d95410"/>
+    <path d="M230 120 L355 120 L355 168 L190 168 Z" fill="#070a0e"/>
+    <path d="M375 120 L505 120 L560 168 L375 168 Z" fill="#070a0e"/>
+    <path d="M570 122 L635 168 L575 168 L520 120 Z" fill="#070a0e"/>
+    <line x1="355" y1="122" x2="355" y2="265" stroke="#2a1208" stroke-width="5"/>
+    <line x1="505" y1="125" x2="505" y2="265" stroke="#2a1208" stroke-width="5"/>
+    <rect x="305" y="193" width="35" height="9" rx="3" fill="#24140c"/>
+    <rect x="455" y="193" width="35" height="9" rx="3" fill="#24140c"/>
+    <rect x="115" y="232" width="675" height="38" rx="12" fill="#5f260c"/>
+    <rect x="158" y="228" width="168" height="64" rx="28" fill="#232323"/>
+    <rect x="583" y="228" width="169" height="64" rx="28" fill="#232323"/>
+    <circle cx="105" cy="226" r="42" fill="#050505" stroke="rgba(255,255,255,.35)" stroke-width="7"/>
+    <circle cx="247" cy="296" r="63" fill="#050505"/>
+    <circle cx="247" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <circle cx="678" cy="296" r="63" fill="#050505"/>
+    <circle cx="678" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <g fill="#181818">
+      <rect x="760" y="190" width="5" height="55" rx="2"/>
+      <rect x="774" y="190" width="5" height="55" rx="2"/>
+      <rect x="788" y="190" width="5" height="55" rx="2"/>
+      <rect x="802" y="190" width="5" height="55" rx="2"/>
+      <rect x="816" y="190" width="5" height="55" rx="2"/>
+    </g>
+    <ellipse cx="850" cy="212" rx="18" ry="15" fill="#ffe18b"/>
+    <polygon points="862,212 970,178 970,250" fill="rgba(255,205,120,.24)"/>
+    <text x="260" y="305" font-size="28" font-family="Arial Black, Arial" fill="rgba(255,220,170,.8)">WRANGLER</text>
+  </g>
+</svg>
+
     <div class="car-smoke-text">Built different. Driven by love.</div>
   </div>
 
-  <div class="car-scene f1-scene">
+  <div class="car-scene" data-scene="1">
     <div class="car-stars"></div>
     <div class="car-road neon-road"></div>
-    <img class="vehicle-img f1-img" src="f1-silhouette.png" alt="Race car silhouette">
+    
+<svg class="vehicle-svg f1-svg" viewBox="0 0 1080 340" aria-label="Red Bull Oracle style race car" role="img">
+  <defs>
+    <filter id="f1Glow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ff1d3d" flood-opacity=".95"/></filter>
+  </defs>
+  <g filter="url(#f1Glow)">
+    <circle cx="212" cy="255" r="65" fill="#050505"/>
+    <circle cx="827" cy="255" r="65" fill="#050505"/>
+    <path d="M70 215 L195 178 L430 170 L585 122 L780 148 L1000 205 L930 246 L115 250 Z" fill="#121941"/>
+    <path d="M500 126 L585 80 L665 145 L570 164 Z" fill="#10122b"/>
+    <rect x="875" y="223" width="175" height="32" rx="8" fill="#121941"/>
+    <rect x="20" y="225" width="155" height="27" rx="8" fill="#121941"/>
+    <rect x="115" y="108" width="130" height="32" rx="8" fill="#121941"/>
+    <rect x="140" y="140" width="32" height="75" fill="#121941"/>
+    <path d="M210 190 C330 180 450 175 585 136 C650 150 720 158 765 160" fill="none" stroke="#ff2d41" stroke-width="14"/>
+    <path d="M230 205 C380 194 545 190 760 190" fill="none" stroke="#ffd32d" stroke-width="8"/>
+    <polygon points="670,154 790,160 900,198 790,195" fill="#c30014"/>
+    <text x="420" y="190" font-size="42" font-family="Arial Black, Arial" fill="#ffec45" stroke="#000" stroke-width="2">RED BULL</text>
+    <text x="460" y="232" font-size="30" font-family="Arial Black, Arial" fill="#fff" stroke="#000" stroke-width="2">ORACLE</text>
+    <ellipse cx="625" cy="135" rx="45" ry="28" fill="#06060c"/>
+    <path d="M550 150 Q600 70 690 150" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="7"/>
+    <circle cx="212" cy="255" r="65" fill="#050505"/>
+    <circle cx="212" cy="255" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <circle cx="827" cy="255" r="65" fill="#050505"/>
+    <circle cx="827" cy="255" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <polygon points="1000,218 1080,190 1080,250" fill="rgba(255,255,255,.18)"/>
+  </g>
+</svg>
+
     <div class="car-smoke-text">You'll always be my favorite destination.</div>
   </div>
 
-  <div class="car-scene bmw-scene">
+  <div class="car-scene" data-scene="2">
     <div class="car-stars"></div>
     <div class="car-road city-road"></div>
     <div class="rain-overlay"></div>
-    <img class="vehicle-img bmw-img" src="bmw-silhouette.png" alt="BMW silhouette">
+    
+<svg class="vehicle-svg bmw-svg" viewBox="0 0 980 360" aria-label="BMW style car" role="img">
+  <defs>
+    <filter id="bmwGlow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ffd19a" flood-opacity=".65"/></filter>
+  </defs>
+  <g filter="url(#bmwGlow)">
+    <circle cx="242" cy="285" r="63" fill="#050505"/>
+    <circle cx="717" cy="285" r="63" fill="#050505"/>
+    <path d="M90 234 Q90 175 120 175 L225 170 L360 92 L604 98 L740 175 L840 175 Q860 205 840 254 L120 254 Z" fill="#111114"/>
+    <path d="M365 112 L470 110 L470 168 L285 168 Z" fill="#070a0e"/>
+    <path d="M492 110 L595 115 L695 168 L492 168 Z" fill="#070a0e"/>
+    <path d="M150 184 C280 150 475 145 700 178 C760 185 805 198 820 205" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="6"/>
+    <rect x="782" y="193" width="23" height="37" rx="4" fill="#151517" stroke="rgba(235,235,255,.55)" stroke-width="2"/>
+    <rect x="808" y="193" width="23" height="37" rx="4" fill="#151517" stroke="rgba(235,235,255,.55)" stroke-width="2"/>
+    <ellipse cx="854" cy="205" rx="18" ry="14" fill="#fff5cd"/>
+    <polygon points="868,204 975,176 975,237" fill="rgba(255,235,190,.20)"/>
+    <circle cx="744" cy="181" r="18" fill="#f8f8f8" stroke="#111" stroke-width="3"/>
+    <path d="M744 164 A17 17 0 0 1 761 181 L744 181 Z" fill="#005cb9"/>
+    <path d="M744 181 L761 181 A17 17 0 0 1 744 198 Z" fill="#f8f8f8"/>
+    <path d="M744 181 L744 198 A17 17 0 0 1 727 181 Z" fill="#005cb9"/>
+    <path d="M727 181 A17 17 0 0 1 744 164 L744 181 Z" fill="#f8f8f8"/>
+    <circle cx="242" cy="285" r="63" fill="#050505"/>
+    <circle cx="242" cy="285" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    <circle cx="717" cy="285" r="63" fill="#050505"/>
+    <circle cx="717" cy="285" r="40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+  </g>
+</svg>
+
     <div class="car-smoke-text">My favorite road always leads to you.</div>
   </div>
 </section>
@@ -145,6 +238,6 @@
   </main>
 </section>
 
-<script src="script.js?v=realcars1"></script>
+<script src="script.js?v=inlinecars1"></script>
 </body>
 </html>

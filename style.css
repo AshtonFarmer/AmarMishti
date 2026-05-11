@@ -1517,269 +1517,57 @@ video{width:100%;display:block;background:#000}
 
 
 /* =========================================================
-   FORCE FIXED CAR UNIVERSE SEQUENCE
+   INLINE SVG CARS - NO IMAGE FILES NEEDED
 ========================================================= */
 
-.car-universe{
-  position:fixed !important;
-  inset:0 !important;
-  z-index:99999999 !important;
-  background:#000 !important;
-  overflow:hidden !important;
-}
-
-.car-universe.hidden{
-  display:none !important;
-}
-
-.car-scene{
+#carUniverse .vehicle-svg{
   position:absolute !important;
-  inset:0 !important;
-  opacity:0 !important;
-  transition:opacity 1.4s ease !important;
-  background:
-    radial-gradient(circle at center, rgba(45,10,80,.58), rgba(0,0,0,1) 70%),
-    #000 !important;
-}
-
-.car-scene.active-scene{
-  opacity:1 !important;
-}
-
-.car-stars::before{
-  content:"";
-  position:absolute;
-  inset:-200px;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(255,150,210,.7) 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,205,95,.55) 1px, transparent 1.8px);
-  background-size:52px 52px, 92px 92px, 128px 128px;
-  opacity:.40;
-  animation:carStarDrift 22s linear infinite;
-}
-
-@keyframes carStarDrift{
-  from{ transform:translateY(0); }
-  to{ transform:translateY(-260px); }
-}
-
-.car-road{
-  position:absolute !important;
-  left:0 !important;
-  bottom:0 !important;
-  width:100% !important;
-  height:27% !important;
-  background:linear-gradient(to bottom, rgba(58,58,58,.96), rgba(10,10,10,1)) !important;
-  box-shadow:0 -30px 70px rgba(255,120,190,.14) !important;
-}
-
-.car-road::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:50%;
-  width:220%;
-  height:4px;
-  background:repeating-linear-gradient(to right, rgba(255,255,255,.9) 0 70px, transparent 70px 140px);
-  animation:carRoadRush 1.45s linear infinite;
-}
-
-@keyframes carRoadRush{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-140px); }
-}
-
-.neon-road{
-  box-shadow:
-    0 -22px 70px rgba(255,0,80,.5),
-    0 -22px 95px rgba(0,140,255,.3) !important;
-}
-
-.city-road{
-  background:linear-gradient(to bottom, rgba(78,78,78,.96), rgba(7,7,7,1)) !important;
-  box-shadow:
-    0 -22px 65px rgba(255,255,255,.13),
-    0 -22px 90px rgba(255,180,95,.18) !important;
-}
-
-.rain-overlay{
-  position:absolute;
-  inset:0;
-  background:repeating-linear-gradient(105deg, rgba(255,255,255,.08) 0 2px, transparent 2px 18px);
-  opacity:.16;
-  animation:carRain 0.45s linear infinite;
-}
-
-@keyframes carRain{
-  from{ transform:translateY(-18px); }
-  to{ transform:translateY(18px); }
-}
-
-.car-shape{
-  position:absolute !important;
-  bottom:14% !important;
-  left:-38% !important;
-  width:300px !important;
-  height:118px !important;
-  animation:carDriveAcross 7.2s linear forwards !important;
-  filter:drop-shadow(0 0 26px rgba(255,185,115,.35));
-}
-
-@keyframes carDriveAcross{
-  from{ left:-38%; transform:translateY(0); }
-  50%{ transform:translateY(-5px); }
-  to{ left:115%; transform:translateY(0); }
-}
-
-.jeep-shape{
-  background:linear-gradient(to bottom, #2d2d2d, #000);
-  clip-path:polygon(5% 65%,18% 40%,55% 35%,70% 20%,88% 22%,96% 60%,100% 72%,95% 85%,8% 85%);
-}
-
-.f1-shape{
-  width:355px !important;
-  height:90px !important;
-  background:linear-gradient(to right,#ff2945,#720000);
-  clip-path:polygon(0% 60%,18% 42%,40% 38%,60% 22%,85% 28%,100% 58%,90% 78%,10% 82%);
-  filter:drop-shadow(0 0 30px rgba(255,0,60,.65)) drop-shadow(0 0 44px rgba(0,120,255,.28)) !important;
-}
-
-.bmw-shape{
-  width:320px !important;
-  height:100px !important;
-  background:linear-gradient(to bottom,#3d3d3d,#000);
-  clip-path:polygon(5% 70%,20% 45%,40% 30%,68% 28%,90% 45%,100% 68%,96% 82%,6% 82%);
-  filter:drop-shadow(0 0 26px rgba(255,255,255,.22)) drop-shadow(0 0 48px rgba(255,175,95,.20)) !important;
-}
-
-.car-shape::before,
-.car-shape::after{
-  content:"";
-  position:absolute;
-  bottom:-18px;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#020202;
-  border:5px solid rgba(255,255,255,.18);
-  box-shadow:0 0 12px rgba(255,255,255,.22);
-}
-
-.car-shape::before{ left:18%; }
-.car-shape::after{ right:14%; }
-
-.car-smoke-text{
-  position:absolute;
-  left:50%;
-  top:35%;
-  transform:translate(-50%,-50%);
-  width:min(950px,92%);
-  text-align:center;
-  opacity:0;
-  font-size:clamp(1.85rem,5.5vw,4.2rem);
-  color:rgba(255,255,255,.95);
-  text-shadow:
-    0 0 22px rgba(255,255,255,.58),
-    0 0 58px rgba(255,180,120,.45),
-    0 0 95px rgba(255,80,160,.25);
-  filter:blur(14px);
-  animation:carSmokeRevealForce 4.6s ease forwards;
-  animation-delay:2s;
-}
-
-@keyframes carSmokeRevealForce{
-  0%{
-    opacity:0;
-    filter:blur(20px);
-    transform:translate(-50%,-50%) scale(.92);
-  }
-  45%{
-    opacity:1;
-    filter:blur(4px);
-  }
-  100%{
-    opacity:1;
-    filter:blur(.3px);
-    transform:translate(-50%,-50%) scale(1);
-  }
-}
-
-
-/* =========================================================
-   REAL VEHICLE SILHOUETTE IMAGE FIX
-========================================================= */
-
-.vehicle-img{
-  position:absolute !important;
-  bottom:10% !important;
-  left:-42% !important;
-  width:clamp(270px, 40vw, 520px) !important;
+  display:block !important;
+  left:-58vw !important;
+  bottom:8vh !important;
+  width:min(620px, 78vw) !important;
   height:auto !important;
-  z-index:4 !important;
-  object-fit:contain !important;
+  z-index:50 !important;
   opacity:1 !important;
-  animation:realCarDrive 7.2s linear forwards !important;
-  filter:
-    drop-shadow(0 0 16px rgba(255,255,255,.20))
-    drop-shadow(0 0 34px rgba(255,170,90,.30)) !important;
+  animation:inlineCarDrive 6.7s linear forwards !important;
+  overflow:visible !important;
 }
 
-.f1-img{
-  width:clamp(310px, 48vw, 620px) !important;
-  bottom:10.5% !important;
-  filter:
-    drop-shadow(0 0 24px rgba(255,0,60,.65))
-    drop-shadow(0 0 42px rgba(0,120,255,.28)) !important;
+#carUniverse .f1-svg{
+  width:min(720px, 88vw) !important;
+  bottom:9vh !important;
 }
 
-.bmw-img{
-  width:clamp(290px, 43vw, 560px) !important;
-  bottom:9.5% !important;
-  filter:
-    drop-shadow(0 0 18px rgba(255,255,255,.28))
-    drop-shadow(0 0 38px rgba(255,180,110,.23)) !important;
+#carUniverse .bmw-svg{
+  width:min(650px, 80vw) !important;
+  bottom:8.5vh !important;
 }
 
-@keyframes realCarDrive{
+@keyframes inlineCarDrive{
   0%{
-    left:-48%;
+    left:-70vw;
     transform:translateY(0) scale(1);
   }
-  45%{
-    transform:translateY(-4px) scale(1.02);
+  48%{
+    transform:translateY(-6px) scale(1.03);
   }
   100%{
-    left:112%;
+    left:112vw;
     transform:translateY(0) scale(1);
   }
-}
-
-/* hide old CSS polygon vehicles if any old markup remains */
-.car-shape{
-  display:none !important;
-}
-
-.car-smoke-text{
-  z-index:5 !important;
-}
-
-/* extra light/smoke trail behind image vehicles */
-.vehicle-img::after{
-  content:"";
 }
 
 @media (max-width:700px){
-  .vehicle-img{
-    width:360px !important;
-    bottom:12% !important;
-  }
-
-  .f1-img{
+  #carUniverse .vehicle-svg{
     width:410px !important;
+    bottom:11vh !important;
   }
 
-  .bmw-img{
-    width:380px !important;
+  #carUniverse .f1-svg{
+    width:470px !important;
+  }
+
+  #carUniverse .bmw-svg{
+    width:430px !important;
   }
 }

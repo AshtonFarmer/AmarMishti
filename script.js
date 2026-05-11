@@ -62,7 +62,24 @@ function runTimelineTransition(options){
   }, 7800);
 }
 
+boltBtn.addEventListener("click", async () => {
+  vibrateHeart();
 
+  try{
+    bgMusic.volume = 0.35;
+    await bgMusic.play();
+  }catch(e){}
+
+  runTimelineTransition({
+    searchText: "Searching the multiverse...",
+    foundMessage: "Tanima Das found ❤️",
+    after: () => {
+      intro.classList.add("hidden");
+      videoPage.classList.remove("hidden");
+      window.scrollTo(0,0);
+    }
+  });
+});
 
 startBtn.addEventListener("click", async () => {
   startBtn.classList.add("hidden-btn");
@@ -137,73 +154,4 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }, 2600);
   }
-});
-
-
-/* =========================================================
-   FORCE FIXED CAR UNIVERSE FLOW
-========================================================= */
-
-function restartAnimation(el){
-  if(!el) return;
-  el.style.animation = "none";
-  el.offsetHeight;
-  el.style.animation = "";
-}
-
-function startCarUniverseSequence(afterSequence){
-  const carUniverse = document.getElementById("carUniverse");
-  const scenes = document.querySelectorAll(".car-scene");
-
-  carUniverse.classList.remove("hidden");
-  carUniverse.style.opacity = "1";
-
-  function showScene(index){
-    scenes.forEach(scene => scene.classList.remove("active-scene"));
-
-    const scene = scenes[index];
-    scene.classList.add("active-scene");
-
-    restartAnimation(scene.querySelector(".vehicle-img"));
-    restartAnimation(scene.querySelector(".car-smoke-text"));
-  }
-
-  showScene(0);
-
-  setTimeout(() => showScene(1), 7200);
-  setTimeout(() => showScene(2), 14400);
-
-  setTimeout(() => {
-    carUniverse.style.transition = "opacity 1.8s ease";
-    carUniverse.style.opacity = "0";
-
-    setTimeout(() => {
-      carUniverse.classList.add("hidden");
-      carUniverse.style.opacity = "";
-      carUniverse.style.transition = "";
-
-      if(afterSequence) afterSequence();
-    }, 1900);
-  }, 21600);
-}
-
-boltBtn.addEventListener("click", async () => {
-  vibrateHeart();
-
-  try{
-    bgMusic.volume = 0.35;
-    await bgMusic.play();
-  }catch(e){}
-
-  startCarUniverseSequence(() => {
-    runTimelineTransition({
-      searchText: "Searching the multiverse...",
-      foundMessage: "Tanima Das found ❤️",
-      after: () => {
-        intro.classList.add("hidden");
-        videoPage.classList.remove("hidden");
-        window.scrollTo(0,0);
-      }
-    });
-  });
 });
