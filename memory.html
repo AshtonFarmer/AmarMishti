@@ -61,9 +61,15 @@
 </section>
 
 
+<div id="memoryFadeCurtain" class="memory-fade-curtain hidden-sunset"></div>
+
 <div id="sunsetCollapse" class="sunset-collapse hidden-sunset">
   <div class="sunset-stars"></div>
   <div class="restarting-fate">Restarting fate...</div>
+
+  <div class="sunset-aura"></div>
+  <div class="sunset-ring ring-one"></div>
+  <div class="sunset-ring ring-two"></div>
   <div class="sunset-core"></div>
 </div>
 
@@ -136,22 +142,50 @@ setTimeout(() => {
 restart.addEventListener("click", (e) => {
   e.preventDefault();
 
-  document.querySelectorAll(".floating-memory").forEach((photo, index) => {
-    photo.style.transition = "all 2.8s ease";
-    photo.style.opacity = "0";
-    photo.style.transform = "scale(.6) translateY(-120px)";
-    photo.style.filter = "blur(3px)";
-  });
-
+  const curtain = document.getElementById("memoryFadeCurtain");
+  const message = document.querySelector(".memory-message");
   const finalLine = document.getElementById("memoryFinal");
-  if(finalLine){
-    finalLine.style.transition = "opacity 1.5s ease";
-    finalLine.style.opacity = "0";
+
+  restart.style.pointerEvents = "none";
+  restart.style.transition = "opacity 1.2s ease, transform 1.2s ease";
+  restart.style.opacity = "0";
+  restart.style.transform = "translateX(-50%) translateY(18px) scale(.92)";
+
+  // Make the whole memory universe feel like it is slowly dissolving.
+  if(curtain){
+    curtain.classList.remove("hidden-sunset");
+    requestAnimationFrame(() => {
+      curtain.classList.add("fade-in-curtain");
+    });
   }
+
+  if(message){
+    message.style.transition = "opacity 2.3s ease, transform 2.3s ease, filter 2.3s ease";
+    message.style.opacity = "0";
+    message.style.transform = "translateY(-30px) scale(.96)";
+    message.style.filter = "blur(5px)";
+  }
+
+  if(finalLine){
+    finalLine.style.transition = "opacity 2.3s ease, transform 2.3s ease, filter 2.3s ease";
+    finalLine.style.opacity = "0";
+    finalLine.style.transform = "translateY(30px) scale(.96)";
+    finalLine.style.filter = "blur(5px)";
+  }
+
+  document.querySelectorAll(".floating-memory").forEach((photo,index) => {
+    photo.style.transition =
+      "opacity 2.9s ease, transform 2.9s ease, filter 2.9s ease";
+    photo.style.transitionDelay = (index * 0.06) + "s";
+    photo.style.opacity = "0";
+    photo.style.transform =
+      "translateY(-160px) scale(.48) rotate(" + ((index % 2 === 0) ? "-12deg" : "12deg") + ")";
+    photo.style.filter = "blur(8px) brightness(.35)";
+  });
 
   setTimeout(() => {
     startSunsetRestart();
-  }, 1800);
+  }, 3000);
 });
 </script>
 
