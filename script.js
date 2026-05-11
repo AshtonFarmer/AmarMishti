@@ -132,3 +132,26 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 400);
   }
 });
+
+
+// Birthday page fade-in after sunset heartbeat restart
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const overlay = document.getElementById("birthdayFadeOverlay");
+
+  if(params.get("fadein") === "1" && overlay){
+    overlay.classList.remove("hidden-fade");
+
+    setTimeout(() => {
+      overlay.classList.add("fade-away-birthday");
+    }, 300);
+
+    setTimeout(() => {
+      overlay.classList.add("hidden-fade");
+
+      if(window.history && window.history.replaceState){
+        window.history.replaceState({}, document.title, "index.html");
+      }
+    }, 2600);
+  }
+});

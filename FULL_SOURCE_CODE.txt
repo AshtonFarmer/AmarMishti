@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css?v=constellation2" />
 </head>
 <body>
+<div id="birthdayFadeOverlay" class="birthday-fade-overlay hidden-fade"></div>
 <audio id="bgMusic" loop>
   <source src="sheesha.mp3" type="audio/mpeg">
 </audio>
@@ -261,16 +262,17 @@ Loading the real code...
 
 <div id="sunsetCollapse" class="sunset-collapse hidden-sunset">
   <div class="sunset-stars"></div>
+
   <div class="restarting-fate">Restarting fate...</div>
 
-  <div class="sunset-aura"></div>
-  <div class="sunset-ring ring-one"></div>
-  <div class="sunset-ring ring-two"></div>
-  <div class="sunset-core"></div>
-</div>
-
-
-<script>
+  <div class="sunset-portal">
+    <div class="sunset-orb">
+      <div class="sunset-orb-core"></div>
+      <div class="sunset-orb-ring"></div>
+      <div class="sunset-orb-aura"></div>
+    </div>
+  </div>
+</div><script>
 const memoryPhotos = [
     "memory1.jpg",
     "memory2.jpg",
@@ -307,12 +309,13 @@ function startSunsetRestart() {
   sunsetCollapse.classList.remove("hidden-sunset");
 
   if(navigator.vibrate){
-    navigator.vibrate([160,80,120]);
+    navigator.vibrate([160,80,120,80,160]);
   }
 
+  // Let the detailed sunset orb open, shrink, heartbeat, then fade into the birthday page.
   setTimeout(() => {
-    window.location.href = "index.html?v=sunset";
-  }, 5600);
+    window.location.href = "index.html?fadein=1";
+  }, 7600);
 }
 
 setTimeout(() => {
@@ -1639,6 +1642,277 @@ video{width:100%;display:block;background:#000}
 }
 
 
+/* =========================================================
+   FINAL SUNSET HEARTBEAT RESTART
+   detailed orb -> shrink -> heartbeat -> birthday fade-in
+========================================================= */
+
+.birthday-fade-overlay{
+  position:fixed;
+  inset:0;
+  z-index:999999999;
+  background:#000;
+  opacity:1;
+  pointer-events:none;
+  transition:opacity 2.2s ease;
+}
+
+.birthday-fade-overlay.fade-away-birthday{
+  opacity:0;
+}
+
+.hidden-fade{
+  display:none !important;
+}
+
+/* Reset/override older portal pieces */
+.sunset-aura,
+.sunset-ring,
+.sunset-core{
+  display:none !important;
+}
+
+.sunset-collapse{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:999999999 !important;
+  overflow:hidden !important;
+  background:#000 !important;
+}
+
+.hidden-sunset{
+  display:none !important;
+}
+
+.sunset-stars::before{
+  content:"";
+  position:absolute;
+  inset:-200px;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,190,95,.85) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,90,150,.75) 1px, transparent 1.8px);
+  background-size:55px 55px, 84px 84px, 125px 125px;
+  opacity:.28;
+  animation:finalStarsCollapse 7.2s ease forwards;
+}
+
+@keyframes finalStarsCollapse{
+  0%{
+    transform:scale(1) rotate(0deg);
+    opacity:.3;
+    filter:blur(0px);
+  }
+  55%{
+    transform:scale(1.45) rotate(2deg);
+    opacity:.18;
+    filter:blur(1px);
+  }
+  100%{
+    transform:scale(2.4) rotate(5deg);
+    opacity:0;
+    filter:blur(5px);
+  }
+}
+
+.restarting-fate{
+  position:absolute !important;
+  left:50% !important;
+  top:38% !important;
+  transform:translate(-50%,-50%) !important;
+  color:white !important;
+  font-size:clamp(1.45rem,5vw,3rem) !important;
+  letter-spacing:.08em !important;
+  opacity:0 !important;
+  z-index:10 !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.85),
+    0 0 45px rgba(255,170,95,.9),
+    0 0 90px rgba(255,80,140,.65) !important;
+  animation:finalFateText 5.8s ease forwards !important;
+}
+
+@keyframes finalFateText{
+  0%{ opacity:0; transform:translate(-50%,-50%) scale(.94); }
+  22%{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+  70%{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+  100%{ opacity:0; transform:translate(-50%,-50%) scale(.98); }
+}
+
+.sunset-portal{
+  position:absolute;
+  inset:0;
+  z-index:9;
+  display:grid;
+  place-items:center;
+}
+
+.sunset-orb{
+  position:relative;
+  width:clamp(96px, 20vmin, 210px);
+  height:clamp(96px, 20vmin, 210px);
+  border-radius:50%;
+  transform:scale(0);
+  opacity:0;
+  animation:finalSunsetOrbJourney 7.2s cubic-bezier(.14,.82,.24,1) forwards;
+}
+
+/* crisp detailed center */
+.sunset-orb-core{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 38% 34%,
+      rgba(255,255,255,1) 0%,
+      rgba(255,252,228,1) 8%,
+      rgba(255,231,145,1) 19%,
+      rgba(255,184,78,1) 35%,
+      rgba(255,122,73,1) 54%,
+      rgba(255,73,130,1) 74%,
+      rgba(145,38,110,1) 100%);
+  box-shadow:
+    inset -18px -18px 32px rgba(80,15,70,.34),
+    inset 14px 12px 28px rgba(255,255,255,.28),
+    0 0 24px rgba(255,255,255,.95),
+    0 0 70px rgba(255,218,130,.95),
+    0 0 130px rgba(255,138,80,.72),
+    0 0 210px rgba(255,74,135,.48);
+  overflow:hidden;
+}
+
+/* animated texture/highlight */
+.sunset-orb-core::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  border-radius:50%;
+  background:
+    conic-gradient(from 20deg,
+      rgba(255,255,255,.22),
+      rgba(255,210,112,.18),
+      rgba(255,95,135,.18),
+      rgba(255,180,75,.16),
+      rgba(255,255,255,.22));
+  animation:orbSurfaceMove 4s linear infinite;
+  mix-blend-mode:screen;
+  opacity:.55;
+}
+
+.sunset-orb-core::after{
+  content:"";
+  position:absolute;
+  inset:10%;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.28);
+  box-shadow:
+    0 0 18px rgba(255,255,255,.45),
+    inset 0 0 18px rgba(255,255,255,.16);
+}
+
+@keyframes orbSurfaceMove{
+  from{ transform:rotate(0deg) scale(1.05); }
+  to{ transform:rotate(360deg) scale(1.05); }
+}
+
+/* crisp ring */
+.sunset-orb-ring{
+  position:absolute;
+  inset:-7%;
+  border-radius:50%;
+  border:3px solid rgba(255,232,180,.78);
+  box-shadow:
+    0 0 24px rgba(255,255,255,.8),
+    0 0 54px rgba(255,190,80,.84),
+    0 0 92px rgba(255,80,140,.55),
+    inset 0 0 22px rgba(255,255,255,.28);
+  animation:ringRotate 5.4s linear infinite;
+}
+
+.sunset-orb-ring::before{
+  content:"";
+  position:absolute;
+  inset:-12%;
+  border-radius:50%;
+  border:1px dashed rgba(255,135,120,.65);
+  animation:ringRotateReverse 7s linear infinite;
+}
+
+@keyframes ringRotate{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+@keyframes ringRotateReverse{
+  from{ transform:rotate(360deg); }
+  to{ transform:rotate(0deg); }
+}
+
+/* soft outside glow only, not blurring the crisp orb */
+.sunset-orb-aura{
+  position:absolute;
+  inset:-70%;
+  border-radius:50%;
+  background:
+    radial-gradient(circle,
+      rgba(255,255,255,.18) 0%,
+      rgba(255,220,135,.22) 22%,
+      rgba(255,132,82,.18) 42%,
+      rgba(255,72,135,.15) 58%,
+      transparent 76%);
+  filter:blur(22px);
+  z-index:-1;
+  animation:auraBreath 2.2s ease-in-out infinite;
+}
+
+@keyframes auraBreath{
+  0%,100%{ opacity:.75; transform:scale(.96); }
+  50%{ opacity:1; transform:scale(1.08); }
+}
+
+/* Orb opens, shrinks to heartbeat dot, then disappears into fade-in */
+@keyframes finalSunsetOrbJourney{
+  0%{
+    opacity:0;
+    transform:scale(0);
+  }
+  12%{
+    opacity:1;
+    transform:scale(.85);
+  }
+  30%{
+    opacity:1;
+    transform:scale(1.45);
+  }
+  46%{
+    opacity:1;
+    transform:scale(.18);
+  }
+  56%{
+    opacity:1;
+    transform:scale(.26);
+  }
+  64%{
+    opacity:1;
+    transform:scale(.16);
+  }
+  72%{
+    opacity:1;
+    transform:scale(.25);
+  }
+  82%{
+    opacity:1;
+    transform:scale(.13);
+  }
+  100%{
+    opacity:0;
+    transform:scale(.05);
+  }
+}
+
+
 
 ===== SCRIPT.JS =====
 
@@ -1774,6 +2048,29 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       });
     }, 400);
+  }
+});
+
+
+// Birthday page fade-in after sunset heartbeat restart
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const overlay = document.getElementById("birthdayFadeOverlay");
+
+  if(params.get("fadein") === "1" && overlay){
+    overlay.classList.remove("hidden-fade");
+
+    setTimeout(() => {
+      overlay.classList.add("fade-away-birthday");
+    }, 300);
+
+    setTimeout(() => {
+      overlay.classList.add("hidden-fade");
+
+      if(window.history && window.history.replaceState){
+        window.history.replaceState({}, document.title, "index.html");
+      }
+    }, 2600);
   }
 });
 

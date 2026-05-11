@@ -65,16 +65,17 @@
 
 <div id="sunsetCollapse" class="sunset-collapse hidden-sunset">
   <div class="sunset-stars"></div>
+
   <div class="restarting-fate">Restarting fate...</div>
 
-  <div class="sunset-aura"></div>
-  <div class="sunset-ring ring-one"></div>
-  <div class="sunset-ring ring-two"></div>
-  <div class="sunset-core"></div>
-</div>
-
-
-<script>
+  <div class="sunset-portal">
+    <div class="sunset-orb">
+      <div class="sunset-orb-core"></div>
+      <div class="sunset-orb-ring"></div>
+      <div class="sunset-orb-aura"></div>
+    </div>
+  </div>
+</div><script>
 const memoryPhotos = [
     "memory1.jpg",
     "memory2.jpg",
@@ -111,12 +112,13 @@ function startSunsetRestart() {
   sunsetCollapse.classList.remove("hidden-sunset");
 
   if(navigator.vibrate){
-    navigator.vibrate([160,80,120]);
+    navigator.vibrate([160,80,120,80,160]);
   }
 
+  // Let the detailed sunset orb open, shrink, heartbeat, then fade into the birthday page.
   setTimeout(() => {
-    window.location.href = "index.html?v=sunset";
-  }, 5600);
+    window.location.href = "index.html?fadein=1";
+  }, 7600);
 }
 
 setTimeout(() => {
