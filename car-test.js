@@ -1,5 +1,11 @@
 const scenes = document.querySelectorAll(".scene");
 
+function restart(el){
+  el.style.animation = "none";
+  el.offsetHeight;
+  el.style.animation = "";
+}
+
 function showScene(index){
   scenes.forEach(scene => scene.classList.remove("active"));
 
@@ -9,17 +15,11 @@ function showScene(index){
   const car = current.querySelector(".car");
   const text = current.querySelector(".text");
 
-  car.style.animation = "none";
-  text.style.animation = "none";
-
-  car.offsetHeight;
-  text.offsetHeight;
-
-  car.style.animation = "";
-  text.style.animation = "";
+  restart(car);
+  restart(text);
 }
 
 showScene(0);
 
-setTimeout(() => showScene(1), 6500);
-setTimeout(() => showScene(2), 13000);
+setTimeout(() => showScene(1), 6800);
+setTimeout(() => showScene(2), 13600);

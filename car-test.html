@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Universe Test</title>
-  <link rel="stylesheet" href="car-test.css">
+  <title>Car Universe Test V2</title>
+  <link rel="stylesheet" href="car-test.css?v=2">
 </head>
 <body>
 
@@ -12,18 +12,83 @@
   <div class="stars"></div>
   <div class="road"></div>
 
-  <svg class="car jeep" viewBox="0 0 980 390">
-    <g>
-      <circle cx="105" cy="226" r="55" fill="#050505"/>
-      <circle cx="247" cy="296" r="63" fill="#050505"/>
-      <circle cx="678" cy="296" r="63" fill="#050505"/>
-      <path d="M95 178 Q95 158 118 158 L150 158 L205 105 L560 105 L665 178 L790 178 L850 235 L800 270 L95 270 Z" fill="#e85c12"/>
-      <rect x="225" y="82" width="335" height="30" rx="8" fill="#d95410"/>
-      <path d="M230 120 L355 120 L355 168 L190 168 Z" fill="#070a0e"/>
-      <path d="M375 120 L505 120 L560 168 L375 168 Z" fill="#070a0e"/>
-      <path d="M570 122 L635 168 L575 168 L520 120 Z" fill="#070a0e"/>
-      <circle cx="247" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
-      <circle cx="678" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+  <!-- Better orange 4-door Wrangler-style Jeep -->
+  <svg class="car jeep" viewBox="0 0 1200 520" aria-label="Orange four-door Wrangler style Jeep">
+    <defs>
+      <filter id="orangeGlow"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ff8a2a" flood-opacity=".8"/></filter>
+      <linearGradient id="jeepOrange" x1="0" x2="1">
+        <stop offset="0" stop-color="#ff7a1a"/>
+        <stop offset=".55" stop-color="#e95510"/>
+        <stop offset="1" stop-color="#b93a08"/>
+      </linearGradient>
+    </defs>
+
+    <g filter="url(#orangeGlow)">
+      <!-- spare tire -->
+      <circle cx="125" cy="310" r="70" fill="#060606"/>
+      <circle cx="125" cy="310" r="42" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="9"/>
+
+      <!-- wheels behind body -->
+      <circle cx="335" cy="390" r="82" fill="#030303"/>
+      <circle cx="850" cy="390" r="82" fill="#030303"/>
+
+      <!-- fenders -->
+      <path d="M230 360 Q335 250 440 360 Z" fill="#1c1c1c"/>
+      <path d="M745 360 Q850 250 955 360 Z" fill="#1c1c1c"/>
+
+      <!-- body -->
+      <path d="M160 230
+               L220 170
+               L345 165
+               L395 105
+               L760 105
+               L880 190
+               L1005 205
+               L1080 295
+               L1040 350
+               L170 350
+               Q145 300 160 230 Z"
+            fill="url(#jeepOrange)"/>
+
+      <!-- boxy roof -->
+      <rect x="405" y="70" width="360" height="45" rx="8" fill="#d64d0f"/>
+      <path d="M390 105 L790 105 L875 190 L270 190 Z" fill="#f06a18"/>
+
+      <!-- windows -->
+      <path d="M410 120 L535 120 L535 178 L355 178 Z" fill="#061018"/>
+      <path d="M560 120 L705 120 L780 178 L560 178 Z" fill="#061018"/>
+      <path d="M800 130 L860 180 L805 180 L745 120 Z" fill="#061018"/>
+
+      <!-- two visible side doors -->
+      <line x1="535" y1="125" x2="535" y2="345" stroke="#3b1608" stroke-width="6"/>
+      <line x1="705" y1="127" x2="705" y2="345" stroke="#3b1608" stroke-width="6"/>
+      <line x1="350" y1="190" x2="350" y2="345" stroke="#3b1608" stroke-width="6"/>
+      <rect x="475" y="225" width="45" height="13" rx="4" fill="#251207"/>
+      <rect x="640" y="225" width="45" height="13" rx="4" fill="#251207"/>
+
+      <!-- lower rocker panel -->
+      <rect x="185" y="315" width="835" height="38" rx="10" fill="#4a1b08"/>
+
+      <!-- grille and lights -->
+      <g fill="#181818">
+        <rect x="960" y="235" width="8" height="70" rx="3"/>
+        <rect x="978" y="235" width="8" height="70" rx="3"/>
+        <rect x="996" y="235" width="8" height="70" rx="3"/>
+        <rect x="1014" y="235" width="8" height="70" rx="3"/>
+        <rect x="1032" y="235" width="8" height="70" rx="3"/>
+      </g>
+      <ellipse cx="1060" cy="265" rx="24" ry="20" fill="#ffe08a"/>
+      <polygon points="1078,265 1190,220 1190,320" fill="rgba(255,210,120,.24)"/>
+
+      <!-- wheel details -->
+      <circle cx="335" cy="390" r="82" fill="#030303"/>
+      <circle cx="335" cy="390" r="50" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="10"/>
+      <circle cx="335" cy="390" r="15" fill="#aaa"/>
+      <circle cx="850" cy="390" r="82" fill="#030303"/>
+      <circle cx="850" cy="390" r="50" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="10"/>
+      <circle cx="850" cy="390" r="15" fill="#aaa"/>
+
+      <text x="405" y="372" font-size="34" font-family="Arial Black, Arial" fill="rgba(255,220,165,.85)">WRANGLER</text>
     </g>
   </svg>
 
@@ -36,13 +101,67 @@
   <div class="stars"></div>
   <div class="road neon"></div>
 
-  <svg class="car f1" viewBox="0 0 1080 340">
-    <g>
-      <circle cx="212" cy="255" r="65" fill="#050505"/>
-      <circle cx="827" cy="255" r="65" fill="#050505"/>
-      <path d="M70 215 L195 178 L430 170 L585 122 L780 148 L1000 205 L930 246 L115 250 Z" fill="#121941"/>
-      <text x="420" y="190" font-size="42" font-family="Arial Black" fill="#ffec45">RED BULL</text>
-      <text x="460" y="232" font-size="30" font-family="Arial Black" fill="#fff">ORACLE</text>
+  <!-- Better Red Bull / ORACLE inspired F1-style car -->
+  <svg class="car f1" viewBox="0 0 1300 430" aria-label="Red Bull Oracle inspired F1 racecar">
+    <defs>
+      <filter id="raceGlow"><feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#ff173d" flood-opacity=".9"/></filter>
+      <linearGradient id="rbBlue" x1="0" x2="1">
+        <stop offset="0" stop-color="#0b123d"/>
+        <stop offset=".6" stop-color="#141d54"/>
+        <stop offset="1" stop-color="#050817"/>
+      </linearGradient>
+    </defs>
+
+    <g filter="url(#raceGlow)">
+      <!-- tires -->
+      <circle cx="270" cy="315" r="78" fill="#020202"/>
+      <circle cx="1010" cy="315" r="78" fill="#020202"/>
+
+      <!-- rear wing -->
+      <rect x="90" y="140" width="175" height="38" rx="8" fill="#11184c"/>
+      <rect x="125" y="178" width="35" height="115" fill="#11184c"/>
+
+      <!-- front wing -->
+      <rect x="1070" y="295" width="210" height="34" rx="8" fill="#11184c"/>
+      <rect x="35" y="300" width="165" height="30" rx="8" fill="#11184c"/>
+
+      <!-- main low body -->
+      <path d="M80 290
+               L210 245
+               L460 235
+               L650 165
+               L910 195
+               L1195 270
+               L1125 325
+               L120 330 Z"
+            fill="url(#rbBlue)"/>
+
+      <!-- nose -->
+      <path d="M790 205 L1225 270 L1128 300 L760 270 Z" fill="#11184c"/>
+
+      <!-- cockpit / halo -->
+      <path d="M575 175 L665 100 L755 190 L650 215 Z" fill="#0b0d21"/>
+      <ellipse cx="692" cy="182" rx="52" ry="32" fill="#03040a"/>
+      <path d="M620 190 Q690 78 790 190" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="9"/>
+
+      <!-- red/yellow streaks -->
+      <path d="M220 260 C410 245 585 228 705 175 C800 190 895 205 1045 235"
+            fill="none" stroke="#ff2540" stroke-width="18"/>
+      <path d="M250 285 C480 270 690 260 955 245"
+            fill="none" stroke="#ffd735" stroke-width="10"/>
+      <polygon points="790,205 960,210 1110,265 890,260" fill="#c40019"/>
+
+      <!-- side text -->
+      <text x="475" y="258" font-size="52" font-family="Arial Black, Arial" fill="#ffe83e" stroke="#000" stroke-width="3">RED BULL</text>
+      <text x="535" y="310" font-size="38" font-family="Arial Black, Arial" fill="#fff" stroke="#000" stroke-width="3">ORACLE</text>
+
+      <!-- wheels again on top -->
+      <circle cx="270" cy="315" r="78" fill="#020202"/>
+      <circle cx="270" cy="315" r="48" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="9"/>
+      <circle cx="1010" cy="315" r="78" fill="#020202"/>
+      <circle cx="1010" cy="315" r="48" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="9"/>
+
+      <polygon points="1195,270 1300,230 1300,320" fill="rgba(255,255,255,.16)"/>
     </g>
   </svg>
 
@@ -55,13 +174,27 @@
   <div class="stars"></div>
   <div class="road city"></div>
 
-  <svg class="car bmw" viewBox="0 0 980 360">
+  <svg class="car bmw" viewBox="0 0 1100 420">
     <g>
-      <circle cx="242" cy="285" r="63" fill="#050505"/>
-      <circle cx="717" cy="285" r="63" fill="#050505"/>
-      <path d="M90 234 Q90 175 120 175 L225 170 L360 92 L604 98 L740 175 L840 175 Q860 205 840 254 L120 254 Z" fill="#111114"/>
-      <circle cx="744" cy="181" r="18" fill="#f8f8f8"/>
-      <path d="M744 164 A17 17 0 0 1 761 181 L744 181 Z" fill="#005cb9"/>
+      <circle cx="285" cy="330" r="78" fill="#050505"/>
+      <circle cx="815" cy="330" r="78" fill="#050505"/>
+      <path d="M95 275 Q95 205 145 205 L270 195 L425 105 L700 112 L855 205 L965 210 Q1000 250 965 300 L135 300 Z" fill="#101012"/>
+      <path d="M430 130 L550 126 L550 198 L330 198 Z" fill="#071019"/>
+      <path d="M575 126 L700 132 L805 198 L575 198 Z" fill="#071019"/>
+      <path d="M180 215 C330 175 560 168 805 210" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="7"/>
+      <rect x="900" y="230" width="28" height="45" rx="5" fill="#151517" stroke="rgba(235,235,255,.55)" stroke-width="2"/>
+      <rect x="932" y="230" width="28" height="45" rx="5" fill="#151517" stroke="rgba(235,235,255,.55)" stroke-width="2"/>
+      <ellipse cx="985" cy="245" rx="22" ry="17" fill="#fff5cd"/>
+      <polygon points="1005,245 1100,215 1100,295" fill="rgba(255,235,190,.20)"/>
+
+      <circle cx="852" cy="218" r="20" fill="#f8f8f8" stroke="#111" stroke-width="3"/>
+      <path d="M852 198 A20 20 0 0 1 872 218 L852 218 Z" fill="#005cb9"/>
+      <path d="M852 218 L852 238 A20 20 0 0 1 832 218 Z" fill="#005cb9"/>
+
+      <circle cx="285" cy="330" r="78" fill="#050505"/>
+      <circle cx="285" cy="330" r="48" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="9"/>
+      <circle cx="815" cy="330" r="78" fill="#050505"/>
+      <circle cx="815" cy="330" r="48" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="9"/>
     </g>
   </svg>
 
@@ -70,6 +203,6 @@
   </div>
 </div>
 
-<script src="car-test.js"></script>
+<script src="car-test.js?v=2"></script>
 </body>
 </html>

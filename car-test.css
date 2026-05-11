@@ -11,7 +11,7 @@ body{
   opacity:0;
   transition:opacity 1s ease;
   background:
-    radial-gradient(circle at center, rgba(60,10,90,.45), black 70%);
+    radial-gradient(circle at center, rgba(70,15,100,.45), black 72%);
 }
 
 .scene.active{
@@ -23,9 +23,10 @@ body{
   position:absolute;
   inset:-200px;
   background-image:
-    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px);
-  background-size:60px 60px;
-  opacity:.4;
+    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,135,210,.65) 1px, transparent 2px);
+  background-size:55px 55px, 96px 96px;
+  opacity:.42;
   animation:starsMove 18s linear infinite;
 }
 
@@ -39,7 +40,8 @@ body{
   bottom:0;
   width:100%;
   height:28vh;
-  background:linear-gradient(to bottom,#444,#070707);
+  background:linear-gradient(to bottom,#464646,#060606);
+  box-shadow:0 -24px 60px rgba(255,130,190,.16);
 }
 
 .road::before{
@@ -60,8 +62,8 @@ body{
 
 .neon{
   box-shadow:
-    0 -20px 70px rgba(255,0,80,.45),
-    0 -20px 90px rgba(0,120,255,.28);
+    0 -20px 70px rgba(255,0,80,.5),
+    0 -20px 90px rgba(0,120,255,.35);
 }
 
 .city{
@@ -71,50 +73,71 @@ body{
 
 .car{
   position:absolute;
-  left:-50vw;
-  bottom:10vh;
-  width:min(650px,80vw);
+  left:-62vw;
+  bottom:7vh;
+  width:min(760px,90vw);
   height:auto;
-  animation:drive 6s linear forwards;
+  animation:drive 6.6s linear forwards;
   filter:
-    drop-shadow(0 0 20px rgba(255,170,80,.5));
+    drop-shadow(0 0 18px rgba(255,255,255,.22))
+    drop-shadow(0 0 42px rgba(255,150,75,.45));
+  overflow:visible;
+}
+
+.jeep{
+  bottom:8vh;
+  width:min(720px,88vw);
 }
 
 .f1{
-  width:min(760px,88vw);
+  bottom:8vh;
+  width:min(840px,96vw);
+  filter:
+    drop-shadow(0 0 22px rgba(255,0,60,.7))
+    drop-shadow(0 0 45px rgba(0,120,255,.32));
+}
+
+.bmw{
+  bottom:8vh;
+  width:min(760px,90vw);
 }
 
 @keyframes drive{
-  from{
-    left:-55vw;
-  }
-  to{
-    left:110vw;
-  }
+  from{ left:-70vw; }
+  to{ left:112vw; }
 }
 
 .text{
   position:absolute;
-  top:32%;
+  top:31%;
   width:100%;
   text-align:center;
-  font-size:clamp(2rem,5vw,4rem);
+  font-size:clamp(2rem,5vw,4.1rem);
   color:white;
   opacity:0;
-  animation:textReveal 3s ease forwards;
+  animation:textReveal 3.3s ease forwards;
   animation-delay:1.5s;
   text-shadow:
-    0 0 22px rgba(255,255,255,.6),
-    0 0 60px rgba(255,180,120,.45);
+    0 0 22px rgba(255,255,255,.68),
+    0 0 60px rgba(255,180,120,.45),
+    0 0 105px rgba(255,80,160,.28);
 }
 
 @keyframes textReveal{
   from{
     opacity:0;
     filter:blur(18px);
+    transform:scale(.95);
   }
   to{
     opacity:1;
     filter:blur(0);
+    transform:scale(1);
   }
+}
+
+@media(max-width:700px){
+  .jeep{ width:430px; bottom:10vh; }
+  .f1{ width:500px; bottom:11vh; }
+  .bmw{ width:450px; bottom:10vh; }
 }
