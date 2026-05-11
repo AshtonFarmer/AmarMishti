@@ -72,7 +72,6 @@ function runTimelineTransition(options){
 
 const carUniverse = document.getElementById("carUniverse");
 const carScenes = Array.from(document.querySelectorAll("#carUniverse .car-scene"));
-const carNames = ["Jeep Universe", "F1 Universe", "BMW Universe"];
 
 let carTimer1;
 let carTimer2;

@@ -1678,3 +1678,179 @@ video{width:100%;display:block;background:#000}
 #carUniverse .car-text{
   color:white !important;
 }
+
+
+/* =========================================================
+   CAR ROAD + CENTER TEXT FINAL FIX
+   This overrides the test-page leftovers after integration.
+========================================================= */
+
+#carUniverse{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:99999999 !important;
+  overflow:hidden !important;
+  background:#000 !important;
+}
+
+#carUniverse.hidden{
+  display:none !important;
+}
+
+#carUniverse .car-scene{
+  position:absolute !important;
+  inset:0 !important;
+  display:none !important;
+  background:
+    radial-gradient(circle at center, rgba(70,15,100,.45), black 72%) !important;
+  overflow:hidden !important;
+}
+
+#carUniverse .car-scene.active{
+  display:block !important;
+}
+
+#carUniverse .car-stars::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-200px !important;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,135,210,.65) 1px, transparent 2px) !important;
+  background-size:55px 55px, 96px 96px !important;
+  opacity:.42 !important;
+  animation:carFinalStarsMove 18s linear infinite !important;
+}
+
+@keyframes carFinalStarsMove{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-250px); }
+}
+
+#carUniverse .car-road{
+  position:absolute !important;
+  left:0 !important;
+  bottom:0 !important;
+  width:100% !important;
+  height:28vh !important;
+  display:block !important;
+  z-index:1 !important;
+  background:linear-gradient(to bottom,#464646,#060606) !important;
+  box-shadow:0 -24px 60px rgba(255,130,190,.16) !important;
+}
+
+#carUniverse .car-road::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  top:50% !important;
+  width:240% !important;
+  height:5px !important;
+  display:block !important;
+  background:repeating-linear-gradient(to right, white 0 70px, transparent 70px 140px) !important;
+  animation:carFinalRoadMove 1.2s linear infinite !important;
+}
+
+@keyframes carFinalRoadMove{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-140px); }
+}
+
+#carUniverse .neon{
+  box-shadow:
+    0 -20px 70px rgba(255,0,80,.5),
+    0 -20px 90px rgba(0,120,255,.35) !important;
+}
+
+#carUniverse .city{
+  box-shadow:0 -20px 70px rgba(255,190,120,.28) !important;
+}
+
+#carUniverse .car{
+  position:absolute !important;
+  left:50% !important;
+  bottom:8vh !important;
+  width:min(720px,88vw) !important;
+  height:auto !important;
+  transform:translateX(-50%) !important;
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,.22))
+    drop-shadow(0 0 42px rgba(255,150,75,.45)) !important;
+  overflow:visible !important;
+  z-index:5 !important;
+}
+
+#carUniverse .jeep{
+  bottom:8vh !important;
+  width:min(720px,88vw) !important;
+}
+
+#carUniverse .f1{
+  bottom:8vh !important;
+  width:min(840px,96vw) !important;
+  filter:
+    drop-shadow(0 0 22px rgba(255,0,60,.7))
+    drop-shadow(0 0 45px rgba(0,120,255,.32)) !important;
+}
+
+#carUniverse .bmw{
+  bottom:8vh !important;
+  width:min(760px,90vw) !important;
+}
+
+#carUniverse .car.drive{
+  animation:carFinalDrive 6.5s linear forwards !important;
+}
+
+@keyframes carFinalDrive{
+  from{
+    left:-70vw;
+    transform:translateX(0);
+  }
+  to{
+    left:115vw;
+    transform:translateX(0);
+  }
+}
+
+#carUniverse .car-text{
+  position:absolute !important;
+  left:0 !important;
+  top:31% !important;
+  width:100% !important;
+  text-align:center !important;
+  font-size:clamp(2rem,5vw,4.1rem) !important;
+  color:white !important;
+  opacity:1 !important;
+  z-index:20 !important;
+  margin:0 !important;
+  transform:none !important;
+  filter:none !important;
+  text-shadow:
+    0 0 22px rgba(255,255,255,.68),
+    0 0 60px rgba(255,180,120,.45),
+    0 0 105px rgba(255,80,160,.28) !important;
+}
+
+#carUniverse .car-text.animate{
+  animation:carFinalTextReveal 3.3s ease forwards !important;
+}
+
+@keyframes carFinalTextReveal{
+  from{
+    opacity:0;
+    filter:blur(18px);
+    transform:scale(.95);
+  }
+  to{
+    opacity:1;
+    filter:blur(0);
+    transform:scale(1);
+  }
+}
+
+@media(max-width:700px){
+  #carUniverse .jeep{ width:430px !important; bottom:10vh !important; }
+  #carUniverse .f1{ width:500px !important; bottom:11vh !important; }
+  #carUniverse .bmw{ width:450px !important; bottom:10vh !important; }
+}
