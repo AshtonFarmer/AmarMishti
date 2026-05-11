@@ -1,0 +1,772 @@
+===== INDEX.HTML =====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Happy Birthday Tanima ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<audio id="bgMusic" loop>
+  <source src="sheesha.mp3" type="audio/mpeg">
+</audio>
+
+<section id="intro" class="intro-screen">
+  <div class="stars"></div>
+  <div class="balloons balloon-left">💗</div>
+  <div class="balloons balloon-right">💗</div>
+  <div class="balloons balloon-bottom-left">❤️</div>
+  <div class="balloons balloon-bottom-right">💖</div>
+
+  <div class="intro-content">
+    <h2>Happy Birthday</h2>
+    <h1>Tanima</h1>
+
+    <p class="tagline">My person. My home. My multiverse.</p>
+
+    <p class="quote">
+      In every universe,<br>
+      in every timeline,<br>
+      in every lifetime,<br>
+      I’ll always find you.
+    </p>
+
+    <div class="infinity">∞</div>
+
+    <p class="small-quote">
+      Our love. Our story.<br>
+      Across every universe, every timeline, every lifetime.
+    </p>
+
+    <p class="break-text">Nothing can break us. ❤️</p>
+
+    <button id="boltBtn" class="bolt-button">⚡</button>
+
+    <p class="tap-text">Tap the flash<br>to open my world ♡<br><span>♪ Sheesha will begin playing ♪</span></p>
+  </div>
+</section>
+
+<section id="timeline" class="timeline hidden">
+  <div class="timeline-stars"></div>
+  <div class="timeline-box">
+    <h2 id="timelineTitle">Searching the multiverse...</h2>
+    <p id="foundText" class="found-hidden">Tanima found ❤️</p>
+  </div>
+</section>
+
+<section id="videoPage" class="video-page hidden">
+  <div class="hearts"></div>
+
+  <main class="page">
+    <section class="card">
+      <h1 class="video-title">Nothing can break us<br><span>❤️</span></h1>
+      <p class="subtitle">A little piece of my heart, made just for you.</p>
+
+      <div class="video-wrap">
+        <video id="loveVideo" playsinline preload="auto" controls>
+          <source src="love-video.mp4" type="video/mp4" />
+        </video>
+
+        <button id="startBtn" class="start-btn">
+          Tap to open my heart ❤️
+        </button>
+      </div>
+
+      <p class="note">Turn your volume up.</p>
+
+      <!-- This is a normal link to a separate page, so it WILL work -->
+      <a class="continue-btn" href="ending.html">Continue to the ending ❤️</a>
+    </section>
+  </main>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+===== ENDING.HTML =====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Ami tomake bhalobashi ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="ending-body">
+  <section class="ending-page">
+    <div class="flower-bg">
+      <span>🌹</span><span>🌸</span><span>🌺</span><span>🌷</span><span>💐</span>
+      <span>🌹</span><span>🌸</span><span>🌺</span><span>🌷</span><span>💐</span>
+      <span>🌹</span><span>🌸</span><span>🌺</span><span>🌷</span><span>💐</span>
+    </div>
+
+    <div class="ending-message">
+      <h1>Ami tomake bhalobashi ❤️</h1>
+      <p>I love you.</p>
+      <p>In every universe, every timeline, every lifetime.</p>
+
+      <div class="ending-buttons">
+      <a class="replay-btn" href="index.html?replay=1">Find us in another universe ⚡</a>
+
+      <button id="btsBtn" class="bts-btn hidden-bts">
+        Behind the scenes 😉
+      </button>
+    </div>
+
+    <div id="btsModal" class="bts-modal hidden-bts">
+      <div class="bts-content">
+        <h2>Behind the scenes ⚡</h2>
+
+        <p>
+          Every universe. Every timeline. Every animation.<br>
+          Built line by line in HTML, CSS, and JavaScript.
+        </p>
+
+        <div class="code-window">
+<pre>
+HTML → structure of every page
+CSS → all animations, stars, flowers, neon glows
+JavaScript → multiverse transitions, replay system, fullscreen video logic
+
+Features included:
+- Birthday intro screen
+- Flash lightning transition
+- Timeline search animation
+- Multiverse replay system
+- Bengali ending
+- Flower bloom animations
+- Audio integration
+- Fullscreen cinematic video
+- Galaxy particles
+- Replay universe logic
+
+This entire experience was handcrafted
+just to make you smile ❤️
+</pre>
+        </div>
+
+        <button id="closeBts" class="close-bts">
+          Close ♡
+        </button>
+      </div>
+    </div>
+    </div>
+  </section>
+<script src="ending.js"></script>
+</body>
+</html>
+
+
+
+===== STYLE.CSS =====
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  min-height:100%;
+  background:#000;
+  color:white;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  overflow-x:hidden;
+}
+.hidden{display:none!important}
+
+/* INTRO */
+.intro-screen{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  padding:26px 16px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,31,139,.35), transparent 26%),
+    radial-gradient(circle at 50% 90%, rgba(255,0,125,.45), transparent 38%),
+    linear-gradient(180deg,#150010 0%,#050008 55%,#000 100%);
+}
+.intro-screen::before{
+  content:"⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡";
+  position:absolute;
+  inset:0;
+  font-size:28px;
+  opacity:.14;
+  letter-spacing:70px;
+  animation:lightningFloat 12s linear infinite;
+}
+@keyframes lightningFloat{from{transform:translateY(100vh)}to{transform:translateY(-120vh)}}
+.stars::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1.4px),
+    radial-gradient(circle,rgba(255,80,180,.8) 1px,transparent 1.6px);
+  background-size:42px 42px,72px 72px;
+  opacity:.28;
+  animation:shimmer 7s linear infinite;
+}
+@keyframes shimmer{0%,100%{opacity:.22}50%{opacity:.42}}
+.intro-content{
+  position:relative;
+  z-index:2;
+  width:min(920px,100%);
+  text-align:center;
+}
+.intro-content h2{
+  margin:0;
+  font-family:"Brush Script MT","Segoe Script",cursive;
+  font-size:clamp(3rem,11vw,7rem);
+  font-weight:400;
+  text-shadow:0 0 12px #ff50b4,0 0 34px #ff0078,0 0 80px rgba(255,0,120,.55);
+}
+.intro-content h1{
+  margin:-8px 0 8px;
+  font-family:"Brush Script MT","Segoe Script",cursive;
+  font-size:clamp(4.6rem,18vw,11rem);
+  font-weight:400;
+  line-height:.9;
+  text-shadow:0 0 14px #ff50b4,0 0 42px #ff0082,0 0 90px rgba(255,0,150,.55);
+}
+.tagline,.small-quote{
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-size:clamp(.72rem,2.3vw,1.05rem);
+  color:#ffd2ea;
+  text-shadow:0 0 14px rgba(255,78,170,.85);
+}
+.quote{
+  margin:20px auto 12px;
+  max-width:640px;
+  font-size:clamp(1.08rem,4vw,1.65rem);
+  line-height:1.38;
+  color:#fff6fb;
+}
+.infinity{
+  font-size:clamp(2.4rem,8vw,4.5rem);
+  color:#ffd5ed;
+  text-shadow:0 0 24px #ff50aa;
+}
+.break-text{
+  font-size:clamp(1.2rem,4vw,2rem);
+  text-shadow:0 0 20px #ff50aa;
+}
+.bolt-button{
+  width:clamp(130px,34vw,230px);
+  height:clamp(130px,34vw,230px);
+  border-radius:50%;
+  border:2px solid rgba(255,175,225,.95);
+  color:white;
+  background:radial-gradient(circle,rgba(255,255,255,.92),rgba(255,0,140,.5) 18%,rgba(85,0,65,.35) 55%,rgba(255,0,150,.08));
+  font-size:clamp(4.2rem,15vw,9rem);
+  cursor:pointer;
+  box-shadow:0 0 24px white,0 0 55px #ff00a0,0 0 110px rgba(255,0,160,.75);
+  animation:pulseBolt 1.5s ease-in-out infinite;
+}
+@keyframes pulseBolt{0%,100%{transform:scale(1)}50%{transform:scale(1.06);filter:brightness(1.35)}}
+.tap-text{
+  margin:16px 0 0;
+  font-family:"Brush Script MT","Segoe Script",cursive;
+  font-size:clamp(1.8rem,7vw,4rem);
+  line-height:1.05;
+  text-shadow:0 0 12px #ff50b4,0 0 36px #ff008c;
+}
+.tap-text span{font-size:.42em;opacity:.85}
+.balloons{
+  position:absolute;
+  z-index:1;
+  font-size:clamp(3rem,14vw,8rem);
+  opacity:.72;
+  filter:drop-shadow(0 0 22px rgba(255,0,140,.9));
+  animation:float 4s ease-in-out infinite;
+}
+.balloon-left{left:4%;top:10%}.balloon-right{right:5%;top:12%;animation-delay:-1s}
+.balloon-bottom-left{left:7%;bottom:8%;animation-delay:-2s}.balloon-bottom-right{right:8%;bottom:10%;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-18px) rotate(4deg)}}
+
+/* TIMELINE */
+.timeline{
+  min-height:100vh;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:radial-gradient(circle at center,rgba(255,255,255,.12),rgba(0,0,0,.96)),linear-gradient(180deg,#0f0018,#000);
+  overflow:hidden;
+}
+.timeline-stars{
+  position:absolute;
+  inset:-200px;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.95) 1px,transparent 1.6px),
+    radial-gradient(circle,rgba(255,0,160,.8) 1px,transparent 1.8px);
+  background-size:45px 45px,75px 75px;
+  opacity:.45;
+  animation:driftStars 10s linear infinite;
+}
+@keyframes driftStars{from{transform:translateY(0)}to{transform:translateY(-120px)}}
+.timeline h2{
+  position:relative;
+  z-index:2;
+  font-size:clamp(2rem,7vw,4rem);
+  text-shadow:0 0 24px #ff00a0;
+}
+.timeline p{
+  position:relative;
+  z-index:2;
+  margin-top:140px;
+  font-size:clamp(1.8rem,6vw,3.3rem);
+  color:#ffd7ef;
+  text-shadow:0 0 18px #ff00a0;
+}
+
+/* VIDEO PAGE */
+.video-page{
+  min-height:100vh;
+  background:radial-gradient(circle at top,#3a1426 0%,#09060a 55%,#000 100%);
+}
+.page{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px 14px;
+}
+.card{
+  width:min(960px,100%);
+  text-align:center;
+  padding:20px 12px 28px;
+  position:relative;
+  z-index:2;
+}
+.video-title{
+  margin:0 0 8px;
+  font-size:clamp(2.4rem,8vw,5.4rem);
+  line-height:1;
+  letter-spacing:-.04em;
+  text-shadow:0 0 16px rgba(255,144,185,.9),0 0 34px rgba(255,75,135,.7),0 0 60px rgba(255,20,100,.35);
+}
+.subtitle{margin:0 0 18px;opacity:.9;font-size:clamp(1rem,3vw,1.4rem)}
+.video-wrap{
+  position:relative;
+  width:min(520px,100%);
+  margin:0 auto;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 0 0 2px rgba(255,255,255,.12),0 18px 60px rgba(0,0,0,.65),0 0 50px rgba(255,73,137,.35);
+  background:#000;
+}
+video{width:100%;display:block;background:#000}
+.start-btn{
+  position:absolute;
+  inset:0;
+  border:0;
+  background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.65)),radial-gradient(circle,rgba(255,95,155,.35),rgba(0,0,0,.8));
+  color:white;
+  font-size:clamp(1.3rem,5vw,2.4rem);
+  font-weight:800;
+  cursor:pointer;
+  text-shadow:0 0 18px white;
+}
+.start-btn.hidden-btn{opacity:0;pointer-events:none;transition:opacity .8s ease}
+.note{margin:16px 0 0;opacity:.75}
+.continue-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:16px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid rgba(255,220,245,.95);
+  background:linear-gradient(135deg,rgba(255,0,140,.55),rgba(255,120,200,.25));
+  color:white;
+  font-size:clamp(1.05rem,4vw,1.45rem);
+  font-weight:900;
+  box-shadow:0 0 26px rgba(255,0,160,.95),0 0 55px rgba(255,0,160,.45);
+  animation:continuePulse 1.7s ease-in-out infinite;
+}
+@keyframes continuePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.hearts::before,.hearts::after{
+  content:"❤️ 💗 ❤️ 💞 💖";
+  position:fixed;
+  left:0;
+  width:100%;
+  font-size:28px;
+  letter-spacing:36px;
+  opacity:.18;
+  white-space:nowrap;
+  animation:floatHearts 18s linear infinite;
+}
+.hearts::before{top:90%}.hearts::after{top:110%;animation-delay:-8s;opacity:.12}
+@keyframes floatHearts{from{transform:translateY(0) translateX(-10%)}to{transform:translateY(-140vh) translateX(10%)}}
+
+/* ENDING PAGE */
+.ending-body{background:#000;overflow:hidden}
+.ending-page{
+  min-height:100vh;
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at center, rgba(255,98,180,.28), rgba(0,0,0,.92) 55%),
+    linear-gradient(180deg,#160010 0%,#000 100%);
+}
+.flower-bg{
+  position:absolute;
+  inset:auto 0 -20px 0;
+  min-height:80vh;
+  display:flex;
+  flex-wrap:wrap;
+  align-content:flex-end;
+  justify-content:space-around;
+  gap:8px;
+  padding:30px 8px;
+}
+.flower-bg span{
+  font-size:clamp(3.6rem,11vw,8rem);
+  opacity:0;
+  transform:translateY(240px) scale(.25) rotate(-8deg);
+  animation:flowerBloom 2.4s ease forwards;
+  filter:drop-shadow(0 0 22px rgba(255,90,170,.95));
+}
+.flower-bg span:nth-child(2){animation-delay:.15s}.flower-bg span:nth-child(3){animation-delay:.30s}
+.flower-bg span:nth-child(4){animation-delay:.45s}.flower-bg span:nth-child(5){animation-delay:.60s}
+.flower-bg span:nth-child(6){animation-delay:.75s}.flower-bg span:nth-child(7){animation-delay:.90s}
+.flower-bg span:nth-child(8){animation-delay:1.05s}.flower-bg span:nth-child(9){animation-delay:1.20s}
+.flower-bg span:nth-child(10){animation-delay:1.35s}.flower-bg span:nth-child(11){animation-delay:1.5s}
+.flower-bg span:nth-child(12){animation-delay:1.65s}.flower-bg span:nth-child(13){animation-delay:1.8s}
+.flower-bg span:nth-child(14){animation-delay:1.95s}.flower-bg span:nth-child(15){animation-delay:2.1s}
+@keyframes flowerBloom{to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+.ending-message{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:22px;
+  width:min(900px,96%);
+}
+.ending-message h1{
+  margin:0 0 12px;
+  font-size:clamp(2.6rem,10vw,6rem);
+  line-height:1;
+  text-shadow:0 0 18px #ffb4e1,0 0 45px #ff00a0,0 0 90px rgba(255,0,160,.65);
+}
+.ending-message p{
+  margin:8px 0;
+  font-size:clamp(1.05rem,4vw,1.55rem);
+  color:#ffe2f2;
+  text-shadow:0 0 14px rgba(255,0,150,.9);
+}
+.replay-btn{
+  display:inline-block;
+  margin-top:26px;
+  padding:16px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid rgba(255,220,245,.95);
+  background:linear-gradient(135deg,rgba(255,0,140,.55),rgba(255,120,200,.24));
+  color:white;
+  font-size:clamp(1rem,3.6vw,1.35rem);
+  font-weight:900;
+  box-shadow:0 0 26px rgba(255,0,160,.95),inset 0 0 14px rgba(255,255,255,.12);
+  animation:continuePulse 1.7s ease-in-out infinite;
+}
+
+
+/* Transition text fixed + centered */
+.timeline{
+  place-items:center !important;
+  text-align:center !important;
+}
+
+.timeline-box{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:min(900px,94%);
+  min-height:260px;
+}
+
+.timeline h2{
+  margin:0 0 26px !important;
+}
+
+.timeline p{
+  margin:0 !important;
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.found-hidden{
+  opacity:0;
+  transform:translateY(14px);
+}
+
+.found-show{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+}
+
+
+/* Behind the scenes button */
+.ending-buttons{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+}
+
+.bts-btn{
+  opacity:0;
+  transform:translateY(18px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.bts-btn.show-bts{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.bts-btn,
+.close-bts{
+  padding:14px 24px;
+  border-radius:999px;
+  border:1px solid rgba(255,220,245,.95);
+  background:linear-gradient(135deg,rgba(255,0,140,.45),rgba(255,120,200,.2));
+  color:white;
+  font-size:clamp(.95rem,3vw,1.2rem);
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:
+    0 0 18px rgba(255,0,160,.85),
+    inset 0 0 12px rgba(255,255,255,.08);
+}
+
+/* Modal */
+.bts-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999999;
+  display:grid;
+  place-items:center;
+  background:rgba(0,0,0,.86);
+  backdrop-filter:blur(12px);
+}
+
+.hidden-bts{
+  display:none;
+}
+
+.bts-content{
+  width:min(950px,92%);
+  max-height:88vh;
+  overflow:auto;
+  border-radius:26px;
+  padding:28px;
+  background:
+    radial-gradient(circle at top, rgba(255,0,160,.22), rgba(0,0,0,.92)),
+    linear-gradient(180deg,#170012,#020003);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:
+    0 0 45px rgba(255,0,160,.4),
+    0 0 120px rgba(255,0,160,.18);
+}
+
+.bts-content h2{
+  margin-top:0;
+  font-size:clamp(2rem,7vw,4rem);
+  text-align:center;
+  text-shadow:
+    0 0 18px rgba(255,255,255,.9),
+    0 0 45px rgba(255,0,160,1);
+}
+
+.bts-content p{
+  text-align:center;
+  font-size:clamp(1rem,3vw,1.35rem);
+  color:#ffe4f4;
+}
+
+.code-window{
+  margin-top:22px;
+  border-radius:18px;
+  overflow:auto;
+  background:#050505;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 0 25px rgba(255,255,255,.04);
+}
+
+.code-window pre{
+  margin:0;
+  padding:24px;
+  color:#ffb7dd;
+  font-size:.95rem;
+  line-height:1.7;
+  white-space:pre-wrap;
+}
+
+
+
+===== SCRIPT.JS =====
+
+const intro = document.getElementById("intro");
+const videoPage = document.getElementById("videoPage");
+const timeline = document.getElementById("timeline");
+const timelineTitle = document.getElementById("timelineTitle");
+const foundText = document.getElementById("foundText");
+const boltBtn = document.getElementById("boltBtn");
+const bgMusic = document.getElementById("bgMusic");
+const video = document.getElementById("loveVideo");
+const startBtn = document.getElementById("startBtn");
+
+function vibrateHeart(){
+  if(navigator.vibrate){
+    navigator.vibrate([120, 50, 120]);
+  }
+}
+
+function resetTimeline(){
+  foundText.classList.remove("found-show");
+  foundText.classList.add("found-hidden");
+}
+
+function runTimelineTransition(options){
+  const searchText = options.searchText || "Searching the multiverse...";
+  const foundMessage = options.foundMessage || "Tanima found ❤️";
+  const after = options.after || function(){};
+
+  resetTimeline();
+
+  timelineTitle.textContent = searchText;
+  foundText.textContent = foundMessage;
+
+  timeline.classList.remove("hidden");
+
+  // Wait first, then reveal the found text so it doesn't show instantly.
+  setTimeout(() => {
+    foundText.classList.remove("found-hidden");
+    foundText.classList.add("found-show");
+  }, 1900);
+
+  // Keep the found text readable before moving on.
+  setTimeout(() => {
+    timeline.classList.add("hidden");
+    resetTimeline();
+    after();
+  }, 5000);
+}
+
+boltBtn.addEventListener("click", async () => {
+  vibrateHeart();
+
+  try{
+    bgMusic.volume = 0.35;
+    await bgMusic.play();
+  }catch(e){}
+
+  runTimelineTransition({
+    searchText: "Searching the multiverse...",
+    foundMessage: "Tanima Das found ❤️",
+    after: () => {
+      intro.classList.add("hidden");
+      videoPage.classList.remove("hidden");
+      window.scrollTo(0,0);
+    }
+  });
+});
+
+startBtn.addEventListener("click", async () => {
+  startBtn.classList.add("hidden-btn");
+  video.controls = true;
+  video.muted = false;
+  video.currentTime = 0;
+
+  try{
+    await video.play();
+  }catch(e){
+    startBtn.classList.remove("hidden-btn");
+    startBtn.textContent = "Tap again to play ❤️";
+    return;
+  }
+
+  try{
+    if(video.requestFullscreen){
+      await video.requestFullscreen();
+    }else if(video.webkitEnterFullscreen){
+      video.webkitEnterFullscreen();
+    }else if(video.webkitRequestFullscreen){
+      await video.webkitRequestFullscreen();
+    }
+  }catch(e){}
+});
+
+// Replay from the ending page: show another multiverse transition first.
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+
+  if(params.get("replay") === "1"){
+    intro.classList.add("hidden");
+    videoPage.classList.add("hidden");
+
+    runTimelineTransition({
+      searchText: "Searching for us in another universe...",
+      foundMessage: "Another lifetime found ❤️",
+      after: () => {
+        intro.classList.remove("hidden");
+        videoPage.classList.add("hidden");
+
+        // clean URL so refreshing doesn't keep replaying the transition
+        if(window.history && window.history.replaceState){
+          window.history.replaceState({}, document.title, "index.html");
+        }
+
+        window.scrollTo(0,0);
+      }
+    });
+  }
+});
+
+
+
+===== ENDING.JS =====
+
+
+window.addEventListener("DOMContentLoaded", () => {
+
+  const btsBtn = document.getElementById("btsBtn");
+  const btsModal = document.getElementById("btsModal");
+  const closeBts = document.getElementById("closeBts");
+
+  // Wait for flower animation to feel complete
+  setTimeout(() => {
+    if(btsBtn){
+      btsBtn.classList.remove("hidden-bts");
+
+      requestAnimationFrame(() => {
+        btsBtn.classList.add("show-bts");
+      });
+    }
+  }, 3200);
+
+  if(btsBtn){
+    btsBtn.addEventListener("click", () => {
+      btsModal.classList.remove("hidden-bts");
+    });
+  }
+
+  if(closeBts){
+    closeBts.addEventListener("click", () => {
+      btsModal.classList.add("hidden-bts");
+    });
+  }
+
+});

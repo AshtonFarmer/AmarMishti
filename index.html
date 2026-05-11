@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Happy Birthday Tanima ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<audio id="bgMusic" loop>
+  <source src="sheesha.mp3" type="audio/mpeg">
+</audio>
+
+<section id="intro" class="intro-screen">
+  <div class="stars"></div>
+  <div class="balloons balloon-left">💗</div>
+  <div class="balloons balloon-right">💗</div>
+  <div class="balloons balloon-bottom-left">❤️</div>
+  <div class="balloons balloon-bottom-right">💖</div>
+
+  <div class="intro-content">
+    <h2>Happy Birthday</h2>
+    <h1>Tanima</h1>
+
+    <p class="tagline">My person. My home. My multiverse.</p>
+
+    <p class="quote">
+      In every universe,<br>
+      in every timeline,<br>
+      in every lifetime,<br>
+      I’ll always find you.
+    </p>
+
+    <div class="infinity">∞</div>
+
+    <p class="small-quote">
+      Our love. Our story.<br>
+      Across every universe, every timeline, every lifetime.
+    </p>
+
+    <p class="break-text">Nothing can break us. ❤️</p>
+
+    <button id="boltBtn" class="bolt-button">⚡</button>
+
+    <p class="tap-text">Tap the flash<br>to open my world ♡<br><span>♪ Sheesha will begin playing ♪</span></p>
+  </div>
+</section>
+
+<section id="timeline" class="timeline hidden">
+  <div class="timeline-stars"></div>
+  <div class="timeline-box">
+    <h2 id="timelineTitle">Searching the multiverse...</h2>
+
+    <div id="scanLog" class="scan-log">
+      <p class="scan-line hidden-line">Scanning timelines...</p>
+      <p class="scan-line hidden-line">Connection detected...</p>
+      <p class="scan-line hidden-line">Soul recognized...</p>
+      <p class="scan-line hidden-line">Synchronizing universes...</p>
+    </div>
+
+    <p id="foundText" class="found-hidden">Tanima found ❤️</p>
+  </div>
+</section>
+
+<section id="videoPage" class="video-page hidden">
+  <div class="hearts"></div>
+
+  <main class="page">
+    <section class="card">
+      <h1 class="video-title">Nothing can break us<br><span>❤️</span></h1>
+      <p class="subtitle">A little piece of my heart, made just for you.</p>
+
+      <div class="video-wrap">
+        <video id="loveVideo" playsinline preload="auto" controls>
+          <source src="love-video.mp4" type="video/mp4" />
+        </video>
+
+        <button id="startBtn" class="start-btn">
+          Tap to open my heart ❤️
+        </button>
+      </div>
+
+      <p class="note">Turn your volume up.</p>
+
+      <!-- This is a normal link to a separate page, so it WILL work -->
+      <a class="continue-btn" href="ending.html">Continue to the ending ❤️</a>
+    </section>
+  </main>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
