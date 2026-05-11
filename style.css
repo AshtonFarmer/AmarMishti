@@ -933,3 +933,131 @@ video{width:100%;display:block;background:#000}
   .memory-pos-3{ left:36%; top:42%; }
   .memory-pos-6{ left:38%; bottom:14%; }
 }
+
+
+/* =========================================================
+   SUNSET UNIVERSE COLLAPSE RESTART - FULLY INTEGRATED
+========================================================= */
+
+.sunset-collapse{
+  position:fixed;
+  inset:0;
+  z-index:999999999;
+  background:#000;
+  overflow:hidden;
+  display:block;
+}
+
+.hidden-sunset{
+  display:none !important;
+}
+
+.sunset-stars::before{
+  content:"";
+  position:absolute;
+  inset:-200px;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255,170,95,.75) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255,90,145,.65) 1px, transparent 1.8px);
+  background-size:55px 55px, 82px 82px, 120px 120px;
+  opacity:.28;
+  animation:collapseStars 5.6s ease forwards;
+}
+
+@keyframes collapseStars{
+  0%{
+    transform:scale(1);
+    opacity:.28;
+  }
+  65%{
+    transform:scale(1.8);
+    opacity:.16;
+  }
+  100%{
+    transform:scale(2.6);
+    opacity:0;
+  }
+}
+
+.restarting-fate{
+  position:absolute;
+  left:50%;
+  top:42%;
+  transform:translate(-50%,-50%);
+  color:white;
+  font-size:clamp(1.5rem,5vw,3rem);
+  letter-spacing:.08em;
+  opacity:0;
+  z-index:3;
+  text-align:center;
+  white-space:nowrap;
+  text-shadow:
+    0 0 20px rgba(255,210,150,.95),
+    0 0 50px rgba(255,130,90,.75),
+    0 0 85px rgba(255,70,130,.55);
+  animation:fateAppear 2.2s ease forwards;
+}
+
+@keyframes fateAppear{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.92);
+  }
+  100%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+}
+
+.sunset-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(0);
+  z-index:4;
+  background:
+    radial-gradient(circle at center,
+      rgba(255,255,255,1) 0%,
+      rgba(255,232,165,1) 16%,
+      rgba(255,188,90,1) 35%,
+      rgba(255,125,86,1) 56%,
+      rgba(255,83,130,.98) 78%,
+      rgba(255,47,110,.88) 100%);
+  box-shadow:
+    0 0 35px rgba(255,255,255,.98),
+    0 0 85px rgba(255,210,120,.98),
+    0 0 170px rgba(255,130,85,.82),
+    0 0 280px rgba(255,70,130,.62);
+  animation:sunsetExpand 2.55s cubic-bezier(.12,.84,.32,1) forwards;
+  animation-delay:2.65s;
+}
+
+@keyframes sunsetExpand{
+  0%{
+    transform:translate(-50%,-50%) scale(0);
+    opacity:0;
+  }
+  12%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1.2);
+  }
+  34%{
+    transform:translate(-50%,-50%) scale(7);
+  }
+  68%{
+    transform:translate(-50%,-50%) scale(45);
+  }
+  100%{
+    transform:translate(-50%,-50%) scale(135);
+    opacity:1;
+  }
+}
+
+.restart-universe{
+  cursor:pointer;
+  border:1px solid rgba(255,220,245,.95);
+}

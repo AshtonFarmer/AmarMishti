@@ -55,10 +55,18 @@
     In every universe... I still find you. ❤️
   </div>
 
-  <a id="restartUniverse" class="restart-universe hidden-memory" href="index.html">
+  <button id="restartUniverse" class="restart-universe hidden-memory">
     Restart our universe ⚡
-  </a>
+  </button>
 </section>
+
+
+<div id="sunsetCollapse" class="sunset-collapse hidden-sunset">
+  <div class="sunset-stars"></div>
+  <div class="restarting-fate">Restarting fate...</div>
+  <div class="sunset-core"></div>
+</div>
+
 
 <script>
 const memoryPhotos = [
@@ -83,6 +91,7 @@ const transition = document.getElementById("memoryTransition");
 const universe = document.getElementById("memoryUniverse");
 const container = document.getElementById("memoryContainer");
 const restart = document.getElementById("restartUniverse");
+const sunsetCollapse = document.getElementById("sunsetCollapse");
 
 function placeMemory(photoName, index) {
   const img = document.createElement("img");
@@ -90,6 +99,18 @@ function placeMemory(photoName, index) {
   img.className = "floating-memory memory-pos-" + ((index % 8) + 1);
   img.alt = "A memory";
   container.appendChild(img);
+}
+
+function startSunsetRestart() {
+  sunsetCollapse.classList.remove("hidden-sunset");
+
+  if(navigator.vibrate){
+    navigator.vibrate([160,80,120]);
+  }
+
+  setTimeout(() => {
+    window.location.href = "index.html?v=sunset";
+  }, 5600);
 }
 
 setTimeout(() => {
@@ -111,6 +132,27 @@ setTimeout(() => {
 
   }, 1200);
 }, 6200);
+
+restart.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  document.querySelectorAll(".floating-memory").forEach((photo, index) => {
+    photo.style.transition = "all 2.8s ease";
+    photo.style.opacity = "0";
+    photo.style.transform = "scale(.6) translateY(-120px)";
+    photo.style.filter = "blur(3px)";
+  });
+
+  const finalLine = document.getElementById("memoryFinal");
+  if(finalLine){
+    finalLine.style.transition = "opacity 1.5s ease";
+    finalLine.style.opacity = "0";
+  }
+
+  setTimeout(() => {
+    startSunsetRestart();
+  }, 1800);
+});
 </script>
 
 </body>
