@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Universe Test</title>
+  <link rel="stylesheet" href="car-test.css">
+</head>
+<body>
+
+<div class="scene active" id="scene1">
+  <div class="stars"></div>
+  <div class="road"></div>
+
+  <svg class="car jeep" viewBox="0 0 980 390">
+    <g>
+      <circle cx="105" cy="226" r="55" fill="#050505"/>
+      <circle cx="247" cy="296" r="63" fill="#050505"/>
+      <circle cx="678" cy="296" r="63" fill="#050505"/>
+      <path d="M95 178 Q95 158 118 158 L150 158 L205 105 L560 105 L665 178 L790 178 L850 235 L800 270 L95 270 Z" fill="#e85c12"/>
+      <rect x="225" y="82" width="335" height="30" rx="8" fill="#d95410"/>
+      <path d="M230 120 L355 120 L355 168 L190 168 Z" fill="#070a0e"/>
+      <path d="M375 120 L505 120 L560 168 L375 168 Z" fill="#070a0e"/>
+      <path d="M570 122 L635 168 L575 168 L520 120 Z" fill="#070a0e"/>
+      <circle cx="247" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+      <circle cx="678" cy="296" r="38" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="8"/>
+    </g>
+  </svg>
+
+  <div class="text">
+    Built different. Driven by love.
+  </div>
+</div>
+
+<div class="scene" id="scene2">
+  <div class="stars"></div>
+  <div class="road neon"></div>
+
+  <svg class="car f1" viewBox="0 0 1080 340">
+    <g>
+      <circle cx="212" cy="255" r="65" fill="#050505"/>
+      <circle cx="827" cy="255" r="65" fill="#050505"/>
+      <path d="M70 215 L195 178 L430 170 L585 122 L780 148 L1000 205 L930 246 L115 250 Z" fill="#121941"/>
+      <text x="420" y="190" font-size="42" font-family="Arial Black" fill="#ffec45">RED BULL</text>
+      <text x="460" y="232" font-size="30" font-family="Arial Black" fill="#fff">ORACLE</text>
+    </g>
+  </svg>
+
+  <div class="text">
+    You'll always be my favorite destination.
+  </div>
+</div>
+
+<div class="scene" id="scene3">
+  <div class="stars"></div>
+  <div class="road city"></div>
+
+  <svg class="car bmw" viewBox="0 0 980 360">
+    <g>
+      <circle cx="242" cy="285" r="63" fill="#050505"/>
+      <circle cx="717" cy="285" r="63" fill="#050505"/>
+      <path d="M90 234 Q90 175 120 175 L225 170 L360 92 L604 98 L740 175 L840 175 Q860 205 840 254 L120 254 Z" fill="#111114"/>
+      <circle cx="744" cy="181" r="18" fill="#f8f8f8"/>
+      <path d="M744 164 A17 17 0 0 1 761 181 L744 181 Z" fill="#005cb9"/>
+    </g>
+  </svg>
+
+  <div class="text">
+    My favorite road always leads to you.
+  </div>
+</div>
+
+<script src="car-test.js"></script>
+</body>
+</html>

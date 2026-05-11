@@ -1,0 +1,120 @@
+body{
+  margin:0;
+  overflow:hidden;
+  background:black;
+  font-family:Arial,sans-serif;
+}
+
+.scene{
+  position:fixed;
+  inset:0;
+  opacity:0;
+  transition:opacity 1s ease;
+  background:
+    radial-gradient(circle at center, rgba(60,10,90,.45), black 70%);
+}
+
+.scene.active{
+  opacity:1;
+}
+
+.stars::before{
+  content:"";
+  position:absolute;
+  inset:-200px;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px);
+  background-size:60px 60px;
+  opacity:.4;
+  animation:starsMove 18s linear infinite;
+}
+
+@keyframes starsMove{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-250px); }
+}
+
+.road{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:28vh;
+  background:linear-gradient(to bottom,#444,#070707);
+}
+
+.road::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:240%;
+  height:5px;
+  background:
+    repeating-linear-gradient(to right, white 0 70px, transparent 70px 140px);
+  animation:roadMove 1.2s linear infinite;
+}
+
+@keyframes roadMove{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-140px); }
+}
+
+.neon{
+  box-shadow:
+    0 -20px 70px rgba(255,0,80,.45),
+    0 -20px 90px rgba(0,120,255,.28);
+}
+
+.city{
+  box-shadow:
+    0 -20px 70px rgba(255,190,120,.28);
+}
+
+.car{
+  position:absolute;
+  left:-50vw;
+  bottom:10vh;
+  width:min(650px,80vw);
+  height:auto;
+  animation:drive 6s linear forwards;
+  filter:
+    drop-shadow(0 0 20px rgba(255,170,80,.5));
+}
+
+.f1{
+  width:min(760px,88vw);
+}
+
+@keyframes drive{
+  from{
+    left:-55vw;
+  }
+  to{
+    left:110vw;
+  }
+}
+
+.text{
+  position:absolute;
+  top:32%;
+  width:100%;
+  text-align:center;
+  font-size:clamp(2rem,5vw,4rem);
+  color:white;
+  opacity:0;
+  animation:textReveal 3s ease forwards;
+  animation-delay:1.5s;
+  text-shadow:
+    0 0 22px rgba(255,255,255,.6),
+    0 0 60px rgba(255,180,120,.45);
+}
+
+@keyframes textReveal{
+  from{
+    opacity:0;
+    filter:blur(18px);
+  }
+  to{
+    opacity:1;
+    filter:blur(0);
+  }
+}
