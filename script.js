@@ -17,11 +17,16 @@ function vibrateHeart(){
 function resetTimeline(){
   foundText.classList.remove("found-show");
   foundText.classList.add("found-hidden");
+
+  document.querySelectorAll(".scan-line").forEach(line => {
+    line.classList.remove("show-line");
+    line.classList.add("hidden-line");
+  });
 }
 
 function runTimelineTransition(options){
   const searchText = options.searchText || "Searching the multiverse...";
-  const foundMessage = options.foundMessage || "Tanima found ❤️";
+  const foundMessage = options.foundMessage || "Tanima Das found ❤️";
   const after = options.after || function(){};
 
   resetTimeline();
@@ -29,41 +34,30 @@ function runTimelineTransition(options){
   timelineTitle.textContent = searchText;
   foundText.textContent = foundMessage;
 
+  // Make absolutely sure the constellation page is visible.
+  timeline.classList.remove("hidden");
+  timeline.style.display = "grid";
+
   const scanLines = document.querySelectorAll(".scan-line");
 
-  scanLines.forEach(line => {
-    line.classList.remove("show-line");
-    line.classList.add("hidden-line");
-  });
-
-  timeline.classList.remove("hidden");
-
-  // Reveal scan log lines one by one
   scanLines.forEach((line, index) => {
     setTimeout(() => {
       line.classList.remove("hidden-line");
       line.classList.add("show-line");
-    }, 700 + (index * 550));
+    }, 700 + (index * 600));
   });
 
-  // Then reveal Tanima found
   setTimeout(() => {
     foundText.classList.remove("found-hidden");
     foundText.classList.add("found-show");
-  }, 3200);
+  }, 3500);
 
-  // Keep everything readable before moving on
   setTimeout(() => {
     timeline.classList.add("hidden");
+    timeline.style.display = "";
     resetTimeline();
-
-    scanLines.forEach(line => {
-      line.classList.remove("show-line");
-      line.classList.add("hidden-line");
-    });
-
     after();
-  }, 6200);
+  }, 6800);
 }
 
 boltBtn.addEventListener("click", async () => {
@@ -115,12 +109,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
 
   if(params.get("replay") === "1"){
-    // Hide the birthday page and video page immediately so only the transition shows.
     intro.classList.add("hidden");
     videoPage.classList.add("hidden");
     resetTimeline();
 
-    // Let the page load first, then run the transition slowly.
     setTimeout(() => {
       runTimelineTransition({
         searchText: "Searching for us in another universe...",
