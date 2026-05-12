@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css?v=iframecars1" />
+  <link rel="stylesheet" href="style.css?v=envelopes1" />
 </head>
 <body>
 
@@ -107,6 +107,24 @@
       <h1 class="video-title">Nothing can break us<br><span>❤️</span></h1>
       <p class="subtitle">A little piece of my heart, made just for you.</p>
 
+      
+<div class="video-envelope left-envelope" data-envelope="left">
+  <button class="envelope-btn" type="button" aria-label="Open cute note one">
+    <span class="envelope-closed">💌</span>
+    <span class="envelope-opened">📬</span>
+  </button>
+  <p class="envelope-label">Open me</p>
+</div>
+
+<div class="video-envelope right-envelope" data-envelope="right">
+  <button class="envelope-btn" type="button" aria-label="Open cute note two">
+    <span class="envelope-closed">💌</span>
+    <span class="envelope-opened">📬</span>
+  </button>
+  <p class="envelope-label">No, open me</p>
+</div>
+
+
       <div class="video-wrap">
         <video id="loveVideo" playsinline preload="auto" controls>
           <source src="love-video.mp4" type="video/mp4" />
@@ -125,6 +143,18 @@
   </main>
 </section>
 
-<script src="script.js?v=iframecars1"></script>
+
+<div id="jokeEnvelopeModal" class="joke-modal hidden-joke">
+  <div class="joke-letter">
+    <button id="closeJokeLetter" class="close-joke" type="button">×</button>
+    <div class="letter-paper">
+      <h2 id="jokeTitle">A tiny note 💌</h2>
+      <p id="jokeText"></p>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js?v=envelopes1"></script>
 </body>
 </html>

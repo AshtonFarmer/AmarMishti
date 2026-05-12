@@ -191,3 +191,54 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 2600);
   }
 });
+
+
+/* =========================================================
+   VIDEO PAGE CUTE ENVELOPES
+========================================================= */
+
+const envelopeNotes = {
+  left: {
+    title: "Important chicken business 💌",
+    text: "\"What did the chicken say to the pig?\" \"Fawwwwkkkkk Off!\""
+  },
+  right: {
+    title: "Extremely serious bird joke 💌",
+    text: "\"Why do seagulls fly over the ocean? Because if they flew over the bay, they'd be bagels.\""
+  }
+};
+
+const jokeModal = document.getElementById("jokeEnvelopeModal");
+const jokeTitle = document.getElementById("jokeTitle");
+const jokeText = document.getElementById("jokeText");
+const closeJokeLetter = document.getElementById("closeJokeLetter");
+
+document.querySelectorAll(".video-envelope").forEach(envelope => {
+  const button = envelope.querySelector(".envelope-btn");
+
+  button.addEventListener("click", () => {
+    const key = envelope.dataset.envelope;
+    const note = envelopeNotes[key];
+
+    envelope.classList.add("opened");
+
+    jokeTitle.textContent = note.title;
+    jokeText.textContent = note.text;
+
+    jokeModal.classList.remove("hidden-joke");
+  });
+});
+
+if(closeJokeLetter){
+  closeJokeLetter.addEventListener("click", () => {
+    jokeModal.classList.add("hidden-joke");
+  });
+}
+
+if(jokeModal){
+  jokeModal.addEventListener("click", (e) => {
+    if(e.target === jokeModal){
+      jokeModal.classList.add("hidden-joke");
+    }
+  });
+}
