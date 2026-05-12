@@ -307,5 +307,3 @@ I always find you again.
 
 Made by hand with love.
 For Tanima Das ❤️
-
-- Ashton Farmer
