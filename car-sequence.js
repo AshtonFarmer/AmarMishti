@@ -2,43 +2,44 @@ const scenes = Array.from(document.querySelectorAll(".scene"));
 const label = document.getElementById("sceneLabel");
 const names = ["Jeep Universe", "F1 Universe", "BMW Universe"];
 
-let timer1;
-let timer2;
+let currentTimer1;
+let currentTimer2;
 
-function restartClass(el, className){
+function restart(el, className){
   if(!el) return;
   el.classList.remove(className);
-  void el.offsetWidth;
+  el.offsetHeight;
   el.classList.add(className);
 }
 
 function showScene(index){
-  clearTimeout(timer1);
-  clearTimeout(timer2);
+  clearTimeout(currentTimer1);
+  clearTimeout(currentTimer2);
 
-  scenes.forEach(scene => {
-    scene.classList.remove("active");
-
-    const oldCar = scene.querySelector(".car");
-    const oldText = scene.querySelector(".text");
-
-    if(oldCar) oldCar.classList.remove("drive");
-    if(oldText) oldText.classList.remove("animate");
-  });
+  scenes.forEach(scene => scene.classList.remove("active"));
 
   const current = scenes[index];
   current.classList.add("active");
-
-  if(label) label.textContent = names[index];
+  label.textContent = names[index];
 
   const car = current.querySelector(".car");
   const text = current.querySelector(".text");
 
-  // Start both effects right away. No more center pop-up.
-  restartClass(text, "animate");
-  restartClass(car, "drive");
+  // Show centered first so you can confirm it exists.
+  car.classList.remove("drive");
+  text.classList.remove("animate");
+
+  currentTimer1 = setTimeout(() => {
+    restart(text, "animate");
+  }, 250);
+
+  currentTimer2 = setTimeout(() => {
+    restart(car, "drive");
+  }, 1300);
 }
 
 showScene(0);
+
+// Automatic sequence
 setTimeout(() => showScene(1), 8000);
 setTimeout(() => showScene(2), 16000);

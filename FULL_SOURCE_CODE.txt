@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Happy Birthday Tanima ❤️</title>
-  <link rel="stylesheet" href="style.css?v=wordsfixed1" />
+  <link rel="stylesheet" href="style.css?v=iframecars1" />
 </head>
 <body>
 
@@ -127,7 +127,7 @@
   </main>
 </section>
 
-<script src="script.js?v=wordsfixed1"></script>
+<script src="script.js?v=iframecars1"></script>
 </body>
 </html>
 
@@ -406,7 +406,7 @@ restart.addEventListener("click", (e) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Car Universe Sequence</title>
-  <link rel="stylesheet" href="car-sequence.css?v=wordsfixed1">
+  <link rel="stylesheet" href="car-sequence.css?v=iframe1">
 </head>
 <body>
 
@@ -495,7 +495,7 @@ restart.addEventListener("click", (e) => {
   <div class="text">My favorite road always leads to you.</div>
 </section>
 
-<script src="car-sequence.js?v=wordsfixed1"></script>
+<script src="car-sequence.js?v=iframe1"></script>
 </body>
 </html>
 
@@ -602,15 +602,14 @@ body{
 
 .car{
   position:absolute;
-  left:-75vw;
+  left:50%;
   bottom:8vh;
   width:min(720px,88vw);
   height:auto;
-  z-index:5;
+  transform:translateX(-50%);
+  filter:drop-shadow(0 0 18px rgba(255,255,255,.22)) drop-shadow(0 0 42px rgba(255,150,75,.45));
   overflow:visible;
-  filter:
-    drop-shadow(0 0 18px rgba(255,255,255,.22))
-    drop-shadow(0 0 42px rgba(255,150,75,.45));
+  z-index:5;
 }
 
 .f1{
@@ -628,14 +627,9 @@ body{
 
 @keyframes drive{
   from{
-    left:-75vw;
+    left:-70vw;
     transform:translateX(0);
   }
-  to{
-    left:115vw;
-    transform:translateX(0);
-  }
-}
   to{
     left:115vw;
     transform:translateX(0);
@@ -690,77 +684,6 @@ body{
 }
 
 
-/* =========================================================
-   FINAL FIX: words visible + fade in/out, cars start offscreen
-========================================================= */
-
-.text{
-  position:absolute !important;
-  top:31% !important;
-  left:0 !important;
-  width:100% !important;
-  text-align:center !important;
-  font-size:clamp(2rem,5vw,4.1rem) !important;
-  color:white !important;
-  opacity:0 !important;
-  filter:blur(18px) !important;
-  transform:scale(.95) !important;
-  z-index:999 !important;
-  pointer-events:none !important;
-  text-shadow:
-    0 0 22px rgba(255,255,255,.68),
-    0 0 60px rgba(255,180,120,.45),
-    0 0 105px rgba(255,80,160,.28) !important;
-}
-
-.text.animate{
-  animation:smokeWordsFadeFinal 5.8s ease forwards !important;
-}
-
-@keyframes smokeWordsFadeFinal{
-  0%{
-    opacity:0;
-    filter:blur(20px);
-    transform:scale(.92);
-  }
-  25%{
-    opacity:1;
-    filter:blur(4px);
-    transform:scale(1);
-  }
-  65%{
-    opacity:1;
-    filter:blur(.3px);
-    transform:scale(1);
-  }
-  100%{
-    opacity:0;
-    filter:blur(14px);
-    transform:scale(1.05);
-  }
-}
-
-.car{
-  left:-75vw !important;
-  transform:translateX(0) !important;
-}
-
-.car.drive{
-  animation:driveFromOffscreenFinal 6.5s linear forwards !important;
-}
-
-@keyframes driveFromOffscreenFinal{
-  from{
-    left:-75vw;
-    transform:translateX(0);
-  }
-  to{
-    left:115vw;
-    transform:translateX(0);
-  }
-}
-
-
 
 ===== CAR-SEQUENCE.JS =====
 
@@ -768,44 +691,45 @@ const scenes = Array.from(document.querySelectorAll(".scene"));
 const label = document.getElementById("sceneLabel");
 const names = ["Jeep Universe", "F1 Universe", "BMW Universe"];
 
-let timer1;
-let timer2;
+let currentTimer1;
+let currentTimer2;
 
-function restartClass(el, className){
+function restart(el, className){
   if(!el) return;
   el.classList.remove(className);
-  void el.offsetWidth;
+  el.offsetHeight;
   el.classList.add(className);
 }
 
 function showScene(index){
-  clearTimeout(timer1);
-  clearTimeout(timer2);
+  clearTimeout(currentTimer1);
+  clearTimeout(currentTimer2);
 
-  scenes.forEach(scene => {
-    scene.classList.remove("active");
-
-    const oldCar = scene.querySelector(".car");
-    const oldText = scene.querySelector(".text");
-
-    if(oldCar) oldCar.classList.remove("drive");
-    if(oldText) oldText.classList.remove("animate");
-  });
+  scenes.forEach(scene => scene.classList.remove("active"));
 
   const current = scenes[index];
   current.classList.add("active");
-
-  if(label) label.textContent = names[index];
+  label.textContent = names[index];
 
   const car = current.querySelector(".car");
   const text = current.querySelector(".text");
 
-  // Start both effects right away. No more center pop-up.
-  restartClass(text, "animate");
-  restartClass(car, "drive");
+  // Show centered first so you can confirm it exists.
+  car.classList.remove("drive");
+  text.classList.remove("animate");
+
+  currentTimer1 = setTimeout(() => {
+    restart(text, "animate");
+  }, 250);
+
+  currentTimer2 = setTimeout(() => {
+    restart(car, "drive");
+  }, 1300);
 }
 
 showScene(0);
+
+// Automatic sequence
 setTimeout(() => showScene(1), 8000);
 setTimeout(() => showScene(2), 16000);
 

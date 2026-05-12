@@ -97,15 +97,14 @@ body{
 
 .car{
   position:absolute;
-  left:-75vw;
+  left:50%;
   bottom:8vh;
   width:min(720px,88vw);
   height:auto;
-  z-index:5;
+  transform:translateX(-50%);
+  filter:drop-shadow(0 0 18px rgba(255,255,255,.22)) drop-shadow(0 0 42px rgba(255,150,75,.45));
   overflow:visible;
-  filter:
-    drop-shadow(0 0 18px rgba(255,255,255,.22))
-    drop-shadow(0 0 42px rgba(255,150,75,.45));
+  z-index:5;
 }
 
 .f1{
@@ -123,14 +122,9 @@ body{
 
 @keyframes drive{
   from{
-    left:-75vw;
+    left:-70vw;
     transform:translateX(0);
   }
-  to{
-    left:115vw;
-    transform:translateX(0);
-  }
-}
   to{
     left:115vw;
     transform:translateX(0);
@@ -182,75 +176,4 @@ body{
 /* Let the iframe page be clean and cinematic */
 body{
   background:black !important;
-}
-
-
-/* =========================================================
-   FINAL FIX: words visible + fade in/out, cars start offscreen
-========================================================= */
-
-.text{
-  position:absolute !important;
-  top:31% !important;
-  left:0 !important;
-  width:100% !important;
-  text-align:center !important;
-  font-size:clamp(2rem,5vw,4.1rem) !important;
-  color:white !important;
-  opacity:0 !important;
-  filter:blur(18px) !important;
-  transform:scale(.95) !important;
-  z-index:999 !important;
-  pointer-events:none !important;
-  text-shadow:
-    0 0 22px rgba(255,255,255,.68),
-    0 0 60px rgba(255,180,120,.45),
-    0 0 105px rgba(255,80,160,.28) !important;
-}
-
-.text.animate{
-  animation:smokeWordsFadeFinal 5.8s ease forwards !important;
-}
-
-@keyframes smokeWordsFadeFinal{
-  0%{
-    opacity:0;
-    filter:blur(20px);
-    transform:scale(.92);
-  }
-  25%{
-    opacity:1;
-    filter:blur(4px);
-    transform:scale(1);
-  }
-  65%{
-    opacity:1;
-    filter:blur(.3px);
-    transform:scale(1);
-  }
-  100%{
-    opacity:0;
-    filter:blur(14px);
-    transform:scale(1.05);
-  }
-}
-
-.car{
-  left:-75vw !important;
-  transform:translateX(0) !important;
-}
-
-.car.drive{
-  animation:driveFromOffscreenFinal 6.5s linear forwards !important;
-}
-
-@keyframes driveFromOffscreenFinal{
-  from{
-    left:-75vw;
-    transform:translateX(0);
-  }
-  to{
-    left:115vw;
-    transform:translateX(0);
-  }
 }
