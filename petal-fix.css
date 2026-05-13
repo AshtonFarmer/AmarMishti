@@ -1,5 +1,4 @@
-/* REAL FIX: keeps the cherry blossom canvas from creating a black block in the page.
-   This file is linked AFTER style.css, so it overrides old rules. */
+/* REAL FIX: cherry blossom canvas stays fullscreen WITHOUT breaking video envelopes */
 
 #petalCanvas.petal-canvas,
 canvas#petalCanvas{
@@ -38,21 +37,66 @@ canvas#petalCanvas{
   z-index:4 !important;
 }
 
-#intro .intro-content,
-#videoPage .card,
-#videoPage .video-envelope,
+#intro .intro-content{
+  position:relative !important;
+  z-index:6 !important;
+}
+
+/* IMPORTANT: do NOT make .video-envelope position:relative.
+   That is what broke the video page. */
+#videoPage .card{
+  position:relative !important;
+  z-index:6 !important;
+}
+
 #videoPage .video-wrap,
 #videoPage .continue-btn{
   position:relative !important;
   z-index:6 !important;
 }
 
-/* Stop the browser from treating the canvas like a normal page section */
-body > #petalCanvas{
-  flex:none !important;
+/* Restore the envelope layout on both sides of the video */
+#videoPage .video-envelope{
+  position:absolute !important;
+  top:42% !important;
+  transform:translateY(-50%) !important;
+  z-index:8 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:6px !important;
 }
 
-/* Keeps hidden sections actually hidden above the petal overlay */
+#videoPage .left-envelope{
+  left:clamp(2px, 3vw, 28px) !important;
+  right:auto !important;
+}
+
+#videoPage .right-envelope{
+  right:clamp(2px, 3vw, 28px) !important;
+  left:auto !important;
+}
+
+/* Keep hidden sections actually hidden above the petal overlay */
 .hidden{
   display:none !important;
+}
+
+/* Mobile envelope layout stays stacked above video if screen is small */
+@media (max-width:760px){
+  #videoPage .video-envelope{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+    transform:none !important;
+    display:inline-flex !important;
+    margin:8px 12px 16px !important;
+  }
+
+  #videoPage .left-envelope,
+  #videoPage .right-envelope{
+    left:auto !important;
+    right:auto !important;
+  }
 }
