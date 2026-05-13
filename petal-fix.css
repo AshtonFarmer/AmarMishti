@@ -1,0 +1,58 @@
+/* REAL FIX: keeps the cherry blossom canvas from creating a black block in the page.
+   This file is linked AFTER style.css, so it overrides old rules. */
+
+#petalCanvas.petal-canvas,
+canvas#petalCanvas{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:auto !important;
+  bottom:auto !important;
+  width:100vw !important;
+  height:100vh !important;
+  max-width:none !important;
+  max-height:none !important;
+  display:block !important;
+  z-index:3 !important;
+  pointer-events:none !important;
+  opacity:.88 !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:none !important;
+  background:transparent !important;
+  mix-blend-mode:screen;
+}
+
+#intro,
+#videoPage{
+  position:relative !important;
+  z-index:1 !important;
+}
+
+#intro .stars,
+#intro::before{
+  z-index:0 !important;
+}
+
+#intro .balloons{
+  z-index:4 !important;
+}
+
+#intro .intro-content,
+#videoPage .card,
+#videoPage .video-envelope,
+#videoPage .video-wrap,
+#videoPage .continue-btn{
+  position:relative !important;
+  z-index:6 !important;
+}
+
+/* Stop the browser from treating the canvas like a normal page section */
+body > #petalCanvas{
+  flex:none !important;
+}
+
+/* Keeps hidden sections actually hidden above the petal overlay */
+.hidden{
+  display:none !important;
+}

@@ -245,6 +245,23 @@ html,body{
     0 0 42px rgba(255,80,180,.22);
 }
 
+/* REAL BLUE FLOWERS: these come AFTER the pink base rule, so they actually override it */
+.flower-2 .bloom span{
+  background:
+    radial-gradient(circle at top,#f8feff 0 9%,#b9ecff 25%,#6cc7ff 72%,#2d68ff 100%) !important;
+  box-shadow:
+    0 0 24px rgba(120,200,255,.70),
+    0 0 48px rgba(70,145,255,.30) !important;
+}
+
+.flower-4 .bloom span{
+  background:
+    radial-gradient(circle at top,#ffffff 0 9%,#c7f6ff 25%,#80ddff 72%,#3d92ff 100%) !important;
+  box-shadow:
+    0 0 24px rgba(135,225,255,.70),
+    0 0 48px rgba(90,175,255,.28) !important;
+}
+
 .bloom span:nth-child(1){ transform:translate(-50%,-85%) rotate(0deg); }
 .bloom span:nth-child(2){ transform:translate(-50%,-85%) rotate(72deg); }
 .bloom span:nth-child(3){ transform:translate(-50%,-85%) rotate(144deg); }
