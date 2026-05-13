@@ -1772,34 +1772,27 @@ video{width:100%;display:block;background:#000}
 }
 
 
-/* =========================================================
-   FIX: MAKE BIRTHDAY PETALS ACTUALLY VISIBLE
-========================================================= */
-
-.intro-screen{
-  z-index:0 !important;
+/* Flower garden button on ending page */
+.garden-btn{
+  display:block;
+  width:fit-content;
+  margin:14px auto 0;
+  padding:15px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid rgba(255,225,245,.95);
+  background:linear-gradient(135deg,rgba(255,0,150,.50),rgba(120,255,190,.20));
+  color:white;
+  font-size:clamp(1rem,3.6vw,1.28rem);
+  font-weight:900;
+  box-shadow:
+    0 0 24px rgba(255,80,180,.70),
+    0 0 44px rgba(120,255,190,.22),
+    inset 0 0 14px rgba(255,255,255,.12);
+  animation:gardenButtonPulse 2.2s ease-in-out infinite;
 }
 
-.petal-canvas{
-  position:fixed !important;
-  inset:0 !important;
-  width:100vw !important;
-  height:100vh !important;
-  z-index:2 !important;
-  pointer-events:none !important;
-  opacity:.95 !important;
-  mix-blend-mode:screen;
-}
-
-.intro-content{
-  position:relative !important;
-  z-index:4 !important;
-}
-
-.balloons{
-  z-index:3 !important;
-}
-
-.stars{
-  z-index:1 !important;
+@keyframes gardenButtonPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.045)}
 }
