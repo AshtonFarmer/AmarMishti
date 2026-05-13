@@ -1,6 +1,4 @@
-===== INDEX.HTML =====
-
-<!DOCTYPE html>
+===== INDEX.HTML =====\n\n<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -163,9 +161,7 @@
 
 
 
-===== ENDING.HTML =====
-
-<!DOCTYPE html>
+===== ENDING.HTML =====\n\n<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -187,6 +183,7 @@
       <p>In every universe, every timeline, every lifetime.</p>
 
       <div class="ending-buttons">
+        <a class="rain-btn" href="rain-universe.html">Stay with me in the rain 🌧️</a>
       <a class="replay-btn" href="memory.html">Find us in another universe ⚡</a>
 
       <button id="btsBtn" class="bts-btn hidden-bts">
@@ -228,9 +225,7 @@ Loading the real code...
 
 
 
-===== MEMORY.HTML =====
-
-<!DOCTYPE html>
+===== MEMORY.HTML =====\n\n<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -428,9 +423,132 @@ restart.addEventListener("click", (e) => {
 
 
 
-===== CAR-SEQUENCE.HTML =====
+===== RAIN-UNIVERSE.HTML =====\n\n<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Rain Universe ❤️</title>
+  <link rel="stylesheet" href="rain-universe.css?v=ending1" />
+</head>
+<body>
+<audio id="rainSong" loop>
+  <source src="rain-song.mp3" type="audio/mpeg">
+</audio>
 
-<!DOCTYPE html>
+<main class="rain-page">
+  <video id="rainVideo" class="rain-video" autoplay muted loop playsinline preload="auto">
+    <source src="rain-video.mp4" type="video/mp4">
+  </video>
+
+  <div class="rain-dark"></div>
+  <div class="rain-window"></div>
+  <div class="rain-streaks"></div>
+  <div class="lightning-flash"></div>
+
+  <section class="rain-card">
+    <p class="rain-kicker">A quiet universe</p>
+    <h1>Even the storm feels peaceful with you.</h1>
+    <p id="rainQuote" class="rain-quote">Rain always feels better when it reminds me of you.</p>
+
+    <button id="rainStartBtn" class="rain-start">Tap to enter the rain ❤️</button>
+
+    <a class="rain-return hidden-rain" id="rainReturn" href="ending.html">
+      Return to our universe ❤️
+    </a>
+  </section>
+
+  <div class="rain-bottom-message">
+    You make me happy, even in the dark and stormy nights.
+  </div>
+</main>
+
+<script src="rain-universe.js?v=ending1"></script>
+</body>
+</html>
+
+
+
+===== RAIN-UNIVERSE.CSS =====\n\n*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;overflow:hidden;background:#02030a;color:white;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.rain-page{position:relative;width:100vw;height:100vh;overflow:hidden;display:grid;place-items:center;background:#02030a}
+.rain-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.52;filter:brightness(.55) contrast(1.15) saturate(.9) blur(.2px);transform:scale(1.04)}
+.rain-dark{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,180,220,.13),transparent 28%),linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.72));z-index:2}
+.rain-window{position:absolute;inset:0;z-index:3;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.12) 0 1px,transparent 2px),radial-gradient(circle at 80% 20%,rgba(255,255,255,.10) 0 1px,transparent 2px),radial-gradient(circle at 45% 65%,rgba(255,255,255,.10) 0 1px,transparent 2px),radial-gradient(circle at 68% 78%,rgba(255,255,255,.12) 0 1px,transparent 2px);background-size:120px 150px,170px 210px,140px 190px,200px 240px;opacity:.42;animation:dropsSlide 9s linear infinite}
+@keyframes dropsSlide{from{background-position:0 0,0 0,0 0,0 0}to{background-position:0 220px,0 280px,0 260px,0 320px}}
+.rain-streaks{position:absolute;inset:-20%;z-index:4;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.20) 0 1px,transparent 1px 18px);animation:rainFall .55s linear infinite}
+@keyframes rainFall{from{transform:translate3d(0,-30px,0)}to{transform:translate3d(-18px,30px,0)}}
+.lightning-flash{position:absolute;inset:0;z-index:5;background:white;opacity:0;pointer-events:none;animation:lightning 9s infinite}
+@keyframes lightning{0%,86%,100%{opacity:0}87%{opacity:.28}88%{opacity:0}89%{opacity:.14}90%{opacity:0}}
+.rain-card{position:relative;z-index:10;width:min(820px,92vw);min-height:420px;padding:34px 24px;border-radius:34px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.20)),radial-gradient(circle at top,rgba(255,120,190,.18),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.18);box-shadow:0 0 45px rgba(255,130,190,.22),0 22px 75px rgba(0,0,0,.55),inset 0 0 30px rgba(255,255,255,.04);backdrop-filter:blur(8px);animation:cardFloat 5s ease-in-out infinite}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.rain-kicker{margin:0 0 10px;text-transform:uppercase;letter-spacing:.26em;font-size:.82rem;color:#ffd7ec;text-shadow:0 0 14px rgba(255,100,180,.9)}
+.rain-card h1{margin:0;max-width:720px;font-size:clamp(2.1rem,7vw,5rem);line-height:1.02;font-family:"Brush Script MT","Segoe Script",cursive;font-weight:400;text-shadow:0 0 16px rgba(255,255,255,.85),0 0 38px rgba(255,105,180,.75),0 0 75px rgba(255,105,180,.35)}
+.rain-quote{min-height:82px;margin:28px 0 26px;max-width:660px;font-size:clamp(1.08rem,3.6vw,1.65rem);line-height:1.45;color:#ffeaf5;text-shadow:0 0 16px rgba(255,255,255,.28);opacity:1;transition:opacity .8s ease,transform .8s ease,filter .8s ease}
+.rain-quote.fade{opacity:0;transform:translateY(12px);filter:blur(5px)}
+.rain-start,.rain-return{border:1px solid rgba(255,220,245,.95);border-radius:999px;padding:15px 26px;color:white;text-decoration:none;cursor:pointer;font-size:clamp(1rem,3.6vw,1.25rem);font-weight:900;background:linear-gradient(135deg,rgba(255,0,140,.58),rgba(255,160,210,.22));box-shadow:0 0 26px rgba(255,0,160,.82),inset 0 0 14px rgba(255,255,255,.12)}
+.rain-start{animation:pulseButton 1.8s ease-in-out infinite}
+@keyframes pulseButton{0%,100%{transform:scale(1)}50%{transform:scale(1.055)}}
+.hidden-rain{display:none!important}
+.rain-bottom-message{position:absolute;left:0;right:0;bottom:24px;z-index:10;padding:0 18px;text-align:center;color:#ffe6f4;font-size:clamp(.95rem,3vw,1.2rem);opacity:.86;text-shadow:0 0 16px rgba(255,255,255,.45),0 0 28px rgba(255,90,170,.48)}
+body.rain-started .rain-video{opacity:.68;filter:brightness(.68) contrast(1.16) saturate(1.05)}
+@media(max-width:640px){.rain-card{min-height:390px;padding:28px 18px}.rain-bottom-message{bottom:14px}}
+
+
+
+===== RAIN-UNIVERSE.JS =====\n\nconst rainStartBtn=document.getElementById("rainStartBtn");
+const rainReturn=document.getElementById("rainReturn");
+const rainSong=document.getElementById("rainSong");
+const rainVideo=document.getElementById("rainVideo");
+const rainQuote=document.getElementById("rainQuote");
+
+const quotes=[
+  "Rain always feels better when it reminds me of you.",
+  "Some of my favorite moments are the quiet ones with you.",
+  "Even storms feel peaceful beside you.",
+  "You make me happy, even in the dark and stormy nights.",
+  "If the world felt heavy, I would still look for you in the rain.",
+  "With you, even the storm sounds like a love song."
+];
+
+let quoteIndex=0;
+
+function nextQuote(){
+  rainQuote.classList.add("fade");
+  setTimeout(()=>{
+    quoteIndex=(quoteIndex+1)%quotes.length;
+    rainQuote.textContent=quotes[quoteIndex];
+    rainQuote.classList.remove("fade");
+  },800);
+}
+
+rainStartBtn.addEventListener("click",async()=>{
+  document.body.classList.add("rain-started");
+
+  try{
+    rainSong.volume=.42;
+    await rainSong.play();
+  }catch(e){}
+
+  try{
+    rainVideo.muted=true;
+    await rainVideo.play();
+  }catch(e){}
+
+  rainStartBtn.classList.add("hidden-rain");
+  rainReturn.classList.remove("hidden-rain");
+
+  nextQuote();
+  setInterval(nextQuote,4200);
+
+  if(navigator.vibrate){
+    navigator.vibrate([80,40,80]);
+  }
+});
+
+
+
+===== CAR-SEQUENCE.HTML =====\n\n<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -531,9 +649,7 @@ restart.addEventListener("click", (e) => {
 
 
 
-===== CAR-SEQUENCE.CSS =====
-
-body{
+===== CAR-SEQUENCE.CSS =====\n\nbody{
   margin:0;
   overflow:hidden;
   background:black;
@@ -715,9 +831,7 @@ body{
 
 
 
-===== CAR-SEQUENCE.JS =====
-
-const scenes = Array.from(document.querySelectorAll(".scene"));
+===== CAR-SEQUENCE.JS =====\n\nconst scenes = Array.from(document.querySelectorAll(".scene"));
 const label = document.getElementById("sceneLabel");
 const names = ["Jeep Universe", "F1 Universe", "BMW Universe"];
 
@@ -765,9 +879,7 @@ setTimeout(() => showScene(2), 16000);
 
 
 
-===== STYLE.CSS =====
-
-*{box-sizing:border-box}
+===== STYLE.CSS =====\n\n*{box-sizing:border-box}
 html,body{
   margin:0;
   min-height:100%;
@@ -2516,11 +2628,33 @@ video{width:100%;display:block;background:#000}
   }
 }
 
+/* Rain universe button on ending page */
+.rain-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:15px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid rgba(210,235,255,.95);
+  background:linear-gradient(135deg,rgba(70,145,255,.48),rgba(255,120,200,.22));
+  color:white;
+  font-size:clamp(1rem,3.6vw,1.28rem);
+  font-weight:900;
+  box-shadow:
+    0 0 24px rgba(90,170,255,.75),
+    0 0 46px rgba(255,0,160,.30),
+    inset 0 0 14px rgba(255,255,255,.12);
+  animation:rainButtonPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes rainButtonPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.045)}
+}
 
 
-===== SCRIPT.JS =====
 
-const intro = document.getElementById("intro");
+===== SCRIPT.JS =====\n\nconst intro = document.getElementById("intro");
 const videoPage = document.getElementById("videoPage");
 const timeline = document.getElementById("timeline");
 const timelineTitle = document.getElementById("timelineTitle");
@@ -2721,12 +2855,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const envelopeNotes = {
   left: {
-    title: "Important scientific discovery 💌",
-    text: "After careful research, I have concluded that your smile is dangerously cute and should probably come with a warning label."
+    title: "Important chicken business 💌",
+    text: "\"What did the chicken say to the pig?\" \"Fawwwwkkkkk Off!\""
   },
   right: {
-    title: "Tiny driving update 💌",
-    text: "No GPS needed. Somehow every road, every universe, and every random thought still ends up leading me back to you."
+    title: "Extremely serious bird joke 💌",
+    text: "\"Why do seagulls fly over the ocean? Because if they flew over the bay, they'd be bagels.\""
   }
 };
 
@@ -2767,9 +2901,7 @@ if(jokeModal){
 
 
 
-===== ENDING.JS =====
-
-
+===== ENDING.JS =====\n\n
 window.addEventListener("DOMContentLoaded", () => {
 
   const btsBtn = document.getElementById("btsBtn");

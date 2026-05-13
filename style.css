@@ -1746,3 +1746,27 @@ video{width:100%;display:block;background:#000}
     clear:both;
   }
 }
+
+/* Rain universe button on ending page */
+.rain-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:15px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  border:1px solid rgba(210,235,255,.95);
+  background:linear-gradient(135deg,rgba(70,145,255,.48),rgba(255,120,200,.22));
+  color:white;
+  font-size:clamp(1rem,3.6vw,1.28rem);
+  font-weight:900;
+  box-shadow:
+    0 0 24px rgba(90,170,255,.75),
+    0 0 46px rgba(255,0,160,.30),
+    inset 0 0 14px rgba(255,255,255,.12);
+  animation:rainButtonPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes rainButtonPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.045)}
+}
