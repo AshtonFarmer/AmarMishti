@@ -14,6 +14,7 @@ const quotes=[
 ];
 
 let quoteIndex=0;
+let quoteTimer;
 
 function nextQuote(){
   rainQuote.classList.add("fade");
@@ -41,7 +42,8 @@ rainStartBtn.addEventListener("click",async()=>{
   rainReturn.classList.remove("hidden-rain");
 
   nextQuote();
-  setInterval(nextQuote,4200);
+  clearInterval(quoteTimer);
+  quoteTimer=setInterval(nextQuote,4200);
 
   if(navigator.vibrate){
     navigator.vibrate([80,40,80]);

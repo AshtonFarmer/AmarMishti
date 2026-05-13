@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Rain Universe ❤️</title>
-  <link rel="stylesheet" href="rain-universe.css?v=ending1" />
+  <link rel="stylesheet" href="rain-universe.css?v=optimized1" />
 </head>
 <body>
 <audio id="rainSong" loop>
@@ -12,19 +12,27 @@
 </audio>
 
 <main class="rain-page">
-  <video id="rainVideo" class="rain-video" autoplay muted loop playsinline preload="auto">
-    <source src="rain-video.mp4" type="video/mp4">
-  </video>
-
-  <div class="rain-dark"></div>
-  <div class="rain-window"></div>
-  <div class="rain-streaks"></div>
+  <div class="rain-sky"></div>
+  <div class="rain-layer"></div>
+  <div class="rain-layer rain-layer-soft"></div>
+  <div class="window-glass"></div>
   <div class="lightning-flash"></div>
 
   <section class="rain-card">
     <p class="rain-kicker">A quiet universe</p>
+
+    <div class="memory-window">
+      <video id="rainVideo" class="rain-video" muted loop playsinline preload="metadata">
+        <source src="rain-video.mp4" type="video/mp4">
+      </video>
+      <div class="video-glow"></div>
+    </div>
+
     <h1>Even the storm feels peaceful with you.</h1>
-    <p id="rainQuote" class="rain-quote">Rain always feels better when it reminds me of you.</p>
+
+    <p id="rainQuote" class="rain-quote">
+      Rain always feels better when it reminds me of you.
+    </p>
 
     <button id="rainStartBtn" class="rain-start">Tap to enter the rain ❤️</button>
 
@@ -38,6 +46,6 @@
   </div>
 </main>
 
-<script src="rain-universe.js?v=ending1"></script>
+<script src="rain-universe.js?v=optimized1"></script>
 </body>
 </html>
