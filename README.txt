@@ -1,21 +1,20 @@
+OPEN rain-universe.css
 
+FIND the sections:
+- .rain-layer
+- .rain-layer-soft
+- .visible-rain / .heavy-rain
+- .lightning-flash
+- .rain-page
+- .window-glass
+- .rain-card
 
-LATEST FIX:
-The memory universe is now a full separate page named memory.html.
+REPLACE them with the code in:
+RAIN_BACKGROUND_FIX.css
 
-Why:
-GitHub Pages was not reliably running the patch code when it was uploaded as separate files.
-This version is fully integrated.
-
-Flow:
-1. Ending page
-2. Click "Find us in another universe ⚡"
-3. Opens memory.html
-4. Shows "Searching for us in another universe..."
-5. Reveals "Another lifetime found ❤️"
-6. Floating memory photos appear
-7. Final line appears
-8. Button restarts the universe back to index.html
-
-Important:
-The memory photos are included directly in the folder as memory1.jpg through memory15.jpg.
+This:
+- removes the ugly hard white line rain
+- removes lightning flashes completely
+- softens the rain into the background
+- makes the page cinematic instead of noisy
+- keeps the cozy rain atmosphere

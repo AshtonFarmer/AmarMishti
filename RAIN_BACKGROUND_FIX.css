@@ -1,0 +1,62 @@
+/* REPLACE ONLY the rain-related sections in rain-universe.css with this */
+
+/* softer cinematic rain background */
+.rain-layer{
+  position:absolute;
+  inset:-20%;
+  z-index:2;
+  pointer-events:none;
+  opacity:.18;
+  background:
+    repeating-linear-gradient(
+      105deg,
+      rgba(220,240,255,.22) 0 1px,
+      transparent 1px 42px
+    );
+  animation:rainMove 1.05s linear infinite;
+  filter:blur(.2px);
+}
+
+.rain-layer-soft{
+  opacity:.08;
+  filter:blur(.6px);
+  background:
+    repeating-linear-gradient(
+      105deg,
+      rgba(255,255,255,.16) 0 1px,
+      transparent 1px 68px
+    );
+  animation-duration:1.6s;
+}
+
+/* remove the aggressive extra rain */
+.visible-rain,
+.heavy-rain{
+  display:none !important;
+}
+
+/* remove lightning completely */
+.lightning-flash{
+  display:none !important;
+}
+
+/* make background moodier so rain blends naturally */
+.rain-page{
+  background:
+    radial-gradient(circle at 50% 18%, rgba(85,110,180,.18), transparent 32%),
+    radial-gradient(circle at 50% 100%, rgba(255,80,160,.10), transparent 40%),
+    linear-gradient(180deg,#060812 0%,#02030a 58%,#000 100%);
+}
+
+/* softer glass droplets */
+.window-glass{
+  opacity:.16;
+}
+
+/* make the card stand out instead of fighting the rain */
+.rain-card{
+  backdrop-filter:blur(2px);
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,.30)),
+    radial-gradient(circle at top,rgba(120,170,255,.10),rgba(255,120,190,.06),rgba(255,255,255,.03));
+}
