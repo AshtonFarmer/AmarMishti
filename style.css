@@ -1770,3 +1770,36 @@ video{width:100%;display:block;background:#000}
   0%,100%{transform:scale(1)}
   50%{transform:scale(1.045)}
 }
+
+
+/* =========================================================
+   FIX: MAKE BIRTHDAY PETALS ACTUALLY VISIBLE
+========================================================= */
+
+.intro-screen{
+  z-index:0 !important;
+}
+
+.petal-canvas{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  z-index:2 !important;
+  pointer-events:none !important;
+  opacity:.95 !important;
+  mix-blend-mode:screen;
+}
+
+.intro-content{
+  position:relative !important;
+  z-index:4 !important;
+}
+
+.balloons{
+  z-index:3 !important;
+}
+
+.stars{
+  z-index:1 !important;
+}

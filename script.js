@@ -242,3 +242,80 @@ if(jokeModal){
     }
   });
 }
+
+
+/* BIRTHDAY CHERRY BLOSSOM PETALS */
+(function(){
+  const canvas = document.getElementById("petalCanvas");
+  if(!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let width = 0;
+  let height = 0;
+  let petals = [];
+
+  function makePetal(randomY=false){
+    return {
+      x: Math.random() * width,
+      y: randomY ? Math.random() * height : -40 - Math.random() * 120,
+      r: 10 + Math.random() * 15,
+      speedY: .65 + Math.random() * 1.15,
+      speedX: -0.45 + Math.random() * .9,
+      sway: Math.random() * Math.PI * 2,
+      swaySpeed: .014 + Math.random() * .03,
+      rotate: Math.random() * Math.PI * 2,
+      rotateSpeed: -0.03 + Math.random() * .06,
+      alpha: .62 + Math.random() * .35
+    };
+  }
+
+  function resizePetals(){
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    const count = width < 700 ? 42 : 78;
+    petals = Array.from({length: count}, () => makePetal(true));
+  }
+
+  function drawPetal(p){
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rotate);
+    ctx.globalAlpha = p.alpha;
+
+    const grad = ctx.createRadialGradient(0,0,1,0,0,p.r*2);
+    grad.addColorStop(0, "rgba(255,255,255,1)");
+    grad.addColorStop(.35, "rgba(255,195,228,.95)");
+    grad.addColorStop(.8, "rgba(255,95,178,.45)");
+    grad.addColorStop(1, "rgba(255,95,178,0)");
+
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, p.r * .72, p.r * 1.35, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function animatePetals(){
+    ctx.clearRect(0,0,width,height);
+
+    petals.forEach(p => {
+      p.sway += p.swaySpeed;
+      p.rotate += p.rotateSpeed;
+      p.x += p.speedX + Math.sin(p.sway) * .55;
+      p.y += p.speedY;
+
+      if(p.y > height + 60 || p.x < -90 || p.x > width + 90){
+        Object.assign(p, makePetal(false));
+      }
+
+      drawPetal(p);
+    });
+
+    requestAnimationFrame(animatePetals);
+  }
+
+  window.addEventListener("resize", resizePetals);
+  resizePetals();
+  animatePetals();
+})();
