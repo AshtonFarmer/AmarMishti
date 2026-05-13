@@ -1,0 +1,25 @@
+
+/* =========================================
+BLUE FLOWER COLOR CHANGE
+Replace ONLY these sections in flower-garden.css
+========================================= */
+
+/* Flower 2 = dreamy blue */
+.flower-2 .bloom span{
+  background:
+    radial-gradient(circle at top,#f7fdff 0 9%,#9fdcff 25%,#5bb7ff 72%,#2a63ff 100%) !important;
+
+  box-shadow:
+    0 0 22px rgba(110,180,255,.58),
+    0 0 42px rgba(90,160,255,.24) !important;
+}
+
+/* Flower 4 = softer cyan-blue */
+.flower-4 .bloom span{
+  background:
+    radial-gradient(circle at top,#ffffff 0 9%,#b9f1ff 25%,#73d5ff 72%,#3b8dff 100%) !important;
+
+  box-shadow:
+    0 0 22px rgba(130,220,255,.58),
+    0 0 42px rgba(110,190,255,.22) !important;
+}

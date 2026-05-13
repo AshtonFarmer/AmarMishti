@@ -1,0 +1,44 @@
+
+/* =========================================
+FULLSCREEN CHERRY BLOSSOM PETAL FIX
+Add this to the VERY BOTTOM of style.css
+========================================= */
+
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+/* force the petals to cover the WHOLE page again */
+#petalCanvas,
+.petal-canvas{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  top:0 !important;
+  left:0 !important;
+  z-index:2 !important;
+  pointer-events:none !important;
+  display:block !important;
+}
+
+/* keep content above petals */
+.intro-content,
+.video-section,
+.video-page,
+.final-page,
+.ending-page{
+  position:relative !important;
+  z-index:4 !important;
+}
+
+/* background stays behind petals */
+.intro-screen,
+.stars,
+.background,
+.bg{
+  position:relative;
+  z-index:1;
+}

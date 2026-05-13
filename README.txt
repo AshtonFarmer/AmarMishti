@@ -1,20 +1,12 @@
-OPEN rain-universe.css
 
-FIND the sections:
-- .rain-layer
-- .rain-layer-soft
-- .visible-rain / .heavy-rain
-- .lightning-flash
-- .rain-page
-- .window-glass
-- .rain-card
+1. OPEN flower-garden.css
+PASTE the BLUE FLOWER section at the VERY BOTTOM.
 
-REPLACE them with the code in:
-RAIN_BACKGROUND_FIX.css
+2. OPEN style.css
+PASTE the FULLSCREEN CHERRY BLOSSOM PETAL FIX
+at the VERY BOTTOM.
 
 This:
-- removes the ugly hard white line rain
-- removes lightning flashes completely
-- softens the rain into the background
-- makes the page cinematic instead of noisy
-- keeps the cozy rain atmosphere
+- changes flowers 2 and 4 to beautiful blue tones
+- fixes the birthday petals so they cover the FULL screen again
+- keeps the flower garden exactly how it currently looks
