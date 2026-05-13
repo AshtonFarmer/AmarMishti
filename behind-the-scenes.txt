@@ -1,0 +1,84 @@
+
+// ===============================================
+// AMAR MISHTI ❤️
+// multiverse emotional engine v13.7
+// ===============================================
+
+
+// scanning timelines...
+const universes = infinite;
+
+
+// impossible challenge:
+function findSoulmate(person){
+    return "Tanima";
+}
+
+
+// timeline synchronization
+if (heart === "hers") {
+    universe.stable = true;
+}
+
+
+// rain universe emotional calibration
+const rainMemories = [
+    "quiet nights",
+    "stormy drives",
+    "peace beside her",
+    "holding onto each other"
+];
+
+
+// flower garden bloom protocol
+function bloomFlowers(){
+    love++;
+    happiness++;
+    petals.fall();
+}
+
+
+// searching all realities...
+while(true){
+    locate("Tanima Das ❤️");
+}
+
+
+// emergency emotional overload
+if (distance > 8000){
+    missHer++;
+}
+
+
+// relationship status
+const us = {
+    type: "soulmates",
+    stability: Infinity,
+    breakable: false
+};
+
+
+// if she smiles...
+function makeWorldBetter(){
+    darkness--;
+    happiness += 999999;
+}
+
+
+// protected memory archive
+const favoriteMoments = [
+    "the rain",
+    "the laughs",
+    "the calls",
+    "the little moments",
+    "everything"
+];
+
+
+// cosmic truth:
+console.log("In every universe, I would still choose you.");
+
+
+// ===============================================
+// end of transmission
+// ===============================================
