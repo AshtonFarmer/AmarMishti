@@ -1,5 +1,4 @@
-/* AMAR MISHTI custom cursor — isolated safe file.
-   This does not affect layout, animations, rain, petals, video, flowers, or JavaScript. */
+/* replace old cursor.css with this */
 
 html,
 body,
@@ -7,15 +6,6 @@ button,
 a,
 input,
 textarea,
-select,
-.envelope-btn,
-.bloom-btn,
-.rain-start,
-.rain-return,
-.garden-return,
-.continue-btn,
-.replay-btn,
-.bts-btn,
-.close-bts{
-  cursor: url("custom-cursor.png") 13 7, auto !important;
+select{
+  cursor:url("custom-cursor.png") 5 3, auto !important;
 }
