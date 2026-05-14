@@ -1,0 +1,17 @@
+SAFE DUCK RETURN FIX (BEST VERSION)
+
+Open:
+duck-game.html
+
+Find:
+href="index.html"
+
+Replace with:
+href="javascript:history.back()"
+
+Final result:
+<a class="duck-return" href="javascript:history.back()">Back to video universe ❤️</a>
+
+Save + Commit.
+
+This returns her to the EXACT previous page/state instead of restarting the intro universe.
