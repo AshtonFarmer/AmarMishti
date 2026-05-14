@@ -1,5 +1,3 @@
-/* replace old cursor.css */
-
 html,
 body,
 button,
@@ -7,5 +5,5 @@ a,
 input,
 textarea,
 select{
-  cursor:url("custom-cursor.png") 3 2, auto !important;
+  cursor:url("custom-cursor.png") 2 1, auto !important;
 }
