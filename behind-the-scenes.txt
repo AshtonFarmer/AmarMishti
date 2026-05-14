@@ -1,84 +1,188 @@
-
-// ===============================================
-// AMAR MISHTI ❤️
-// multiverse emotional engine v13.7
-// ===============================================
-
-
-// scanning timelines...
-const universes = infinite;
+// ==================================================
+// AMAR MISHTI ❤️⚡
+// behind the scenes archive
+// multiverse emotional engine vFINAL
+// ==================================================
 
 
-// impossible challenge:
-function findSoulmate(person){
-    return "Tanima";
+// booting birthday universe...
+const project = "Amar Mishti";
+const madeFor = "Tanima";
+const builtBy = "Ashton";
+
+
+// --------------------------------------------------
+// core truth
+// --------------------------------------------------
+
+const love = Infinity;
+const distance = "too far";
+const missingHer = true;
+
+function chooseHerAcrossUniverses(){
+  return "always";
 }
 
 
-// timeline synchronization
-if (heart === "hers") {
-    universe.stable = true;
+// --------------------------------------------------
+// multiverse search system
+// --------------------------------------------------
+
+const universes = [
+  "birthday universe",
+  "car universe",
+  "memory universe",
+  "rain universe",
+  "flower garden universe",
+  "secret duck universe"
+];
+
+for(const universe of universes){
+  console.log("Searching:", universe);
+}
+
+console.log("Tanima found ❤️");
+
+
+// --------------------------------------------------
+// car universe
+// --------------------------------------------------
+
+const vehicles = [
+  "orange Jeep Wrangler",
+  "Red Bull Oracle race car",
+  "cool BMW"
+];
+
+function driveByWithLove(vehicle){
+  return `${vehicle} passed by carrying a message`;
 }
 
 
-// rain universe emotional calibration
-const rainMemories = [
-    "quiet nights",
-    "stormy drives",
-    "peace beside her",
-    "holding onto each other"
+// --------------------------------------------------
+// envelope joke system
+// --------------------------------------------------
+
+const jokes = [
+  "What did the chicken say to the pig?",
+  "Why do seagulls fly over the ocean?"
+];
+
+let envelopesOpened = 0;
+
+function openEnvelope(){
+  envelopesOpened++;
+
+  if(envelopesOpened >= 2){
+    unlockSecretDuckUniverse();
+  }
+}
+
+
+// --------------------------------------------------
+// secret duck universe
+// --------------------------------------------------
+
+function unlockSecretDuckUniverse(){
+  console.log("QUACK PORTAL OPENED 🦆⚡");
+}
+
+const duckStats = {
+  breadCollected: "maximum",
+  quackLevel: 999,
+  emotionalDamage: "critical but cute",
+  mission: "collect bread, avoid puddles, protect love"
+};
+
+function duckVictory(){
+  return "Secret universe complete 🦆⚡";
+}
+
+
+// --------------------------------------------------
+// rain universe
+// --------------------------------------------------
+
+const rainQuotes = [
+  "Rain always feels better when it reminds me of you.",
+  "Even storms feel peaceful beside you.",
+  "You make me happy, even in the dark and stormy nights."
+];
+
+function enterRainUniverse(){
+  return "quiet, cozy, safe";
+}
+
+
+// --------------------------------------------------
+// flower garden universe
+// --------------------------------------------------
+
+function bloomGarden(){
+  flowers++;
+  happiness++;
+  petals.fall();
+}
+
+const flowerColors = [
+  "pink",
+  "blue",
+  "pink",
+  "blue",
+  "pink"
 ];
 
 
-// flower garden bloom protocol
-function bloomFlowers(){
-    love++;
-    happiness++;
-    petals.fall();
-}
+// --------------------------------------------------
+// custom cursor
+// --------------------------------------------------
 
-
-// searching all realities...
-while(true){
-    locate("Tanima Das ❤️");
-}
-
-
-// emergency emotional overload
-if (distance > 8000){
-    missHer++;
-}
-
-
-// relationship status
-const us = {
-    type: "soulmates",
-    stability: Infinity,
-    breakable: false
+const cursor = {
+  color: "blue",
+  effect: "tiny lightning sparks",
+  dangerLevel: "low",
+  vibe: "subtle but cool"
 };
 
 
-// if she smiles...
-function makeWorldBetter(){
-    darkness--;
-    happiness += 999999;
+// --------------------------------------------------
+// petals
+// --------------------------------------------------
+
+const cherryBlossoms = {
+  fullscreen: true,
+  romantic: true,
+  zIndexSituation: "finally stable"
+};
+
+
+// --------------------------------------------------
+// ending
+// --------------------------------------------------
+
+function finalMessage(){
+  return "Ami tomake bhalobashi ❤️";
 }
 
 
-// protected memory archive
-const favoriteMoments = [
-    "the rain",
-    "the laughs",
-    "the calls",
-    "the little moments",
-    "everything"
-];
+// --------------------------------------------------
+// emergency debug notes
+// --------------------------------------------------
+
+// DO NOT PANIC.
+// If something looks broken:
+// 1. GitHub Pages may be caching.
+// 2. Chrome may be caching.
+// 3. Ctrl + Shift + R.
+// 4. Do not randomly replace working files.
+// 5. Breathe.
 
 
-// cosmic truth:
-console.log("In every universe, I would still choose you.");
+// --------------------------------------------------
+// final transmission
+// --------------------------------------------------
 
+console.log("In every universe, every timeline, every lifetime...");
+console.log("I would still choose you ❤️");
 
-// ===============================================
-// end of transmission
-// ===============================================
+// end of behind the scenes archive
