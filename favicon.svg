@@ -6,13 +6,11 @@
       <stop offset="0.7" stop-color="#ff006e"/>
       <stop offset="1" stop-color="#93004d"/>
     </radialGradient>
-
     <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fff5a7"/>
       <stop offset="0.45" stop-color="#ffd000"/>
       <stop offset="1" stop-color="#ff7a00"/>
     </linearGradient>
-
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
@@ -21,18 +19,8 @@
       </feMerge>
     </filter>
   </defs>
-
   <rect width="64" height="64" rx="14" fill="#070008"/>
-
-  <path filter="url(#glow)"
-        fill="url(#heart)"
-        d="M32 53S9 39 9 22c0-8 6-14 14-14 4.8 0 7.4 2.3 9 5.1C33.6 10.3 36.2 8 41 8c8 0 14 6 14 14 0 17-23 31-23 31Z"/>
-
-  <path filter="url(#glow)"
-        fill="url(#bolt)"
-        stroke="#fff7b0"
-        stroke-width="1.5"
-        d="M43 28 31 45h9l-4 14 17-22h-9l5-9z"/>
-
+  <path filter="url(#glow)" fill="url(#heart)" d="M32 53S9 39 9 22c0-8 6-14 14-14 4.8 0 7.4 2.3 9 5.1C33.6 10.3 36.2 8 41 8c8 0 14 6 14 14 0 17-23 31-23 31Z"/>
+  <path filter="url(#glow)" fill="url(#bolt)" stroke="#fff7b0" stroke-width="1.5" d="M43 28 31 45h9l-4 14 17-22h-9l5-9z"/>
   <circle cx="22" cy="17" r="3" fill="#fff" opacity=".62"/>
 </svg>
