@@ -1,0 +1,21 @@
+
+/* DUCK RESORT BACKGROUND */
+
+body{
+  background:
+    linear-gradient(rgba(15,10,25,.35), rgba(15,10,25,.35)),
+    url('duck-resort-bg.png') center center / cover no-repeat fixed !important;
+}
+
+.duck-card{
+  background:rgba(5,10,30,.62) !important;
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow:
+    0 0 28px rgba(255,170,220,.20),
+    0 0 40px rgba(255,220,120,.12) !important;
+}
+
+.game-arena{
+  background:rgba(0,20,60,.58) !important;
+}
