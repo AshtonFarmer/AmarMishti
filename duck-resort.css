@@ -1,21 +1,49 @@
+/* DUCK RESORT BACKGROUND REAL FIX
+   This targets .duck-page because duck-game.css covers the body with .duck-page.
+*/
 
-/* DUCK RESORT BACKGROUND */
-
+html,
 body{
+  background:#0b0614 !important;
+}
+
+.duck-page{
   background:
-    linear-gradient(rgba(15,10,25,.35), rgba(15,10,25,.35)),
-    url('duck-resort-bg.png') center center / cover no-repeat fixed !important;
+    linear-gradient(rgba(18,8,22,.28), rgba(18,8,22,.38)),
+    url("duck-resort-bg.png") center center / cover no-repeat !important;
 }
 
+/* hide the old star/glow layers so the image can actually show */
+.duck-stars,
+.duck-glow{
+  opacity:.18 !important;
+  pointer-events:none !important;
+}
+
+/* make the card readable but still let the resort show through */
 .duck-card{
-  background:rgba(5,10,30,.62) !important;
-  backdrop-filter:blur(4px);
-  border:1px solid rgba(255,255,255,.18) !important;
+  background:
+    linear-gradient(180deg, rgba(6,8,22,.68), rgba(6,8,22,.46)) !important;
+  backdrop-filter: blur(3px);
+  border:1px solid rgba(255,255,255,.22) !important;
   box-shadow:
-    0 0 28px rgba(255,170,220,.20),
-    0 0 40px rgba(255,220,120,.12) !important;
+    0 0 34px rgba(255,170,220,.22),
+    0 0 42px rgba(255,220,120,.16),
+    0 18px 70px rgba(0,0,0,.55) !important;
 }
 
+/* keep the playable area visible */
 .game-arena{
-  background:rgba(0,20,60,.58) !important;
+  background:
+    linear-gradient(180deg, rgba(10,25,65,.72), rgba(6,16,42,.72)) !important;
+  backdrop-filter: blur(1px);
+}
+
+/* slightly improve button glow with the resort */
+.duck-btn,
+.duck-return{
+  box-shadow:
+    0 0 24px rgba(255,205,90,.42),
+    0 0 34px rgba(255,100,190,.22),
+    inset 0 0 14px rgba(255,255,255,.12) !important;
 }
