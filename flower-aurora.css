@@ -1,0 +1,103 @@
+/* FLOWER GARDEN AURORA ADD-ON
+   Safe add-on: no JS, no layout rewrite. */
+
+.garden-page{
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,135,205,.18), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(120,255,170,.14), transparent 38%),
+    linear-gradient(180deg,#050512 0%,#03060b 58%,#000 100%) !important;
+}
+
+/* soft northern lights layer */
+.garden-page::before{
+  content:"";
+  position:absolute;
+  inset:-28vh -20vw;
+  z-index:1;
+  pointer-events:none;
+  opacity:.72;
+  background:
+    radial-gradient(ellipse at 16% 35%, rgba(69,210,255,.22), transparent 33%),
+    radial-gradient(ellipse at 76% 32%, rgba(163,92,255,.18), transparent 35%),
+    linear-gradient(110deg,
+      transparent 0%,
+      rgba(78,255,196,.00) 14%,
+      rgba(77,255,196,.22) 25%,
+      rgba(92,175,255,.13) 36%,
+      transparent 48%,
+      rgba(184,82,255,.14) 60%,
+      rgba(255,116,205,.12) 72%,
+      transparent 86%
+    );
+  filter:blur(24px) saturate(1.35);
+  transform:skewY(-8deg);
+  animation:auroraFlow 17s ease-in-out infinite alternate;
+}
+
+/* second slow ribbon for depth */
+.garden-page::after{
+  content:"";
+  position:absolute;
+  inset:-18vh -14vw;
+  z-index:2;
+  pointer-events:none;
+  opacity:.42;
+  background:
+    linear-gradient(78deg,
+      transparent 8%,
+      rgba(75,230,255,.10) 22%,
+      rgba(70,255,172,.18) 33%,
+      transparent 46%,
+      rgba(139,104,255,.18) 60%,
+      rgba(255,116,205,.12) 74%,
+      transparent 91%
+    );
+  filter:blur(38px);
+  transform:skewY(10deg);
+  animation:auroraRibbon 23s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes auroraFlow{
+  0%{ transform:translate3d(-4vw,-2vh,0) skewY(-8deg) scale(1); opacity:.52; }
+  50%{ transform:translate3d(3vw,2vh,0) skewY(-5deg) scale(1.06); opacity:.78; }
+  100%{ transform:translate3d(7vw,-1vh,0) skewY(-10deg) scale(1.02); opacity:.62; }
+}
+
+@keyframes auroraRibbon{
+  0%{ transform:translate3d(6vw,1vh,0) skewY(10deg) scale(1.06); opacity:.30; }
+  50%{ transform:translate3d(-1vw,-3vh,0) skewY(7deg) scale(1.12); opacity:.52; }
+  100%{ transform:translate3d(-7vw,2vh,0) skewY(12deg) scale(1.04); opacity:.38; }
+}
+
+/* keep existing layers above aurora */
+.garden-stars{ z-index:3 !important; }
+.garden-glow{ z-index:4 !important; }
+.flower-field{ z-index:8 !important; }
+.garden-card{ 
+  z-index:10 !important;
+  width:min(880px,92vw) !important;
+  background:
+    linear-gradient(180deg,rgba(2,7,12,.66),rgba(0,0,0,.34)),
+    radial-gradient(circle at 22% 12%,rgba(103,224,255,.13),transparent 34%),
+    radial-gradient(circle at 76% 12%,rgba(255,120,205,.13),transparent 34%),
+    radial-gradient(circle at top,rgba(255,120,200,.15),rgba(120,255,190,.08),rgba(255,255,255,.035)) !important;
+  border:1px solid rgba(223,250,255,.20) !important;
+  box-shadow:
+    0 0 46px rgba(110,220,255,.13),
+    0 0 58px rgba(255,120,200,.21),
+    0 22px 75px rgba(0,0,0,.63),
+    inset 0 0 34px rgba(255,255,255,.045) !important;
+  backdrop-filter:blur(4px);
+}
+.petal-rain{ z-index:12 !important; }
+
+.bloom-btn,
+.garden-return{
+  background:
+    linear-gradient(135deg,rgba(255,0,140,.54),rgba(70,210,255,.18),rgba(120,255,190,.18)) !important;
+  box-shadow:
+    0 0 24px rgba(255,0,160,.65),
+    0 0 42px rgba(120,220,255,.20),
+    inset 0 0 14px rgba(255,255,255,.12) !important;
+}
