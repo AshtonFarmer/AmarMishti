@@ -4,54 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Tanima Eyes Only ❤️</title>
-  <link rel="stylesheet" href="tanima-eyes-only.css?v=1" />
+  <link rel="stylesheet" href="tanima-eyes-only.css?v=2" />
   <link rel="stylesheet" href="cursor.css?v=1" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
   <link rel="shortcut icon" href="favicon.svg?v=2">
 </head>
 <body>
-<main class="eyes-page">
+<main class="eyes-page" id="eyesPage">
   <div class="soft-vignette"></div>
   <div class="paper-grain"></div>
   <div class="quiet-particles" aria-hidden="true"></div>
-  <section class="eyes-intro">
+  <section class="passcode-screen" id="passcodeScreen" aria-label="Private passcode screen">
     <p class="private-label">A private universe</p>
     <h1>Tanima Eyes Only</h1>
-    <p class="intro-line">No multiverse noise. No jokes. Just something from my heart to yours.</p>
+    <p class="passcode-subtitle">Enter our day to unlock this little piece of my heart.</p>
+    <div class="passcode-dots" id="passcodeDots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <p id="passcodeMessage" class="passcode-message">Anniversary passcode ❤️</p>
+    <div class="keypad" aria-label="Passcode keypad">
+      <button type="button" data-key="1">1</button><button type="button" data-key="2">2</button><button type="button" data-key="3">3</button>
+      <button type="button" data-key="4">4</button><button type="button" data-key="5">5</button><button type="button" data-key="6">6</button>
+      <button type="button" data-key="7">7</button><button type="button" data-key="8">8</button><button type="button" data-key="9">9</button>
+      <button type="button" class="keypad-ghost" data-clear="true">Clear</button><button type="button" data-key="0">0</button><button type="button" class="keypad-ghost" data-delete="true">⌫</button>
+    </div>
   </section>
-  <section class="letter-stage" aria-label="Envelope opening into a video">
-    <div class="envelope-scene">
+  <section class="eyes-intro" id="eyesIntro" aria-hidden="true">
+    <p class="private-label">Unlocked for Tanima</p>
+    <h1>Tanima Eyes Only</h1>
+    <p class="intro-line">No multiverse noise. No jokes. Just my heart, opening for you.</p>
+  </section>
+  <section class="letter-stage locked-stage" id="letterStage" aria-label="Envelope that opens into a video">
+    <div class="envelope-scene" id="envelopeScene">
       <button id="openLetterBtn" class="open-letter-btn" type="button" aria-label="Open when you are ready">
-        <span class="envelope">
-          <span class="envelope-back"></span>
-          <span class="letter-paper">
-            <span class="paper-glow"></span>
-            <span class="paper-line line-1"></span>
-            <span class="paper-line line-2"></span>
-            <span class="paper-line line-3"></span>
-            <span class="paper-heart">❤️</span>
-          </span>
-          <span class="envelope-front"></span>
-          <span class="envelope-flap"></span>
-          <span class="wax-seal">❤️</span>
-        </span>
+        <span class="envelope"><span class="envelope-back"></span><span class="letter-paper"><span class="paper-glow"></span><span class="paper-line line-1"></span><span class="paper-line line-2"></span><span class="paper-line line-3"></span><span class="paper-heart">❤️</span></span><span class="envelope-front"></span><span class="envelope-flap"></span><span class="wax-seal">❤️</span></span>
       </button>
-      <p class="open-hint">Open when you’re ready ❤️</p>
+      <p id="openHint" class="open-hint">Open when you’re ready ❤️</p>
     </div>
     <div class="video-shell" id="videoShell" aria-hidden="true">
-      <div class="video-frame">
-        <video id="heartVideo" class="heart-video" controls playsinline preload="metadata">
-          <source src="tanima-eyes-only.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div class="video-frame"><video id="heartVideo" class="heart-video" controls playsinline preload="metadata"><source src="tanima-eyes-only.mp4" type="video/mp4" /></video></div>
       <p class="video-note">This is me speaking from my heart.</p>
+      <button id="closeEnvelopeBtn" class="close-envelope-btn" type="button">Close the envelope ❤️</button>
     </div>
-    <div class="closed-envelope" aria-hidden="true">
-      <div class="closed-card"><div class="tiny-envelope">💌</div><p>Kept safely in this little universe.</p></div>
-    </div>
+    <div class="closed-envelope" id="closedEnvelope" aria-hidden="true"><div class="closed-card"><div class="tiny-envelope">💌</div><p>Kept safely in this little universe.</p></div></div>
     <a id="returnBts" class="return-bts hidden-eyes" href="ending.html?behind=1">Return to behind the scenes ❤️</a>
   </section>
 </main>
-<script src="tanima-eyes-only.js?v=1"></script>
+<script src="tanima-eyes-only.js?v=2"></script>
 </body>
 </html>
