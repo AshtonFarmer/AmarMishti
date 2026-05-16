@@ -1,0 +1,128 @@
+/* TANIMA EYES ONLY - VISIBILITY FIX
+   This keeps the title readable and forces the envelope/video/return button into safe visible positions.
+*/
+
+/* keep the title at top, not behind the envelope */
+.eyes-intro{
+  top:4.5vh !important;
+  z-index:18 !important;
+}
+
+.eyes-intro h1{
+  font-size:clamp(2.2rem,6vw,4.8rem) !important;
+}
+
+.intro-line{
+  font-size:clamp(.95rem,2vw,1.12rem) !important;
+}
+
+/* make the letter stage cover the screen safely */
+.letter-stage{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  z-index:12 !important;
+  display:block !important;
+}
+
+/* force envelope visible below the title */
+.envelope-scene{
+  position:absolute !important;
+  left:50% !important;
+  top:58% !important;
+  transform:translate(-50%, -50%) !important;
+  width:min(520px,88vw) !important;
+  display:grid !important;
+  place-items:center !important;
+  gap:18px !important;
+}
+
+.envelope{
+  width:min(430px,78vw) !important;
+  height:min(270px,45vw) !important;
+  min-height:210px !important;
+}
+
+/* when opened, hide top title so the video feels intimate */
+body.opened .eyes-intro,
+body.video-revealed .eyes-intro,
+body.finished .eyes-intro{
+  opacity:0 !important;
+  filter:blur(10px) !important;
+  pointer-events:none !important;
+}
+
+/* keep video centered and not too low */
+.video-shell{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%, -50%) scale(.96) !important;
+  width:min(850px,92vw) !important;
+}
+
+body.video-revealed .video-shell{
+  transform:translate(-50%, -50%) scale(1) !important;
+}
+
+.heart-video{
+  max-height:50vh !important;
+  min-height:230px !important;
+}
+
+.close-envelope-btn{
+  margin-top:10px !important;
+}
+
+/* closed envelope + return button positions */
+body.finished .closed-envelope{
+  position:absolute !important;
+  left:50% !important;
+  top:43% !important;
+  transform:translate(-50%, -50%) scale(1) !important;
+}
+
+.return-bts{
+  position:fixed !important;
+  left:50% !important;
+  bottom:7vh !important;
+  transform:translateX(-50%) translateY(18px) !important;
+  z-index:50 !important;
+  white-space:nowrap;
+}
+
+body.finished .return-bts{
+  transform:translateX(-50%) translateY(0) !important;
+}
+
+/* Make return visible when JS removes hidden class */
+.return-bts:not(.hidden-eyes){
+  display:inline-block !important;
+}
+
+@media(max-width:720px){
+  .eyes-intro{
+    top:3vh !important;
+  }
+
+  .envelope-scene{
+    top:60% !important;
+  }
+
+  .envelope{
+    width:min(360px,82vw) !important;
+    height:min(228px,52vw) !important;
+    min-height:190px !important;
+  }
+
+  .heart-video{
+    max-height:45vh !important;
+    min-height:200px !important;
+  }
+
+  .return-bts{
+    bottom:4vh !important;
+    font-size:.95rem !important;
+  }
+}
