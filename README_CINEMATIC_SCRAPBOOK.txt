@@ -1,0 +1,1 @@
+Upload all files/folders. This version uses your Who-Tasked-It book logic: book translateX, arrows translateX, papers flip with rotateY(-180deg), and z-index changes. It does not replace tanima-eyes-only.css or tanima-eyes-only.js.
