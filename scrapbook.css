@@ -1,1 +1,98 @@
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#211114;color:#4e3028;font-family:Georgia,"Times New Roman",serif}#scrapbookUniverse{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 8%,rgba(255,238,190,.30),transparent 24%),radial-gradient(circle at 10% 88%,rgba(255,180,190,.20),transparent 32%),linear-gradient(135deg,#2a171a,#7b563c 45%,#211114)}#scrapbookUniverse:before{content:"";position:absolute;inset:0;opacity:.22;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 7px);pointer-events:none}.ambient-lights{position:absolute;top:0;left:0;right:0;height:70px;z-index:3;background:radial-gradient(circle at 7% 42%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 16% 35%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 27% 48%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 39% 35%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 52% 44%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 65% 35%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 78% 48%,#fff1b2 0 5px,transparent 7px),radial-gradient(circle at 91% 35%,#fff1b2 0 5px,transparent 7px);filter:drop-shadow(0 0 10px rgba(255,231,150,.95));opacity:.88}.pressed-flower{position:absolute;z-index:1;color:rgba(255,238,220,.45);font-size:8rem;pointer-events:none}.flower-left{left:-22px;bottom:-16px;rotate:-18deg}.flower-right{right:-18px;top:80px;rotate:18deg}.scrapbook-title{position:absolute;top:70px;z-index:20;text-align:center;color:#fff4e9;pointer-events:none}.scrapbook-title p{margin:0 0 4px;text-transform:uppercase;letter-spacing:.28em;font-size:.75rem;color:#ffe0d7}.scrapbook-title h1{margin:0;font-family:"Brush Script MT","Segoe Script",cursive;font-size:clamp(2.5rem,6vw,5rem);font-weight:400;line-height:.9;text-shadow:0 0 16px rgba(255,255,255,.72),0 0 34px rgba(255,170,140,.35)}.scrapbook-title span{display:block;margin-top:10px;color:#ffece4;font-size:clamp(.95rem,2vw,1.15rem);opacity:.9}.navigation-button{border:none;background:rgba(45,22,22,.62);color:#fff4e9;width:58px;height:58px;border-radius:50%;margin:50px;cursor:pointer;transition:transform .5s,opacity .3s,background .3s;z-index:50;font-size:3rem;line-height:.8;box-shadow:0 0 24px rgba(0,0,0,.28);border:1px solid rgba(255,238,220,.38);backdrop-filter:blur(4px)}.navigation-button:disabled{opacity:.25;cursor:not-allowed}.book{width:440px;height:590px;position:relative;transition:transform .5s;z-index:10;filter:drop-shadow(0 35px 45px rgba(0,0,0,.48))}.paper{height:100%;width:100%;position:absolute;top:0;left:0;perspective:1500px}.front,.back{position:absolute;width:100%;height:100%;top:0;left:0;display:flex;justify-content:center;align-items:center;transform-origin:left;transition:transform .72s cubic-bezier(.22,.78,.22,1);background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.30),transparent 28%),linear-gradient(135deg,#f4dfbd,#ead0a5 55%,#d8b482);border-left:#6a3f19 6px solid;box-shadow:inset 0 0 24px rgba(90,45,20,.10)}.front{z-index:1;backface-visibility:hidden}.back{z-index:0}.front-content,.back-content{position:relative;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center}.back-content{transform:rotateY(180deg)}.flipped .front,.flipped .back{transform:rotateY(-180deg)}#p1{z-index:10}#p2{z-index:9}#p3{z-index:8}#p4{z-index:7}#p5{z-index:6}#p6{z-index:5}#p7{z-index:4}#p8{z-index:3}#p9{z-index:2}#p10{z-index:1}.cover-front{background:radial-gradient(circle at top,rgba(255,240,210,.55),transparent 42%),linear-gradient(135deg,#edd1a1,#c99663)}.cover-content h2{margin:12px 0;font-family:"Brush Script MT","Segoe Script",cursive;font-weight:400;font-size:4rem;color:#5b3429}.cover-content p{font-size:1.28rem;line-height:1.5}.cover-content small{font-family:"Brush Script MT","Segoe Script",cursive;font-size:1.5rem}.photo{position:relative;background:#fff8ed;padding:12px 12px 18px;box-shadow:0 14px 24px rgba(80,40,20,.25);border-radius:4px;z-index:3;margin:12px auto 16px}.photo:before,.photo:after{content:"";position:absolute;width:86px;height:25px;background:rgba(244,216,166,.74);border:1px solid rgba(150,105,55,.12);z-index:10}.photo:before{top:-13px;left:18%;rotate:-7deg}.photo:after{bottom:-12px;right:12%;rotate:5deg}.photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px}.hero{width:86%;height:58%}.wide{width:88%;height:58%}.tall{width:70%;height:66%}.square{width:72%;height:56%}.collage{width:84%;height:66%}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;height:60%;width:92%;margin:10px auto 12px}.pair .mini{width:100%;height:100%;margin:0}.tilt-left{transform:rotate(-2.2deg)}.tilt-right{transform:rotate(2.1deg)}.caption{position:relative;z-index:4;margin:8px auto 0;max-width:92%;text-align:center;color:#5d352c;font-family:"Brush Script MT","Segoe Script",cursive;font-size:1.75rem;line-height:1.15}.caption.light{color:#fff2e8;text-shadow:0 0 14px rgba(255,210,185,.18)}.rain-page{background:radial-gradient(circle at 50% 20%,rgba(255,230,180,.18),transparent 34%),linear-gradient(135deg,#221920,#39292c 55%,#111017)}.color-page{background:radial-gradient(circle at 20% 18%,rgba(255,90,180,.23),transparent 28%),radial-gradient(circle at 80% 20%,rgba(80,170,255,.21),transparent 28%),radial-gradient(circle at 40% 80%,rgba(255,220,80,.24),transparent 30%),linear-gradient(135deg,#f3d6b8,#edc89a)}.elegant-page{background:radial-gradient(circle at 70% 10%,rgba(255,255,255,.42),transparent 28%),linear-gradient(135deg,#fff0cc,#e7cda4)}.sunset-page{background:radial-gradient(circle at 50% 20%,rgba(255,210,125,.28),transparent 32%),linear-gradient(135deg,#f3dfbf,#d8b07d)}.final-page{background:radial-gradient(circle at top,rgba(255,245,220,.42),transparent 38%),linear-gradient(135deg,#f5dfbd,#d7b17a)}.final-content h2{margin:0;font-size:3.3rem;font-weight:400}.final-content h3{margin:0 0 20px;font-family:"Brush Script MT","Segoe Script",cursive;font-size:3.4rem;font-weight:400;color:#78443d}.final-content p{max-width:350px;margin:0 auto 22px;font-size:1.05rem;line-height:1.45}.final-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.final-buttons a{display:inline-block;padding:12px 16px;border-radius:999px;color:#fff8f0;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-weight:900;background:linear-gradient(135deg,rgba(120,62,40,.88),rgba(180,96,84,.78))}.page-count{position:absolute;bottom:22px;z-index:60;color:#fff0e5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-weight:800;background:rgba(42,22,20,.50);border:1px solid rgba(255,235,220,.22);padding:8px 14px;border-radius:999px}@media(max-width:850px){.scrapbook-title{top:42px}.scrapbook-title span{display:none}.book{width:min(360px,70vw);height:min(520px,66vh)}.navigation-button{position:absolute;bottom:30px;margin:0;width:48px;height:48px;font-size:2.4rem}.navigation-button#prev-btn{left:18px}.navigation-button#next-btn{right:18px}.caption{font-size:1.42rem}.cover-content h2{font-size:3rem}.final-content h2{font-size:2.5rem}.final-content h3{font-size:2.5rem}}@media(max-width:520px){.book{width:300px;height:460px}.front-content,.back-content{padding:18px}.caption{font-size:1.25rem}.photo{padding:9px 9px 14px}.hero,.wide,.collage{height:54%}.tall{height:60%;width:78%}.pair{gap:8px;height:54%}}
+
+/* SMALL POLISH FIXES */
+.scrapbook-title{
+  top:26px !important;
+  z-index:8 !important;
+  transition:opacity .55s ease, transform .55s ease, filter .55s ease;
+}
+
+.scrapbook-title h1{
+  font-size:clamp(2.15rem,4.6vw,4rem) !important;
+}
+
+.scrapbook-title span{
+  display:block;
+  margin-top:16px !important;
+  opacity:.92 !important;
+  text-shadow:0 0 10px rgba(80,35,25,.28), 0 0 18px rgba(255,255,255,.22);
+}
+
+/* Once she starts turning pages, get the title out of the way */
+body.scrapbook-book-opened .scrapbook-title{
+  opacity:0;
+  transform:translateY(-24px);
+  filter:blur(8px);
+  pointer-events:none;
+}
+
+/* Final quote page now has the reference marriage image attached */
+.final-content{
+  justify-content:flex-start !important;
+  padding-top:18px !important;
+  gap:5px;
+}
+
+.final-memory{
+  width:84% !important;
+  height:38% !important;
+  margin:2px auto 6px !important;
+  padding:9px 9px 13px !important;
+  transform:rotate(-1.2deg);
+}
+
+.final-content h2{
+  font-size:clamp(1.65rem,3.8vw,2.55rem) !important;
+  margin:0 !important;
+  line-height:.95 !important;
+}
+
+.final-content h3{
+  font-size:clamp(1.65rem,3.6vw,2.45rem) !important;
+  margin:2px 0 8px !important;
+  line-height:1 !important;
+}
+
+.final-content p{
+  font-size:clamp(.86rem,1.45vw,1rem) !important;
+  line-height:1.28 !important;
+  max-width:350px !important;
+  margin:0 auto 10px !important;
+}
+
+.final-buttons{
+  gap:8px !important;
+}
+
+.final-buttons a{
+  padding:10px 14px !important;
+  font-size:.9rem !important;
+}
+
+@media(max-width:850px){
+  .scrapbook-title{
+    top:18px !important;
+  }
+
+  .scrapbook-title h1{
+    font-size:2.55rem !important;
+  }
+
+  .scrapbook-title span{
+    margin-top:10px !important;
+  }
+
+  .final-memory{
+    height:34% !important;
+  }
+
+  .final-content p{
+    font-size:.82rem !important;
+  }
+
+  .final-buttons a{
+    width:100%;
+    text-align:center;
+    padding:9px 12px !important;
+  }
+}
