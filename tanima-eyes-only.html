@@ -10,8 +10,25 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
   <link rel="shortcut icon" href="favicon.svg?v=2">
   <style>
-    .heart-video{
-      border:0 !important;
+    .eyes-video-wrapper{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    .eyes-video{
+      display:block;
+      width:100%;
+      max-height:58vh;
+      min-height:230px;
+      border:0;
+      border-radius:20px;
+      background:#050205;
+      outline:none;
+      object-fit:contain;
     }
   </style>
 </head>
@@ -54,14 +71,18 @@
 
     <div class="video-shell" id="videoShell">
       <div class="video-frame">
-        <iframe
-          id="heartVideo"
-          class="heart-video"
-          src="https://1drv.ms/v/c/d63e1dc956329d07/IQTi9XUg8g8CR6-eO9nkp_iiAUO_CpMdZLjJTaWqlBSsfxA?width=1024"
-          title="Tanima Eyes Only Video"
-          allow="autoplay; fullscreen; encrypted-media"
-          allowfullscreen>
-        </iframe>
+        <div class="eyes-video-wrapper">
+          <video
+            id="heartVideo"
+            class="heart-video"
+            controls
+            playsinline
+            preload="metadata"
+          >
+            <source src="./tanima-eyes-only.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <p class="video-note">This is me speaking from my heart.</p>
       <button id="closeEnvelopeBtn" class="close-envelope-btn" type="button">Close the envelope ❤️</button>
