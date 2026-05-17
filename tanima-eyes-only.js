@@ -1,4 +1,6 @@
-/* Tanima Eyes Only - Stable restored version */
+/* Tanima Eyes Only - Candle video upgrade
+   Keeps the same envelope system, just slows the reveal and adds cinematic state classes.
+*/
 (function(){
   const PASSCODE = "032126";
   const page = document.body;
@@ -20,12 +22,12 @@
   function makeParticles(){
     if(!particles) return;
     particles.innerHTML = "";
-    for(let i=0;i<24;i++){
+    for(let i=0;i<34;i++){
       const p=document.createElement("span");
       p.style.left=random(4,96)+"vw";
-      p.style.setProperty("--drift", random(-80,80).toFixed(1)+"px");
-      p.style.animationDuration=random(8,17).toFixed(2)+"s";
-      p.style.animationDelay=random(-16,0).toFixed(2)+"s";
+      p.style.setProperty("--drift", random(-90,90).toFixed(1)+"px");
+      p.style.animationDuration=random(10,22).toFixed(2)+"s";
+      p.style.animationDelay=random(-18,0).toFixed(2)+"s";
       particles.appendChild(p);
     }
   }
@@ -89,11 +91,13 @@
     page.classList.add("opened");
     if(openBtn) openBtn.disabled = true;
 
-    setTimeout(()=>page.classList.add("video-revealed"),1800);
+    // Slow, emotional pacing: envelope opens first, then room dims, then video fades in.
+    setTimeout(()=>page.classList.add("video-preparing"),1350);
+    setTimeout(()=>page.classList.add("video-revealed"),3250);
 
     setTimeout(()=>{
       try{ if(video) video.play().catch(()=>{}); }catch(e){}
-    },2400);
+    },3900);
   }
 
   function closeEnvelope(){
@@ -101,6 +105,7 @@
     finished = true;
     try{ if(video) video.pause(); }catch(e){}
     page.classList.remove("video-revealed");
+    page.classList.remove("video-preparing");
     page.classList.add("finished");
   }
 

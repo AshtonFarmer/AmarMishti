@@ -1,0 +1,258 @@
+/* Tanima Eyes Only candle-date video polish
+   Safe add-on: does not change envelope HTML structure. */
+
+/* Warmer private candle-date room */
+.eyes-page{
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255,195,128,.18), transparent 26%),
+    radial-gradient(circle at 15% 80%, rgba(255,128,155,.15), transparent 32%),
+    radial-gradient(circle at 85% 78%, rgba(255,178,110,.12), transparent 30%),
+    linear-gradient(180deg,#17080d 0%,#090304 54%,#020104 100%) !important;
+}
+
+.candle-date-scene{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:.85;
+  transition:opacity 1.3s ease, filter 1.3s ease;
+}
+
+body.video-revealed .candle-date-scene{
+  opacity:1;
+  filter:saturate(1.05);
+}
+
+.table-glow{
+  position:absolute;
+  left:50%;
+  bottom:-18%;
+  width:min(860px,105vw);
+  height:42vh;
+  transform:translateX(-50%);
+  background:
+    radial-gradient(ellipse at center, rgba(255,155,85,.25), transparent 62%);
+  filter:blur(14px);
+}
+
+.candle{
+  position:absolute;
+  bottom:8vh;
+  width:34px;
+  height:96px;
+  border-radius:12px 12px 6px 6px;
+  background:
+    linear-gradient(90deg, #f8d9a5, #fff0ca 45%, #d6a36d);
+  box-shadow:
+    inset -6px 0 12px rgba(121,63,23,.20),
+    0 0 24px rgba(255,153,81,.22);
+}
+
+.candle-left{
+  left:7vw;
+}
+
+.candle-right{
+  right:7vw;
+  height:78px;
+  opacity:.9;
+}
+
+.candle span{
+  position:absolute;
+  left:50%;
+  top:-32px;
+  width:18px;
+  height:34px;
+  transform:translateX(-50%);
+  border-radius:50% 50% 48% 48%;
+  background:
+    radial-gradient(circle at 50% 75%, #fff7c9 0 14%, #ffd06d 38%, #ff7b45 64%, transparent 72%);
+  filter:drop-shadow(0 0 12px rgba(255,190,90,.95)) drop-shadow(0 0 28px rgba(255,110,70,.35));
+  animation:candleFlicker 2.15s ease-in-out infinite alternate;
+}
+
+.candle-right span{
+  animation-delay:-.8s;
+}
+
+@keyframes candleFlicker{
+  0%{ transform:translateX(-50%) scale(.92) rotate(-2deg); opacity:.82; }
+  35%{ transform:translateX(-48%) scale(1.08) rotate(3deg); opacity:1; }
+  70%{ transform:translateX(-53%) scale(.98) rotate(-3deg); opacity:.9; }
+  100%{ transform:translateX(-50%) scale(1.14) rotate(2deg); opacity:1; }
+}
+
+.rose-shadow{
+  position:absolute;
+  color:rgba(255,206,188,.13);
+  font-size:7rem;
+  filter:blur(.2px);
+  text-shadow:0 0 30px rgba(255,160,130,.12);
+}
+
+.rose-one{
+  left:13vw;
+  bottom:14vh;
+  transform:rotate(-18deg);
+}
+
+.rose-two{
+  right:14vw;
+  bottom:12vh;
+  transform:rotate(15deg);
+}
+
+/* More cinematic dust */
+.quiet-particles span{
+  width:4px !important;
+  height:4px !important;
+  background:rgba(255,218,154,.68) !important;
+  box-shadow:
+    0 0 10px rgba(255,205,135,.58),
+    0 0 25px rgba(255,130,110,.16) !important;
+}
+
+/* The envelope is preserved, just gets a warmer glow */
+.envelope{
+  filter:
+    drop-shadow(0 26px 38px rgba(0,0,0,.58))
+    drop-shadow(0 0 36px rgba(255,174,118,.20)) !important;
+}
+
+.wax-seal{
+  animation:waxHeartbeat 4.8s ease-in-out infinite;
+}
+
+@keyframes waxHeartbeat{
+  0%,82%,100%{ box-shadow:0 0 18px rgba(255,80,130,.65),0 0 38px rgba(255,80,130,.25),inset 0 0 12px rgba(255,255,255,.25); }
+  88%{ box-shadow:0 0 28px rgba(255,118,158,.88),0 0 58px rgba(255,102,150,.38),inset 0 0 14px rgba(255,255,255,.30); }
+}
+
+/* Dim the room between envelope opening and video reveal */
+body.video-preparing .eyes-page::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:9;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at center, transparent 0 34%, rgba(0,0,0,.24) 68%, rgba(0,0,0,.48) 100%);
+  animation:roomDim 1.7s ease both;
+}
+
+@keyframes roomDim{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+
+/* Bigger emotional video centerpiece */
+.video-shell{
+  width:min(1120px,96vw) !important;
+  top:51% !important;
+}
+
+body.video-revealed .video-shell{
+  transform:translate(-50%,-50%) scale(1) !important;
+}
+
+.video-frame{
+  padding:12px !important;
+  border-radius:34px !important;
+  background:
+    linear-gradient(135deg, rgba(255,218,173,.72), rgba(255,132,168,.22), rgba(255,202,131,.18)) !important;
+  border:1px solid rgba(255,232,210,.62) !important;
+  box-shadow:
+    0 0 40px rgba(255,173,118,.30),
+    0 0 78px rgba(255,93,145,.20),
+    0 28px 90px rgba(0,0,0,.70) !important;
+  animation:videoHeartbeat 5.8s ease-in-out infinite;
+}
+
+@keyframes videoHeartbeat{
+  0%,78%,100%{
+    box-shadow:
+      0 0 40px rgba(255,173,118,.30),
+      0 0 78px rgba(255,93,145,.20),
+      0 28px 90px rgba(0,0,0,.70);
+  }
+  84%{
+    box-shadow:
+      0 0 58px rgba(255,206,163,.48),
+      0 0 105px rgba(255,96,150,.34),
+      0 28px 90px rgba(0,0,0,.72);
+  }
+  90%{
+    box-shadow:
+      0 0 44px rgba(255,173,118,.34),
+      0 0 86px rgba(255,93,145,.23),
+      0 28px 90px rgba(0,0,0,.70);
+  }
+}
+
+.eyes-video,
+.heart-video{
+  max-height:68vh !important;
+  min-height:min(360px,48vh) !important;
+  border-radius:24px !important;
+}
+
+.video-note{
+  margin-top:18px !important;
+  color:#fff1e8 !important;
+  letter-spacing:.03em;
+  text-shadow:
+    0 0 14px rgba(255,186,141,.42),
+    0 0 28px rgba(255,99,150,.20) !important;
+}
+
+/* Slower and softer transition from envelope into video */
+body.video-revealed .envelope-scene{
+  transform:translate(-50%,-58%) scale(.88) !important;
+  filter:blur(22px) brightness(1.12) !important;
+  transition:
+    opacity 1.45s ease,
+    transform 1.45s cubic-bezier(.18,.88,.24,1),
+    filter 1.45s ease !important;
+}
+
+/* Keep return buttons readable after the video closes */
+body.finished .eyes-return-buttons{
+  z-index:80;
+}
+
+@media(max-width:720px){
+  .candle{
+    width:26px;
+    height:72px;
+    bottom:6vh;
+  }
+
+  .candle-left{
+    left:4vw;
+  }
+
+  .candle-right{
+    right:4vw;
+  }
+
+  .rose-shadow{
+    font-size:4.5rem;
+  }
+
+  .video-shell{
+    width:96vw !important;
+  }
+
+  .eyes-video,
+  .heart-video{
+    max-height:56vh !important;
+    min-height:220px !important;
+  }
+
+  .video-frame{
+    padding:8px !important;
+    border-radius:26px !important;
+  }
+}
