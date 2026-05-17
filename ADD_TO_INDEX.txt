@@ -1,3 +1,0 @@
-Paste this line at the bottom of index.html, directly under your current script.js line:
-
-<script src="duck-unlock.js?v=1"></script>
