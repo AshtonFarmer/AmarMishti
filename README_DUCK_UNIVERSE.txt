@@ -1,1 +1,0 @@
-Upload duck-unlock.js, duck-game.html, duck-game.css, duck-game.js. Then add the one script line from ADD_TO_INDEX.txt to index.html. This is safer than replacing your whole index.html.
