@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Secret Duck Universe 🦆⚡</title>
-<link rel="stylesheet" href="duck-game.css?v=1" />
+<link rel="stylesheet" href="duck-game.css?v=2" />
 <link rel="stylesheet" href="duck-resort.css?v=1" />
 <link rel="stylesheet" href="cursor.css?v=1" />
 </head>
@@ -34,9 +34,16 @@
         <div class="duck-foot foot-one"></div>
         <div class="duck-foot foot-two"></div>
       </div>
+
+      <div id="duckJoystick" class="duck-joystick" aria-label="Duck joystick">
+        <div class="joystick-ring">
+          <div id="joystickThumb" class="joystick-thumb">⚡</div>
+        </div>
+        <span class="joystick-label">drag to waddle</span>
+      </div>
     </section>
 
-    <p id="duckMessage" class="duck-message">Use arrow keys or WASD. Collect 🍞 and ❤️. Avoid 💧.</p>
+    <p id="duckMessage" class="duck-message">Use arrow keys, WASD, or the mobile joystick. Collect 🍞 and ❤️. Avoid 💧.</p>
 
     <div class="duck-buttons">
       <button id="startDuckGame" class="duck-btn">Start duck chaos 🦆</button>
@@ -45,6 +52,6 @@
   </section>
 </main>
 
-<script src="duck-game.js?v=1"></script>
+<script src="duck-game.js?v=2"></script>
 </body>
 </html>

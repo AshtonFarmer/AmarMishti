@@ -6,9 +6,128 @@
 .duck-kicker{margin:0 0 8px;text-transform:uppercase;letter-spacing:.26em;font-size:.78rem;color:#fff0bd;text-shadow:0 0 14px rgba(255,205,70,.78)}
 .duck-card h1{margin:0;font-size:clamp(2.8rem,8vw,5.8rem);line-height:1;font-family:"Brush Script MT","Segoe Script",cursive;font-weight:400;text-shadow:0 0 16px rgba(255,255,255,.85),0 0 36px rgba(255,210,75,.72),0 0 70px rgba(90,205,255,.24)}
 .duck-intro{margin:8px 0 14px;color:#fff4d4;font-size:clamp(.95rem,2.4vw,1.2rem)}.duck-hud{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:12px auto 14px}.duck-hud div{padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-weight:800}
-.game-arena{position:relative;width:min(820px,100%);height:min(390px,48vh);margin:0 auto;border-radius:28px;overflow:hidden;background:radial-gradient(circle at 50% 120%,rgba(120,230,255,.22),transparent 42%),linear-gradient(180deg,rgba(6,20,48,.92),rgba(3,12,30,.94));border:1px solid rgba(180,235,255,.18);box-shadow:inset 0 0 36px rgba(90,205,255,.1),0 18px 50px rgba(0,0,0,.55)}
+.game-arena{position:relative;width:min(820px,100%);height:min(390px,48vh);margin:0 auto;border-radius:28px;overflow:hidden;background:radial-gradient(circle at 50% 120%,rgba(120,230,255,.22),transparent 42%),linear-gradient(180deg,rgba(6,20,48,.92),rgba(3,12,30,.94));border:1px solid rgba(180,235,255,.18);box-shadow:inset 0 0 36px rgba(90,205,255,.1),0 18px 50px rgba(0,0,0,.55);touch-action:none}
 .game-arena:before{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:repeating-linear-gradient(90deg,rgba(90,205,255,.1) 0 40px,rgba(255,255,255,.04) 40px 80px);opacity:.45;animation:pondMove 8s linear infinite}@keyframes pondMove{from{background-position:0 0}to{background-position:160px 0}}
 .duck-player{position:absolute;width:72px;height:62px;left:40px;top:150px;z-index:5;filter:drop-shadow(0 0 12px rgba(255,220,80,.45))}.duck-body{position:absolute;left:10px;top:26px;width:50px;height:30px;border-radius:55% 45% 48% 52%;background:linear-gradient(135deg,#ffe36e,#ffb800)}.duck-head{position:absolute;left:38px;top:10px;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#fff08a,#ffc400)}.duck-beak{position:absolute;left:58px;top:20px;width:18px;height:10px;border-radius:80% 35% 35% 80%;background:#ff8a00}.duck-eye{position:absolute;left:54px;top:17px;width:5px;height:5px;border-radius:50%;background:#111}.duck-wing{position:absolute;left:20px;top:34px;width:24px;height:14px;border-radius:60% 40% 55% 45%;background:rgba(255,174,0,.65);transform:rotate(-12deg)}.duck-foot{position:absolute;bottom:0;width:18px;height:8px;border-radius:70% 30% 70% 30%;background:#ff8a00}.foot-one{left:20px}.foot-two{left:42px}
 .collectible,.hazard{position:absolute;z-index:4;display:grid;place-items:center;width:38px;height:38px;font-size:28px;filter:drop-shadow(0 0 10px rgba(255,255,255,.28));animation:itemBob 1.7s ease-in-out infinite}@keyframes itemBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.hazard{filter:drop-shadow(0 0 10px rgba(90,205,255,.45))}
 .duck-message{min-height:32px;margin:14px auto 12px;color:#fff4d4;font-size:clamp(.95rem,2.5vw,1.15rem);text-shadow:0 0 12px rgba(255,210,75,.42)}.duck-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.duck-btn,.duck-return{border:1px solid rgba(255,240,190,.92);border-radius:999px;padding:13px 22px;color:white;text-decoration:none;cursor:pointer;font-size:clamp(.95rem,2.7vw,1.1rem);font-weight:900;background:linear-gradient(135deg,rgba(255,190,40,.55),rgba(75,185,255,.24));box-shadow:0 0 22px rgba(255,210,70,.55),0 0 36px rgba(90,205,255,.2),inset 0 0 14px rgba(255,255,255,.1)}
 .duck-confetti{position:absolute;width:8px;height:8px;border-radius:50%;background:#ffd84a;z-index:20;animation:confettiPop 1s ease forwards}@keyframes confettiPop{to{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}@media(max-width:700px){.duck-card{padding:18px 14px}.game-arena{height:42vh}.duck-player{transform:scale(.9)}}
+
+
+/* Mobile joystick upgrade */
+.duck-joystick{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  z-index:30;
+  display:none;
+  width:118px;
+  height:142px;
+  user-select:none;
+  touch-action:none;
+  pointer-events:auto;
+}
+
+.joystick-ring{
+  position:absolute;
+  left:0;
+  bottom:22px;
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(255,255,255,.10),rgba(90,205,255,.08) 52%,rgba(255,210,70,.10));
+  border:1px solid rgba(190,238,255,.38);
+  box-shadow:
+    0 0 18px rgba(90,205,255,.42),
+    0 0 34px rgba(255,210,75,.20),
+    inset 0 0 22px rgba(255,255,255,.07);
+  backdrop-filter:blur(5px);
+}
+
+.joystick-ring:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border-radius:50%;
+  border:1px dashed rgba(255,240,190,.28);
+}
+
+.joystick-thumb{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:48px;
+  height:48px;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 35% 25%,rgba(255,255,255,.55),transparent 26%),
+    linear-gradient(135deg,rgba(255,210,65,.96),rgba(75,185,255,.82));
+  color:white;
+  font-size:1.35rem;
+  font-weight:900;
+  box-shadow:
+    0 0 16px rgba(255,220,90,.70),
+    0 0 32px rgba(90,205,255,.48),
+    inset 0 0 12px rgba(255,255,255,.30);
+  transition:transform .08s linear;
+}
+
+.joystick-label{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:140px;
+  color:#fff4d4;
+  font-size:.74rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-shadow:0 0 10px rgba(255,210,75,.55);
+  opacity:.9;
+}
+
+body.duck-joystick-active .joystick-ring{
+  box-shadow:
+    0 0 25px rgba(90,205,255,.62),
+    0 0 46px rgba(255,210,75,.32),
+    inset 0 0 26px rgba(255,255,255,.10);
+}
+
+@media (hover:none), (pointer:coarse), (max-width:800px){
+  .duck-joystick{
+    display:block;
+  }
+
+  .game-arena{
+    height:min(430px,50vh);
+  }
+}
+
+@media(max-width:460px){
+  .duck-joystick{
+    width:96px;
+    height:120px;
+    left:12px;
+    bottom:12px;
+  }
+
+  .joystick-ring{
+    width:92px;
+    height:92px;
+  }
+
+  .joystick-thumb{
+    width:42px;
+    height:42px;
+  }
+
+  .joystick-label{
+    font-size:.62rem;
+    width:118px;
+  }
+}
